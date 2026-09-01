@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>24시간 글로벌 정보보안 다이제스트 — 2026-08-15 (세로)</title>
+<style>
+/* ═══ news-broadcast-ppt 토큰 (OKLCH Newsprint) ═══ */
+:root{
+  --color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);
+  --color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);
+  --color-rule:oklch(84% 0.010 45);--color-rule-2:oklch(68% 0.014 45);
+  --color-muted:oklch(48% 0.012 45);--color-neutral:oklch(36% 0.010 45);
+  --color-accent:oklch(42% 0.20 25);--color-accent-ink:oklch(98% 0.012 45);
+  --bg:var(--color-paper);--bg-soft:var(--color-paper-2);--surface:var(--color-paper);--surface-2:var(--color-paper-3);
+  --text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:var(--color-muted);
+  --accent:var(--color-accent);--good:oklch(58% 0.18 145);--warn:oklch(68% 0.16 75);--bad:var(--color-accent);
+  --font-sans:'Inter','Noto Sans KR',sans-serif;--font-display:'Oswald','Inter','Noto Sans KR',sans-serif;
+  --font-mono:'JetBrains Mono','IBM Plex Mono',monospace;
+  --mb-scale:1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:#14151a;overscroll-behavior:none;touch-action:pan-y}
+body{font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+/* ═══ 세로 스테이지 430×932 (19.5:9) ═══ */
+.deck{position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden}
+.slide{
+  position:absolute;inset:auto;left:50%;top:50%;
+  width:430px;height:932px;padding:44px 40px 58px;
+  transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;
+  background:var(--bg);color:var(--text-1);overflow:hidden;
+  opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease;
+  display:flex;flex-direction:column;
+}
+.slide.is-active{opacity:1;pointer-events:auto}
+/* ═══ 타이포 ═══ */
+.s-tag{font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.s-title{font-family:var(--font-display);font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}
+.s-sub{font-size:14.5px;line-height:1.55;color:var(--text-2);margin-top:10px}
+/* 뉴스프린트 이중 구분선 */
+.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}
+.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}
+/* 위험도 배지 */
+.badge{display:inline-block;font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border:1.5px solid currentColor;margin-top:14px}
+.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}
+.b-high{color:oklch(55% 0.19 35);background:oklch(55% 0.19 35 / .08)}
+.b-mid{color:var(--warn);background:oklch(68% 0.16 75 / .12)}
+.b-watch{color:var(--text-3);background:var(--surface-2)}
+/* 콘텐츠 블록 */
+.blk{margin-top:20px}
+.blk-label{font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:12px}
+.blk ul{list-style:none}
+.blk li{position:relative;font-size:15px;line-height:1.58;color:var(--text-1);padding-left:18px;margin-bottom:11px}
+.blk li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;background:var(--accent)}
+.blk li strong{font-weight:700}
+.blk li em{font-style:normal;color:var(--accent);font-weight:700}
+/* 출처 */
+.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:12px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}
+.src b{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}
+/* ═══ 슬라이드 2: 5건 리스트 ═══ */
+.news-row{display:flex;align-items:flex-start;gap:14px;padding:15px 0;border-bottom:1px solid var(--color-rule)}
+.news-row:last-of-type{border-bottom:none}
+.news-num{font-family:var(--font-display);font-size:26px;font-weight:800;color:var(--color-rule-2);line-height:1;min-width:34px}
+.news-main{flex:1}
+.news-head{font-size:16px;font-weight:700;line-height:1.35;color:var(--text-1)}
+.news-meta{display:flex;align-items:center;gap:8px;margin-top:6px}
+.news-cat{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.mini-badge{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.08em;padding:2px 7px;border:1px solid currentColor}
+/* ═══ 슬라이드 8: 트렌드 카드 ═══ */
+.trend-card{background:var(--surface-2);border-top:3px solid var(--accent);padding:16px 18px;margin-bottom:14px}
+.trend-kicker{font-family:var(--font-display);font-size:17px;font-weight:700;letter-spacing:.02em;margin-bottom:6px}
+.trend-body{font-size:14px;line-height:1.55;color:var(--text-2)}
+.trend-body strong{color:var(--text-1)}
+/* ═══ 슬라이드 9: 액션 ═══ */
+.act-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-rule)}
+.act-row:last-of-type{border-bottom:none}
+.act-tag{font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:.06em;min-width:52px;padding-top:2px}
+.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}
+.act-head{font-size:15.5px;font-weight:700;line-height:1.4}
+.act-sub{font-size:13px;line-height:1.5;color:var(--text-2);margin-top:4px}
+/* ═══ 타이틀 슬라이드 ═══ */
+.title-slide{justify-content:center}
+.title-slide .s-title{font-size:52px;line-height:1.1}
+.title-date{font-family:var(--font-mono);font-size:15px;letter-spacing:.14em;color:var(--text-2);margin-top:22px}
+.title-meta{display:flex;gap:26px;margin-top:34px}
+.title-meta div{border-top:2px solid var(--text-1);padding-top:10px}
+.title-meta .n{font-family:var(--font-display);font-size:30px;font-weight:800;line-height:1}
+.title-meta .l{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-top:6px}
+.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}
+/* ═══ 크롬 ═══ */
+.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}
+.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}
+.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}
+.hint.gone{opacity:0}
+.notes{display:none}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- 1 타이틀 -->
+<section class="slide title-slide">
+  <div class="s-tag">Security Digest · 24H</div>
+  <h1 class="s-title">24시간<br>글로벌 정보보안<br>다이제스트</h1>
+  <div class="title-date">2026. 08. 15 (금)</div>
+  <div class="title-meta">
+    <div><div class="n">5</div><div class="l">보도 건수</div></div>
+    <div><div class="n">4</div><div class="l">핵심 시그널</div></div>
+    <div><div class="n">1</div><div class="l">CVSS 10.0</div></div>
+  </div>
+  <div class="title-foot">The Hacker News · Futurum · Taipei Times · 보안뉴스 · Security Affairs · Tom's Hardware</div>
+  <div class="notes"><p>24시간 동안 수집된 글로벌 보안 뉴스 5건을 정리한 다이제스트입니다. CVSS 10.0 SAP 취약점부터 AI 에이전트 국가 사이버전까지, 4가지 핵심 시그널을 짚어봅니다.</p></div>
+</section>
+
+<!-- 2 5건 한눈에 -->
+<section class="slide">
+  <div class="s-tag">Overview</div>
+  <h2 class="s-title" style="font-size:28px">5건, 한눈에</h2>
+  <hr class="rule-double">
+  <div class="news-row">
+    <div class="news-num">01</div>
+    <div class="news-main">
+      <div class="news-head">SAP Commerce Cloud, CVSS 10.0 미인증 RCE</div>
+      <div class="news-meta"><span class="news-cat">패치 악용</span><span class="mini-badge b-crit">극심</span></div>
+    </div>
+  </div>
+  <div class="news-row">
+    <div class="news-num">02</div>
+    <div class="news-main">
+      <div class="news-head">대만 정부망, 준자율 AI 에이전트 공격</div>
+      <div class="news-meta"><span class="news-cat">Agentic AI</span><span class="mini-badge b-high">중대</span></div>
+    </div>
+  </div>
+  <div class="news-row">
+    <div class="news-num">03</div>
+    <div class="news-main">
+      <div class="news-head">서강대 학사 시스템, 18만 건 개인정보 유출</div>
+      <div class="news-meta"><span class="news-cat">교육기관</span><span class="mini-badge b-high">중대</span></div>
+    </div>
+  </div>
+  <div class="news-row">
+    <div class="news-num">04</div>
+    <div class="news-main">
+      <div class="news-head">macOS 화면 공유, 모네로 채굴기 유포</div>
+      <div class="news-meta"><span class="news-cat">크립토재킹</span><span class="mini-badge b-mid">주의</span></div>
+    </div>
+  </div>
+  <div class="news-row">
+    <div class="news-num">05</div>
+    <div class="news-main">
+      <div class="news-head">미 백악관, 민간 Hack-Back 역공 규정</div>
+      <div class="news-meta"><span class="news-cat">정책</span><span class="mini-badge b-watch">동향</span></div>
+    </div>
+  </div>
+  <div class="notes"><p>5건의 위험도: 극심 1, 중대 2, 주의 1, 동향 1. 아래에서 건별로 심층 분석합니다.</p></div>
+</section>
+
+<!-- 3 SAP -->
+<section class="slide">
+  <div class="s-tag">01 · 심층 분석</div>
+  <h2 class="s-title">SAP Commerce Cloud<br>CVSS 10.0</h2>
+  <span class="badge b-crit">극심 · 야생 악용 진행 중</span>
+  <div class="blk">
+    <div class="blk-label">사건 배경</div>
+    <ul>
+      <li>백엔드 Telnet 인터페이스의 <strong>미인증 원격 코드 실행(RCE)</strong> 취약점, <em>CVE-2026-58231</em></li>
+      <li>보안 패치 배포 <strong>수일 만에</strong> 자동화 익스플로잇 스캔·침투 시도 급증</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">기술적 · 장기적 파급</div>
+    <ul>
+      <li><strong>결제망·공급망 직접 타격</strong> — 결제 정보 탈취, 주문 조작, 랜섬웨어 유포로 직결</li>
+      <li>인터넷 직접 노출 엔드포인트의 <strong>네트워크 격리</strong>와 패치 <strong>즉시 적용</strong> 필수</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News — "SAP Commerce Cloud CVE-2026-58231 Targeted in Exploitation Attempts Days After Patch"</div>
+  <div class="notes"><p>가장 시급한 건입니다. 커머스 백엔드가 장악되면 결제 정보 탈취와 랜섬웨어로 직결되므로, 인터넷 노출 엔드포인트 격리와 패치 즉시 적용이 최우선입니다.</p></div>
+</section>
+
+<!-- 4 대만 AI -->
+<section class="slide">
+  <div class="s-tag">02 · 심층 분석</div>
+  <h2 class="s-title">대만 정부망<br>AI 에이전트 공격</h2>
+  <span class="badge b-high">중대 · 국가급 사이버전</span>
+  <div class="blk">
+    <div class="blk-label">사건 배경</div>
+    <ul>
+      <li>디지털발전부(MODA)·국가사이버안전청(ACS) <strong>공식 확인</strong></li>
+      <li>AI 에이전트가 <strong>스스로</strong> 취약점 정찰 → 계정 탈취 수행, 다수 에이전트가 기계 속도로 <strong>병렬</strong> 침투</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">기술적 · 장기적 파급</div>
+    <ul>
+      <li><strong>Agentic AI 위협의 실전 검증</strong> — 지정학적 갈등 지역 정부망에서 자율 침투 확인</li>
+      <li>방화벽·SIEM을 넘어 <strong>AI 기반 적응형 방어(Adaptive Defense)</strong>가 국가 안보 과제로 부상</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Futurum Research · Taipei Times — "Taiwan targeted in AI-driven hacking campaign"</div>
+  <div class="notes"><p>구조적으로 가장 중요한 건입니다. 실험실이 아니라 실제 지정학적 갈등 지역에서 준자율 AI 침투가 검증된 셈입니다.</p></div>
+</section>
+
+<!-- 5 서강대 -->
+<section class="slide">
+  <div class="s-tag">03 · 심층 분석</div>
+  <h2 class="s-title">서강대 학사 시스템<br>18만 건 유출</h2>
+  <span class="badge b-high">중대 · 교육기관 침해</span>
+  <div class="blk">
+    <div class="blk-label">사건 배경</div>
+    <ul>
+      <li>학사 행정 시스템 <strong>해킹 침해</strong>, 재학생·졸업생·교직원의 <strong>학번·성명·아이디 18만여 건</strong> 노출</li>
+      <li>유출 통지·시스템 점검 단행, <strong>관계 당국 합동 조사</strong> 착수</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">기술적 · 장기적 파급</div>
+    <ul>
+      <li>민감 정보 다량 보유에도 <strong>보안 투자 취약한 교육기관</strong>의 구조적 취약성 재확인</li>
+      <li>유출 계정 기반 <strong>2차 크리덴셜 스터핑·스피어 피싱</strong> 위협, <strong>MFA 전면 도입</strong> 시급</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>보안뉴스 — "취약점 경고 및 보안 업데이트: 서강대 개인정보 18만건 유출"</div>
+  <div class="notes"><p>국내 건입니다. 유출된 계정이 2차 피싱·크리덴셜 스터핑에 악용될 수 있어 MFA 전면 도입이 시급합니다.</p></div>
+</section>
+
+<!-- 6 macOS -->
+<section class="slide">
+  <div class="s-tag">04 · 심층 분석</div>
+  <h2 class="s-title">macOS 화면 공유<br>모네로 채굴기 유포</h2>
+  <span class="badge b-mid">주의 · 크립토재킹</span>
+  <div class="blk">
+    <div class="blk-label">사건 배경</div>
+    <ul>
+      <li>화면 공유 프로토콜의 <strong>인증 미흡 결함</strong> 악용, 원격 쉘 획득 후 <strong>XMRig 마이너</strong> 백그라운드 상주</li>
+      <li>피해자 시스템 리소스 <strong>무단 탈취</strong> 캠페인 식별</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">기술적 · 장기적 파급</div>
+    <ul>
+      <li>기업 내 Mac 도입률 상승에 맞춰 <strong>Mac 표적 악성코드 다양화</strong></li>
+      <li>윈도우 외 macOS <strong>인프라 침해·자원 착취</strong> 고도화, <strong>macOS 전용 EDR</strong> 모니터링 요구</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Security Affairs — "macOS Screen Sharing Flaw Exploited to Deploy Monero Miners"</div>
+  <div class="notes"><p>엔드포인트 표적이 윈도우에서 Mac으로 확대되고 있습니다. 크립토재킹 시그니처 모니터링과 macOS EDR 커버리지가 필요합니다.</p></div>
+</section>
+
+<!-- 7 Hack-Back -->
+<section class="slide">
+  <div class="s-tag">05 · 심층 분석</div>
+  <h2 class="s-title">미 백악관<br>민간 Hack-Back 규정</h2>
+  <span class="badge b-watch">동향 · 거버넌스</span>
+  <div class="blk">
+    <div class="blk-label">사건 배경</div>
+    <ul>
+      <li>민간 보안기업의 <strong>해외 범죄 조직 대상 역공격 허용</strong> 세부 조건 공개</li>
+      <li>참여 기업 <strong>100만 달러(약 13.8억 원) 에스크로 예치</strong> + <strong>DOJ·DHS 건별 서면 승인</strong> 필수화</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">기술적 · 장기적 파급</div>
+    <ul>
+      <li><strong>사이버 교전의 민간화</strong> — 공탁금·사전 승인으로 오폭 방지하는 책임성 장치</li>
+      <li>배후 국가와의 <strong>외교 마찰</strong> 및 공격 조직 <strong>보복(Retaliation)</strong> 리스크 관리가 관건</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Tom's Hardware — "White House authorizes private companies to launch 'hack-back' cyberattacks"</div>
+  <div class="notes"><p>합법화된 민간 사이버 역공의 통제 장치입니다. 무분별한 보복전과 제3국 인프라 피해를 차단하는 안전판인 동시에 외교 리스크를 키우는 요인입니다.</p></div>
+</section>
+
+<!-- 8 트렌드 -->
+<section class="slide">
+  <div class="s-tag">Signal</div>
+  <h2 class="s-title" style="font-size:28px">5건에서 읽는<br>4가지 시그널</h2>
+  <hr class="rule-double">
+  <div class="trend-card">
+    <div class="trend-kicker">패치 → 야생 악용, 시간축소</div>
+    <div class="trend-body">SAP 사례처럼 패치 직후 자동화 공격이 시작. <strong>패치 SLA를 '수일'에서 '수시간'으로</strong> 단축해야 하는 시대.</div>
+  </div>
+  <div class="trend-card">
+    <div class="trend-kicker">Agentic AI 실전 투입</div>
+    <div class="trend-body">자율형 AI가 국가급 사이버전 도구로 검증. <strong>공격과 방어 모두 AI화</strong> — 적응형 방어가 필수.</div>
+  </div>
+  <div class="trend-card">
+    <div class="trend-kicker">엔드포인트 표적 다양화</div>
+    <div class="trend-body">macOS 채굴기 유포로 <strong>Mac 표적 인프라 침해</strong> 고도화. EDR 커버리지의 크로스 플랫폼 확장 필요.</div>
+  </div>
+  <div class="trend-card">
+    <div class="trend-kicker">거버넌스·정책 공백</div>
+    <div class="trend-body">민간 hack-back 합법화는 <strong>사이버 교전의 민간화</strong>. 책임성 장치와 외교·보복 리스크 관리가 새 안보 의제.</div>
+  </div>
+  <div class="notes"><p>4가지 시그널: 패치-악용 시간축소, AI 실전, 엔드포인트 다양화, 거버넌스 공백.</p></div>
+</section>
+
+<!-- 9 액션 -->
+<section class="slide">
+  <div class="s-tag">Action</div>
+  <h2 class="s-title" style="font-size:28px">우선순위별 대응</h2>
+  <hr class="rule-double">
+  <div class="act-row">
+    <div class="act-tag t-now">즉시</div>
+    <div><div class="act-head">SAP Commerce Cloud 패치 + 노출 엔드포인트 격리</div><div class="act-sub">CVSS 10.0 야생 악용 대응 — 미인증 RCE 경로 차단, 세그멘테이션</div></div>
+  </div>
+  <div class="act-row">
+    <div class="act-tag t-now">즉시</div>
+    <div><div class="act-head">MFA 전면 확대</div><div class="act-sub">서강대 유출 등 크리덴셜 스터핑·스피어 피싱 대비 2차 인증 강제</div></div>
+  </div>
+  <div class="act-row">
+    <div class="act-tag t-soon">단기</div>
+    <div><div class="act-head">Agentic AI 탐지 — 적응형 방어 PoC</div><div class="act-sub">자율 AI 정찰·권한 상승 패턴 탐지, 기존 SIEM 보완</div></div>
+  </div>
+  <div class="act-row">
+    <div class="act-tag t-soon">단기</div>
+    <div><div class="act-head">macOS EDR 도입/확장</div><div class="act-sub">화면 공유 프로토콜 패치 확인, 크립토재킹 시그니처 모니터링</div></div>
+  </div>
+  <div class="act-row">
+    <div class="act-tag t-mon">모니터</div>
+    <div><div class="act-head">미 Hack-Back 정책 후속</div><div class="act-sub">참여 기업 명단·건별 승인 사례 추적, 외교 리스크 모니터링</div></div>
+  </div>
+  <div class="notes"><p>즉시 2건(패치+격리, MFA), 단기 2건(AI 탐지 PoC, macOS EDR), 모니터링 1건(hack-back 후속).</p></div>
+</section>
+
+<!-- 10 출처 -->
+<section class="slide">
+  <div class="s-tag">Sources</div>
+  <h2 class="s-title" style="font-size:28px">출처</h2>
+  <hr class="rule-double">
+  <div class="blk" style="margin-top:8px">
+    <ul>
+      <li><strong>The Hacker News</strong> — SAP Commerce Cloud CVE-2026-58231</li>
+      <li><strong>Futurum Research</strong> — Agentic AI and Cybersecurity Readiness</li>
+      <li><strong>Taipei Times</strong> — Taiwan targeted in AI-driven hacking campaign</li>
+      <li><strong>보안뉴스</strong> — 서강대 개인정보 18만건 유출</li>
+      <li><strong>Security Affairs</strong> — macOS Screen Sharing / Monero Miners</li>
+      <li><strong>Tom's Hardware</strong> — White House private hack-back policy</li>
+    </ul>
+  </div>
+  <div class="src"><b>편집 고지</b>위험도 배지(극심/중대/주의/동향)는 보도 내용 기반 편집 판단이며, 개별 사건의 최종 위험도는 공식 CVSS·당국 발표를 기준으로 재확인해야 합니다. 수집 기준: 2026-08-15 (금) 24시간.</div>
+  <div class="notes"><p>6개 원천 매체. 위험도 배지는 편집 판단임을 고지합니다.</p></div>
+</section>
+
+</div>
+<script>
+/* 19.5:9 네이티브 세로 데크 — fit + 스와이프/탭 네비게이션 */
+(function () {
+  'use strict';
+  var deck = document.querySelector('.deck');
+  if (!deck) return;
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  if (!slides.length) return;
+
+  /* 430×932 스테이지를 화면에 맞춤 (세로 화면: 높이 제약, 가로: 폭 제약) */
+  var W = 430, H = 932;
+  function fit() {
+    var vw = window.innerWidth || 390, vh = window.innerHeight || 844;
+    deck.style.setProperty('--mb-scale', Math.min(vw / W, vh / H).toFixed(4));
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', function () { setTimeout(fit, 200); });
+
+  var prog = document.createElement('div'); prog.className = 'pbar'; deck.appendChild(prog);
+  var counter = document.createElement('div'); counter.className = 'counter'; deck.appendChild(counter);
+  var hint = document.createElement('div'); hint.className = 'hint'; hint.textContent = '← 스와이프 →'; deck.appendChild(hint);
+  setTimeout(function () { hint.classList.add('gone'); }, 5000);
+
+  var cur = 0;
+  function show(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    cur = i;
+    slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+    prog.style.width = ((i + 1) / slides.length * 100) + '%';
+    counter.textContent = (i + 1) + ' / ' + slides.length;
+  }
+  show(0);
+
+  var sx = 0, sy = 0, tracking = false;
+  document.addEventListener('touchstart', function (e) {
+    if (e.touches.length !== 1) return;
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY; tracking = true;
+  }, { passive: true });
+  document.addEventListener('touchmove', function (e) {
+    if (!tracking) return;
+    var dx = e.touches[0].clientX - sx, dy = e.touches[0].clientY - sy;
+    if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.5 && e.cancelable) e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('touchend', function (e) {
+    if (!tracking) return;
+    tracking = false;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) show(cur + 1); else show(cur - 1);
+      return;
+    }
+    if (Math.abs(dx) < 12 && Math.abs(t.clientY - sy) < 12) {
+      var w = window.innerWidth;
+      if (t.clientX > w * 0.65) show(cur + 1);
+      else if (t.clientX < w * 0.35) show(cur - 1);
+    }
+  }, { passive: true });
+
+  var mx = null;
+  document.addEventListener('mousedown', function (e) { mx = e.clientX; });
+  document.addEventListener('mouseup', function (e) {
+    if (mx === null) return;
+    var dx = e.clientX - mx; mx = null;
+    if (Math.abs(dx) > 50) { if (dx < 0) show(cur + 1); else show(cur - 1); }
+  });
+
+  function fromHash() {
+    var m = /^#\/(\d+)/.exec(location.hash);
+    if (m) show(parseInt(m[1], 10) - 1);
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+  setInterval(function () {
+    var h = '#/' + (cur + 1);
+    if (location.hash !== h) { try { history.replaceState(null, '', h); } catch (e) {} }
+  }, 800);
+})();
+</script>
+</body>
+</html>
