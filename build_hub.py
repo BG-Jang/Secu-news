@@ -51,6 +51,12 @@ def parse_issue(path: Path):
         print(f"  ! 날짜를 못 찾아 건너뜁니다: {path.name}", file=sys.stderr)
         return None
 
+    # 같은 날짜 복수 호 지원 — 파일명 토큰(pm/am/privacy/special)을 slug로 사용
+    slug = ""
+    mslug = re.search(r"(?:^|[-_])(pm|am|privacy|special)(?:[-_]|$)", path.name, re.I)
+    if mslug:
+        slug = mslug.group(1).lower()
+
     style = re.search(r"<style[^>]*>(.*?)</style>", raw, re.S)
     css = style.group(1).strip() if style else ""
 
@@ -68,6 +74,7 @@ def parse_issue(path: Path):
 
     return {
         "date": d.isoformat(),
+        "slug": slug,
         "dow": WEEKDAY_KO[d.weekday()],
         "sub": strip_tags(sub.group(1)) if sub else "",
         "foot": strip_tags(foot.group(1)) if foot else "",
@@ -93,11 +100,11 @@ def build(issue_dir: Path, body_only: bool) -> str:
     if not days:
         sys.exit("issues 폴더에서 읽을 수 있는 파일이 없습니다.")
 
-    # 같은 날짜가 여러 번 있으면 마지막 것만 사용
+    # 같은 날짜+슬러그가 여러 번 있으면 마지막 것만 사용 (서로 다른 슬러그는 별개 호로 유지)
     dedup = {}
     for day in days:
-        dedup[day["date"]] = day
-    days = sorted(dedup.values(), key=lambda x: x["date"], reverse=True)
+        dedup[(day["date"], day.get("slug", ""))] = day
+    days = sorted(dedup.values(), key=lambda x: (x["date"], x.get("slug", "")), reverse=True)
 
     # 날짜별 CSS는 대부분 동일하므로 해시로 풀링해 파일 크기를 줄임
     pool, order = {}, []
@@ -250,6 +257,8 @@ body.mode-deck #deck{display:block}
 var DAYS = /*__DAYS__*/[];
 var CSSPOOL = /*__CSSPOOL__*/{};
 var MONTH_KO = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+var SLUG_KO = {pm:'저녁판', am:'아침판', privacy:'개인정보 결산', special:'특집'};
+function dayKey(d){ return d.slug ? d.date+'-'+d.slug : d.date }
 
 var body = document.body;
 var listEl = document.getElementById('list');
@@ -267,7 +276,7 @@ function renderList(filter){
   var f = (filter||'').trim().toLowerCase();
   var shown = DAYS.filter(function(d){
     if(!f) return true;
-    var hay = (d.date+' '+d.dow+' '+d.sub+' '+d.foot+' '+d.slides.join(' ')).toLowerCase();
+    var hay = (d.date+' '+d.dow+' '+(d.slug||'')+' '+d.sub+' '+d.foot+' '+d.slides.join(' ')).toLowerCase();
     return hay.indexOf(f) !== -1;
   });
   if(!shown.length){ listEl.innerHTML = '<div class="ix-empty">일치하는 호가 없습니다.</div>'; return; }
@@ -282,8 +291,9 @@ function renderList(filter){
     var chips = (d.meta||[]).map(function(m){
       return '<span class="chip">'+esc(m.n)+' '+esc(m.l)+'</span>';
     }).join('');
+    if(d.slug) chips = '<span class="chip" style="border-color:var(--accent);color:var(--accent)">'+esc(SLUG_KO[d.slug]||d.slug)+'</span>'+chips;
     out.push(
-      '<button class="card" data-date="'+d.date+'">'+
+      '<button class="card" data-key="'+esc(dayKey(d))+'">'+
         '<div class="card-d"><div class="card-dd">'+p[1]+'.'+p[2]+'</div>'+
           '<div class="card-dow">'+esc(d.dow)+'요일</div></div>'+
         '<div class="card-body">'+
@@ -299,7 +309,7 @@ function renderList(filter){
 
 listEl.addEventListener('click', function(e){
   var c = e.target.closest ? e.target.closest('.card') : null;
-  if(c) location.hash = '#/'+c.dataset.date+'/1';
+  if(c) location.hash = '#/'+c.dataset.key+'/1';
 });
 qEl.addEventListener('input', function(){ renderList(qEl.value) });
 
@@ -313,13 +323,13 @@ function fit(){
 window.addEventListener('resize', fit);
 window.addEventListener('orientationchange', function(){ setTimeout(fit,200) });
 
-function openDay(dateStr, n){
+function openDay(key, n){
   var d = null;
-  for(var i=0;i<DAYS.length;i++){ if(DAYS[i].date===dateStr){ d=DAYS[i]; break } }
+  for(var i=0;i<DAYS.length;i++){ if(dayKey(DAYS[i])===key){ d=DAYS[i]; break } }
   if(!d) return showIndex();
 
-  if(cur !== dateStr){
-    cur = dateStr;
+  if(cur !== key){
+    cur = key;
     dayCss.textContent = CSSPOOL[d.css] || '';
     slideEls.forEach(function(el){ el.remove() });
     slideEls = [];
@@ -329,7 +339,7 @@ function openDay(dateStr, n){
       deckEl.appendChild(el);
       slideEls.push(el);
     });
-    dayLabel.textContent = dateStr.replace(/-/g,'.');
+    dayLabel.textContent = d.date.replace(/-/g,'.') + (d.slug ? ' · '+(SLUG_KO[d.slug]||d.slug) : '');
   }
   body.className = 'mode-deck';
   fit();
@@ -414,7 +424,7 @@ deckEl.addEventListener('mouseup', function(e){
 /* ---------- 라우팅 ---------- */
 function route(){
   if(suppress) return;
-  var m = /^#\/(\d{4}-\d{2}-\d{2})(?:\/(\d+))?/.exec(location.hash||'');
+  var m = /^#\/(\d{4}-\d{2}-\d{2}(?:-[A-Za-z0-9]+)?)(?:\/(\d+))?/.exec(location.hash||'');
   if(m) openDay(m[1], m[2] ? parseInt(m[2],10) : 1);
   else showIndex();
 }
