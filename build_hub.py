@@ -51,9 +51,9 @@ def parse_issue(path: Path):
         print(f"  ! 날짜를 못 찾아 건너뜁니다: {path.name}", file=sys.stderr)
         return None
 
-    # 같은 날짜 복수 호 지원 — 파일명 토큰(pm/am/privacy/special)을 slug로 사용
+    # 같은 날짜 복수 호 지원 — 파일명 토큰(pm/am/privacy/special/issue)을 slug로 사용
     slug = ""
-    mslug = re.search(r"(?:^|[-_])(pm|am|privacy|special)(?:[-_]|$)", path.name, re.I)
+    mslug = re.search(r"(?:^|[-_])(pm|am|privacy|special|issue)(?:[-_]|$)", path.name, re.I)
     if mslug:
         slug = mslug.group(1).lower()
 
@@ -257,7 +257,7 @@ body.mode-deck #deck{display:block}
 var DAYS = /*__DAYS__*/[];
 var CSSPOOL = /*__CSSPOOL__*/{};
 var MONTH_KO = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
-var SLUG_KO = {pm:'저녁판', am:'아침판', privacy:'개인정보 결산', special:'특집'};
+var SLUG_KO = {pm:'저녁판', am:'아침판', privacy:'개인정보 결산', special:'특집', issue:'이슈 특집'};
 function dayKey(d){ return d.slug ? d.date+'-'+d.slug : d.date }
 
 var body = document.body;
