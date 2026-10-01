@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>보안 스페셜 — 중소형 병원 랜섬웨어 동시 감염 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">중소형 병원 20곳<br>동일 랜섬웨어<br>동시 감염</h1>
+  <div class="title-date">2026. 10. 01 (THU)</div>
+  <div class="title-meta">
+    <div><div class="n">의료SW 공급망</div><div class="l">동일 시스템 다수 공유 — 공통 침투 경로 추정</div></div>
+    <div><div class="n">EMR·PACS 마비</div><div class="l">전자의무기록·의료영상저장전송시스템 표적화</div></div>
+    <div><div class="n">엔드포인트 격차</div><div class="l">안티랜섬웨어 유무에 따라 피해 상이</div></div>
+  </div>
+  <div class="title-foot">중소형 병원 20여곳에서 동일한 랜섬웨어로 동시 감염 확인 — EMR·PACS 등 핵심 의료시스템 마비, 동일 의료SW 공급망 침투 가능성 제기 · KISA·한국사회보장정보원(SSiS) 합동 조사 착수, 침투 경로·데이터 유출 여부 미확인 · 안티랜섬웨어 2차 방어 갖춘 병원과 취약 병원 간 피해 격차 뚜렷 — 엔드포인트 탐지·차단 체계의 결정적 역할 입증<br>의료기관 랜섬웨어 동시 감염 사안 심층 분석</div>
+  <div class="notes"><p>2026년 10월 1일자 보안 스페셜 다이제스트. 중소형 병원 20여곳의 동일 랜섬웨어 동시 감염 사고, EMR·PACS 표적화와 의료SW 공급망 침투 가능성, KISA·SSiS 합동 조사 현황, 그리고 안티랜섬웨어 엔드포인트 방어가 피해 규모를 갈랐다는 교훈을 다룹니다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 1</div>
+  <h2 class="s-title">중소형 병원 20여곳<br>동일 랜섬웨어 동시 감염 확인</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">2차 의료기관 다수 포함 · KISA·SSiS 신고 접수, 조사 진행 중</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li>보안업계 확인 — 최근 중소형 병원 20여곳에서 랜섬웨어 침해사고 연쇄 발생, 피해 병원의 상당수에서 <strong>동일 종류 랜섬웨어가 발견돼 공통된 공격 경로 존재 여부로 당국 조사 확대</strong></li>
+      <li>피해 병원은 의원급이 아니라 <strong>건강검진 등 다양한 의료서비스를 제공하는 2차 의료기관이 다수 포함</strong> — 보안 역량이 상대적으로 취약한 중소 병원을 표적으로 삼은 것으로 추정, 과거 제약사 집중 공격 패턴의 재현</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>전자신문 — 중소형 병원 20곳, 동일 랜섬웨어 동시 감염 (2026-09-30)</div>
+  <div class="notes"><p>중소형 병원 20여곳에서 동일한 랜섬웨어가 확인된 연쇄 침해. 피해 병원이 2차 의료기관 중심이라는 점에서 단순 개별 공격이 아닌 조직적 표적 공습으로 봐야 하며, 당국의 침투 경로 규명이 관건.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 2</div>
+  <h2 class="s-title">EMR·PACS 마비 —<br>의료SW 공급망 침투 가능성</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">동일 의료SW 공유 병원 다수 · 확산 여부 확인 못 해</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li>문제가 발생한 시스템은 <strong>전자의무기록시스템(EMR)과 의료영상저장전송시스템(PACS)</strong> — 환자의 진료기록을 전자 관리하는 EMR, CT·MRI·X선 영상을 디지털 저장·조회·전송하는 PACS 등 병원 업무의 핵심 인프라가 표적</li>
+      <li>피해 병원 가운데 <strong>동일한 의료 시스템을 사용하는 곳이 다수</strong>로 파악 — 의료SW 공급망을 통한 공격 가능성 거론, SW 취약점을 침투 경로로 활용한 것으로 추정 · 동일 SW를 쓰는 다른 병원으로 피해가 이미 확산했을 가능성도 배제 불가</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>전자신문 — 중소형 병원 20곳, 동일 랜섬웨어 동시 감염 (2026-09-30)</div>
+  <div class="notes"><p>EMR·PACS라는 공통 표적과 동일 의료SW 사용이라는 공통점이 겹치며 공급망 공격 가설이 부상. 침투 경로와 유출 여부는 조사 중이나, 동일 SW 사용 병원 전체가 잠재 피해군에 들어간다는 점이 핵심 리스크.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 3</div>
+  <h2 class="s-title">안티랜섬웨어 2차 방어 —<br>피해 규모를 갈린 요인</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">탐지·차단 체계 유무에 따라 피해 상이 · 복구 지원 최우선</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li>병원들은 자체 보안 수준에 따라 피해 규모가 뚜렷하게 갈림 — <strong>랜섬웨어 탐지·차단 체계(안티랜섬웨어)가 2차 방어선으로 작동한 병원이 있었던 반면, 내부 보안이 취약한 병원은 공격에 그대로 노출</strong></li>
+      <li>KISA와 SSiS는 관련 정보를 공유하며 각각 조사 — SSiS는 <strong>의료행위 차질이 없도록 시스템 복구를 우선 지원</strong>, 랜섬웨어 공격 경로·피해 규모·데이터 유출 여부는 아직 조사 중</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>전자신문 — [뉴스줌인] 공급망 보안만으론 부족…랜섬웨어 막는 엔드포인트 방어 (2026-09-30)</div>
+  <div class="notes"><p>같은 공격에 노출돼도 안티랜섬웨어 솔루션 보유 여부에 따라 실제 감염 여부가 달라졌다는 점이 확인. 공급망 보강과 별개로 엔드포인트에서의 탐지·차단 2차 방어선이 피해 규모를 결정한다는 교훈.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">공급망 공격의 구조 —<br>의료SW가 침투 통로가 된 이유</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">기술적·장기적 파급</div>
+    <ul>
+      <li><strong>공급망 공격은 최종 대상을 직접 공략하는 대신 다수가 공통으로 사용하는 SW·서비스·업데이트/유지보수 체계를 통로로 삼아, 하나의 공급망을 장악하면 다수의 기관 시스템에 동시에 접근</strong> — 공격 효율이 극대화되는 구조</li>
+      <li><strong>중소기업·중소 병원은 외부 제품과 서비스 의존도가 높고 공급업체의 개발·배포 과정을 직접 점검하기 어려워 취약</strong> — 이번 사고처럼 동일 의료SW를 공유하는 기관군이 하나의 침입면(attack surface)으로 묶이는 것이 현실화, 유사한 공동 SW를 쓰는 다른 산업으로도 확산 가능한 패턴</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">권고</div>
+    <ul>
+      <li><strong>의료SW 공급업체 — 개발부터 업데이트·배포·유지보수 전 과정 취약점 관리 의무화, 외부 접속 계정·관리자 권한 최소화, 업데이트 파일 위·변조 검증 강화</strong>, 공동 SW 사용 기관 간 침해 정보 실시간 공유 체계 구축</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>전자신문 — [뉴스줌인] 공급망 보안만으론 부족…랜섬웨어 막는 엔드포인트 방어 종합 분석</div>
+  <div class="notes"><p>공급망 공격은 '한 번 장악, 다수 침투' 구조. 의료SW라는 공통 분모가 20여 병원을 하나의 표적 군으로 만들었고, 공급업체 전 과정 취약점 관리와 기관 간 정보 공유가 구조적 해법.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">엔드포인트 2차 방어 프로토콜 —<br>NIST 랜섬웨어 대응책</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">기술적·장기적 파급</div>
+    <ul>
+      <li><strong>공급망이 악용됐다고 모든 기관이 같은 피해를 보는 것은 아님 — 내부로 유입된 악성 행위를 PC·서버에서 탐지·차단하면 랜섬웨어 실행과 파일 암호화 이전 단계에서 저지 가능</strong> — 의심 프로세스 실행, 대량 파일 변경, 비정상 권한 상승 등 랜섬웨어 특유의 행위 탐지가 핵심</li>
+      <li><strong>내부 확산 차단 체계 필수 — 단일 PC·서버 감염이 다른 시스템으로 이동 못 하게 불필요한 통신 차단과 중요 시스템 접근 권한 세분화</strong>, 백업 데이터를 운영망과 분리 보관해 감염 이후에도 정상 복구 가능하도록 관리 — NIST 주요 랜섬웨어 대응책의 기본 축</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">권고</div>
+    <ul>
+      <li><strong>안티랜섬웨어 솔루션 전 엔드포인트 적용 + OS·주요 프로그램 최신 패치, 불필요한 관리자 권한·원격접속 계정 정리, 네트워크 세그먼트 간 통신 차단과 백업 분리 보관 체계 검증</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>전자신문 — [뉴스줌인] 공급망 보안만으론 부족…랜섬웨어 막는 엔드포인트 방어 (NIST 대응책 인용)</div>
+  <div class="notes"><p>NIST 랜섬웨어 대응의 핵심은 탐지-차단-확산방지-복구 4단계. 이번 사고에서 안티랜섬웨어 보유 여부가 피해 규모를 결정했듯, 엔드포인트 2차 방어와 백업 분리 보관이 공급망 리스크에 대한 실질적 완충장치.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">사용 중인 의료SW(EMR·PACS 등) 공급업체 식별 + 동일 SW 사용 여부 내부 전수 점검, KISA·SSiS 조사 결과 공유 채널 확보</div><div class="act-sub">동일 랜섬웨어 동시 감염 — 공급망 공통 침투 경로 확인 시 추가 피해 확산 가능</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">EMR·PACS 서버 및 의료 업무 PC 전수 안티랜섬웨어 탐지·차단 상태 점검, 미적용 엔드포인트 즉시 적용</div><div class="act-sub">2차 방어선 부재가 피해 규모 결정 — 랜섬웨어 실행·파일 암호화 단계 차단</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">OS·의료SW 최신 패치 상태 확인 + 불필요한 관리자 권한·원격접속 계정 정리, 의료망 세그먼트 간 불필요 통신 차단 룰 점검</div><div class="act-sub">내부 확산 방지 — 단일 감염이 EMR·PACS 전체로 이동 못 하게 접근 권한 세분화</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">EMR·PACS 백업의 운영망 분리 보관 상태 검증 + 복구 훈련 실시, 의료행위 연속성을 위한 대체 업무 절차 점검</div><div class="act-sub">시스템 마비 시 진료 차질 최소화 — SSiS 복구 지원 우선 원칙에 부합하는 자체 대비</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">의료SW 공급업체 보안 수준 정기 평가(개발-배포-유지보수 전 과정) + 공동 SW 사용 의료기관 간 침해 정보 공유 체계 참여</div><div class="act-sub">공급망 공격 구조 대응 — NIST 랜섬웨어 대응책 기반 엔드포인트 방어 체계 지속 운영</div></div></div>
+  <div class="src"><b>편집 고지</b>본 PPT는 각 보도 기관의 원문 기반 정리입니다. 상세 내용은 출처 링크를 확인하시기 바랍니다.</div>
+  <div class="notes"><p>출처: 전자신문(2026-09-30). 중소형 병원 20여곳 동일 랜섬웨어 동시 감염 사고와 엔드포인트 방어 교훈을 기반으로 한 조치 사항 정리.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
