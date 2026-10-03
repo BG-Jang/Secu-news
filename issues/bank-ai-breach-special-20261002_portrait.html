@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>보안 스페셜 — 은행권 AI 공격·정보유출 현황 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">은행권 AI 공격·<br>정보유출<br>현황 특집</h1>
+  <div class="title-date">2026. 10. 02 (FRI)</div>
+  <div class="title-meta">
+    <div><div class="n">5곳 유출 확인</div><div class="l">신한·KB국민·하나·부산·예가람저축은행</div></div>
+    <div><div class="n">ARTEX AI 흔적</div><div class="l">신한 공격 서버서 중국어 자율 침투 도구 정황</div></div>
+    <div><div class="n">외부 접점 표적</div><div class="l">대출조회·영업지원·직원용 업무지원 시스템 집중</div></div>
+  </div>
+  <div class="title-foot">신한은행 고객 약 2만5천명 개인정보 유출 — 대출모집인 간편조회 서비스 본인확인 우회, 공격 서버에서 'ARTEX-自主渗透試控制台'(AI 자율 침투테스트 콘솔) 문자열 포착 · KB국민 119명·하나 89명·부산은행 외주 개발직원 11명·예가람저축은행 약 4만명 유출 확인, 우리·NH농협은 공격 시도만 차단 · 금융당국 10.2 긴급 상황대응 회의 소집 — 외부 노출 전산시스템 전반 점검·위협정보 공유 가동<br>금융권 연쇄 해킹 사고 종합 분석 (2026.10.3 뉴스 기준)</div>
+  <div class="notes"><p>2026년 10월 2일자 보안 스페셜 다이제스트. 신한·KB국민·하나·부산은행·예가람저축은행 연쇄 정보유출 사고 현황, 신한 공격 서버에서 포착된 중국어 기반 LLM 자율 침투 도구 ARTEX AI 정황, 외부 접점 시스템 공통 취약 패턴과 금융당국·수사기관 대응을 다룹니다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">신한은행 약 2만5천명 유출 —<br>'ARTEX AI' 자율 침투 흔적 포착</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">본인확인 우회 크리덴셜 스터핑 · 오픈소스 LLM 침투 도구 전용 의혹</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li>신한은행 대출모집인용 간편조회 서비스에서 <strong>본인확인 절차가 우회돼 고객 약 2만5천명의 성명·전화번호·연소득·대출한도 등 개인정보 유출</strong>(주민등록번호 66건, CI 97건 포함) — 9/29~30 새벽 공격, 은행장은 "손해 발생 시 전액 보상" 사과문 게시</li>
+      <li>공격에 이용된 것으로 추정되는 크리덴셜 스터핑 웹서버 HTML 타이틀에서 <strong>'ARTEX-自主渗透試控制台'(AI 자율 침투테스트 콘솔) 중국어 문자열 확인</strong> — LLM·멀티에이전트로 정찰-취약점 탐색-공격 경로 계획까지 자동화하는 오픈소스 도구로, 실제 공격 활용 여부는 미확인</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 — 신한은행 해킹에 AI 동원됐나…서버서 '중국어 침투도구' 흔적(종합) (2026-10-02)</div>
+  <div class="notes"><p>신한 사고의 핵심은 규모뿐 아니라 공격 인프라에서 포착된 중국어 기반 LLM 자율 침투 도구 ARTEX AI 정황. 크리덴셜 스터핑 자동화 + 오픈소스 침투테스트 도구의 공격 전용이 실재한다면, 금융권 전체가 동일한 자동화 킬체인에 노출됐다는 의미.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">KB국민 119명·하나 89명 —<br>내부 업무시스템까지 침투</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">직원용 모바일 업무지원·영업지원시스템(ODS) 표적 · 외부 비정상 접근 공통</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>KB국민은행 — 직원용 모바일 업무지원시스템 외부 비정상 접근으로 임직원 20명+고객 99명(119명)의 성명·전화번호·주소·암호화된 주민등록번호 유출</strong> — 9/27 밤 공격 시작, 9/30 19:00경 유출 확인 후 서버·접속경로 차단 및 피해자 통보</li>
+      <li><strong>하나은행 — 영업지원시스템(ODS)에서 외부 해킹 에이전트의 비정상 접근으로 고객 89명의 주민등록번호·성명·주소·이메일·전화번호·직장명 유출</strong> — 10/1 침해 확인, 10/2 유출 확인 후 침해 IP 차단·유사 시스템 점검·금융당국 보고</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 — 국민·하나·부산은행도 당했다…금융권 해킹 피해 확산(종합2보) / 매일경제 (2026-10-02)</div>
+  <div class="notes"><p>KB국민은 직원용 모바일 업무지원시스템, 하나는 ODS(영업지원시스템) — 고객 대상 서비스가 아닌 내부 업무 인프라가 직접 표적이 된 점에 유의. 둘 다 '외부 비정상 접근'이라는 동일 수법이며, 하나 사고에서는 해킹 에이전트 활용 가능성이 명시됨.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">부산·예가람 유출 + 우리·NH<br>공격 시도 차단 — 피해 지도</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">유출 확인 5곳 vs 미확인 2곳 · 예가람저축은행 약 4만명 최대 규모</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>BNK부산은행 — 직원용 영업지원시스템·외부 웹페이지 공격으로 외주 개발직원 11명의 성명·전화번호·생년월일·이메일 유출</strong>(10/1 21:00경 공격→10/2 04:30 확인, 약 7시간 30분) · <strong>예가람저축은행 — 고객 개인정보 서버 외부 비정상 접근으로 약 4만명(성명·생년월일·연락처) 유출 추산</strong>, 서비스 중단·외부 IP 차단</li>
+      <li><strong>우리은행·NH농협은행 — 외부 접근 가능 시스템에 대한 해킹 공격 시도는 있었으나 정보 유출 없음 확인</strong> — 의심 IP 차단·침입방지시스템(IPS) 차단 및 시스템 점검 완료, 정확한 공격·인지 시각은 미확인</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 — BNK부산은행도 해킹당해…외주 개발직원 정보 11건 유출(종합) / 금융권 해킹 피해 확산(종합2보) (2026-10-02)</div>
+  <div class="notes"><p>부산·우리·NH 모두 '외부 접근 가능 시스템'이 공격 표면이었다. IPS가 작동해 유출을 막은 우리·NH 사례와 달리, 부산·예가람은 웹서버·개인정보 서버에서 직접 유출 — 침입방지 체계의 1차 방어 여부가 피해 여부를 가른 대표적 대비 사례.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Fact Sheet</div>
+  <h2 class="s-title">금융권 해킹 피해<br>현황 매트릭스 (10.3 기준)</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">유출 확인 — 5곳</div>
+    <ul>
+      <li><strong>신한은행 약 25,000명</strong> — 대출모집인 간편조회(성명·전화·연소득·대출한도, 주민번호 66건·CI 97건 포함) · 9/29~30 새벽</li>
+      <li><strong>예가람저축은행 약 40,000명</strong> — 고객 개인정보 서버(성명·생년월일·연락처) · 9/30 정황 확인</li>
+      <li><strong>KB국민 119명</strong>(임직원 20+고객 99) — 직원용 모바일 업무지원시스템 · 9/27 밤 공격→9/30 확인</li>
+      <li><strong>하나은행 89명</strong> — 영업지원시스템 ODS(주민번호·성명·주소 등) · 10/1 침해→10/2 유출 확인</li>
+      <li><strong>BNK부산은행 11명</strong>(외주 개발직원) — 영업지원시스템·외부 웹페이지 · 10/1 21:00→10/2 04:30</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">유출 미확인 — 2곳</div>
+    <ul>
+      <li><strong>우리은행·NH농협은행</strong> — 외부 접근 가능 시스템 해킹 시도, 유출 정보 확인 안 됨 · IP 차단·IPS 차단 후 점검</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스·매일경제 종합 (2026-10-02~03 뉴스 기준)</div>
+  <div class="notes"><p>유출 확인 5곳(약 6만5천명 규모) vs 미확인 2곳. 공통점은 전부 '외부 접점 시스템' — 대출조회, 영업지원, 직원용 업무지원 등 인터넷에 노출된 서비스. 공격 주체와 사고 간 연계성, AI 활용 여부는 수사 중.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">ARTEX AI — 보안용 LLM 도구가<br>해킹 자동화 무기로 전용된 순간</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">기술적·장기적 파급</div>
+    <ul>
+      <li><strong>ARTEX AI는 중국어 기반 GitHub 오픈소스로 공개된 LLM+멀티에이전트 자율 침투테스트 시스템 — 정보 수집→취약점 탐색→공격 경로 계획→보안도구 실행→취약점 검증까지 킬체인 전체 자동화 설계</strong> · 바이두 BSRC '에이전트+' 공방 능력 챌린지 우승 프로젝트로, 별도 승인 없이 누구나 다운로드 가능</li>
+      <li><strong>과거 크리덴셜 스터핑은 사람이 아이디·비밀번호 조합을 손으로 반복 대입하던 수법 — AI 자동화로 대입 속도·범위가 질적으로 상승, 다크웹에서 수집한 자격증명 데이터의 무차별 재사용이 실시간화</strong> · "오픈소스라 공격자 신상 추정이 어렵다"는 점이 오히려 확산 리스크의 본질 — 보안 점검용으로 개발된 도구가 허가 없이 공격 자동화 수단으로 전용되는 경로가 열린 것</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">권고</div>
+    <ul>
+      <li><strong>크리덴셜 스터핑 탐지 강화 — 동일 자격증명의 다수 시스템 동시 대입 패턴·비정상 로그인 시점 클러스터링 실시간 차단, 오픈소스 침투테스트 도구(ARTEX 등)의 야생 악용 사례를 위협 인텔리전스로 지속 추적</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 — 신한은행 해킹에 AI 동원됐나…서버서 '중국어 침투도구' 흔적(종합) (지니언스 문종현 센터장 진단 인용)</div>
+  <div class="notes"><p>ARTEX AI 정황은 'AI가 사람을 대신해 취약점을 찾고 공격 경로를 짜는' 단계로 위협이 이동했음을 시사. 다만 오픈소스 특성상 중국어 문자열만으로 공격자 특정은 불가 — 실제 활용 여부는 당국 확인 전이며, 금융권 전체에 대한 동일 킬체인 재사용 가능성이 핵심 리스크.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">외부 접점 시스템 공통 취약 —<br>본인확인·접근통제 실패의 구조</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">기술적·장기적 파급</div>
+    <ul>
+      <li><strong>7곳 사고 전부 '외부 접근 가능 시스템'에서 시작 — 대출모집인 간편조회(신한), 직원용 모바일 업무지원(KB국민), 영업지원시스템 ODS(하나·부산), 개인정보 서버(예가람)</strong> · 인터넷에 노출된 서비스일수록 인증 우회·크리덴셜 스터핑·웹서버 취약점에 직접 노출되며, 내부 업무 시스템까지 공격 표면이 확대됨</li>
+      <li><strong>공통 대응 방향 — 외부 노출 전산시스템 전반 점검, 인증·접근통제 및 취약점 점검, 공격 IP·공격수법 위협정보 공유(금융당국 10/2 긴급 회의 결정)</strong> · IPS가 공격을 차단한 우리·NH와 유출으로 이어진 부산·예가람의 대비는 1차 방어(침입방지)와 2차 방어(데이터 접근 통제·탐지) 격차를 실증</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">권고</div>
+    <ul>
+      <li><strong>외부 노출 시스템 전수 — 본인확인 절차 우회 경로 재검증, 최소 권한 기반 데이터 접근 통제(주민번호·CI 등 민감정보 분리 조회 차단), 침입방지+탐지 이중 방어 검증과 금융당국 위협정보 공유 채널 상시 참여</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>대통령실 브리핑(금융당국 긴급 상황대응 회의) · 연합뉴스 종합 (2026-10-02)</div>
+  <div class="notes"><p>7곳의 공격 표면이 전부 외부 접점 시스템이라는 점이 이번 사태의 구조. 본인확인 우회와 자격증명 대입이 공통 수법이므로, 인증 로직 재검증+민감정보 접근 세분화+침입방지/탐지 이중 방어가 금융권 공통 대응의 최소 기준.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Response</div>
+  <h2 class="s-title">금융당국·수사기관<br>긴급 대응 가동</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>금융당국 — 10/2 15:00 긴급 상황대응 회의 소집, 외부 노출 전산시스템 전반 점검 지시 · 인증·접근통제 및 취약점 점검, 공격 IP·공격수법 등 위협정보 금융권 공유</strong></li>
+      <li><strong>수사기관 — 신한·KB국민·하나·부산은행에 대해 입건 전 조사 착수, 공격경위·침입경로·피해범위 확인 진행</strong> · 각 은행은 서비스·비인가 접근 차단, 침해 IP 차단, 유사 시스템 점검, 피해자 통보 등 자체 대응 병행 — 공격 주체·사고 간 연계성 및 AI 활용 여부는 현재 조사 중</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>대통령실 브리핑 (newsId=156784231) / 한국일보 — 금융권 해킹 수사 (2026-10-02)</div>
+  <div class="notes"><p>당국 대응은 '점검+공유' 축, 수사는 입건 전 조사 단계. 신한 ARTEX AI 정황과 각 사고의 동일 수법(외부 비정상 접근)이 연계된 단일 캠페인인지 여부가 다음 분기점 — 수사 결과에 따라 금융권 공통 취약성으로 격상될 수 있음.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">외부 노출 시스템(대출조회·영업지원·직원용 업무지원 등) 전수 점검 — 본인확인 절차 우회 경로 재검증, 크리덴셜 스터핑 탐지 룰(동일 자격증명 다수 대입 패턴) 실시간 적용</div><div class="act-sub">신한 2만5천명 유출 수법 재현 방지 — AI 자동화 크리덴셜 스터핑에 대한 속도 대응 필수</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">민감정보(주민번호·CI·생년월일) 접근 통제 세분화 — 조회 권한 최소화와 분리 보관 확인, 비정상 조회 시점 클러스터링 탐지 가동</div><div class="act-sub">유출 항목 공통점 — 성명·전화번호 기반 1차 정보와 주민번호·CI 결합 시 2차 피해(신용사기) 급증</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">침입방지시스템(IPS)·탐지 체계 이중 방어 검증 — 우리·NH 차단 성공 패턴 벤치마크, 웹서버 취약점 패치 상태 전수 확인</div><div class="act-sub">부산·예가람 유출 vs 우리·NH 차단의 격차 원인 분석 — 1차 방어 실패 시 2차 방어 작동 여부 실전 점검</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">금융당국 긴급 회의 결정사항(외부 노출 시스템 점검·위협정보 공유) 이행 계획 수립 + 공격 IP·공격수법 TTP 공유 채널 상시 참여</div><div class="act-sub">입건 전 조사 진행 중 — 공격 연계성 확인 시 추가 점검 범위 확대에 대비</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">오픈소스 LLM 침투 도구(ARTEX AI 등) 야생 악용 사례 위협 인텔리전스 추적 + 직원·외주 개발자 자격증명 관리 강화(다중인증·세션 통제)</div><div class="act-sub">AI 공격 자동화 확산 대응 — 부산은행 외주 개발직원 정보 유출처럼 3rd-party 계정이 침투 교두보가 되는 경로 차단</div></div></div>
+  <div class="src"><b>편집 고지</b>본 PPT는 각 보도 기관의 원문 기반 정리입니다. 상세 내용은 출처 링크를 확인하시기 바랍니다.</div>
+  <div class="notes"><p>출처: 연합뉴스, 매일경제, 대통령실 브리핑, 한국일보 (2026-10-02~03). 은행권 AI 공격·정보유출 연쇄 사고 종합 특집 — 외부 접점 시스템 점검과 크리덴셜 스터핑 탐지 강화가 최우선 조치.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
