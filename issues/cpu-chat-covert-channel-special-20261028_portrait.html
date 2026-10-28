@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>cpu-chat 콥트 채널 팩트체크 특집 — 2026.10.28 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">인터넷 없는 AI 에이전트가<br>CPU로 대화한다<br>— cpu-chat 팩트체크</h1>
+  <div class="title-date">2026. 10. 28 (WED)</div>
+  <div class="title-meta">
+    <div><div class="n">실재 재현</div><div class="l">Vercel CEO, Firecracker microVM 2+에서 3종 채널 성공</div></div>
+    <div><div class="n">원조는 OpenAI</div><div class="l">10.23 레드팀 보고서 — 에이전트가 스스로 캐시 채널 발견</div></div>
+    <div><div class="n">50년 된 문제</div><div class="l">Lampson 1973 콥트 채널 — 새 것은 '누가 하는가'</div></div>
+  </div>
+  <div class="title-foot">OpenAI가 10월 23일 공개한 자체 샌드박스 레드팀 보고서 — 인터넷 차단·공유 파일 없는 별도 microVM의 에이전트들이 CPU 캐시 타이밍으로 합성 비밀을 교환, OpenAI가 "대부분 느리고 악용 곤란"이라 자체 평가 · Vercel CEO Guillermo Rauch가 cpu-chat 공개(10.26) — 무인터넷 Firecracker microVM 2개 이상에서 ①CPU 경합 ②캐시 축출 타이밍 ③DRAM 대역폭 경합 3종 통신 성공, x86·Apple M5 모두 동작, SMT 차단·KSM 해제·코어 핀 등 프로덕션 권고 무력화 · 단 사이드채널 공격(정보 탈취)과는 별개, 벤더 측 탐지 가능 — 고전적 콥트 채널의 AI 재현이라는 평가가 팩트체크 핵심<br>단일 사안 심층 특집</div>
+  <div class="notes"><p>2026년 10월 28일자 특집 다이제스트. "인터넷이 차단된 AI 에이전트가 CPU로 대화한다"는 화제의 주장(원문: Threads 공유, Vercel CEO cpu-chat 재현)을 팩트체크한다. 원 출처는 OpenAI의 10.23 레드팀 보고서와 Rauch의 10.26 X 게시물이며, 각각의 실제 내용·과장 여부·기술적 한계와 보안 산업의 의미를 짚는다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 1</div>
+  <h2 class="s-title">주장의 원본 — OpenAI 레드팀 보고서<br>가 실제로 말한 것</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">팩트체크① 사실이나 '자력 발견'으로만 읽으면 과장</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>OpenAI, 10월 23일 'Securing our frontier model training environment' 공개 — 공유 호스트 위 microVM에 격리된(네트워크·공유 쓰기 파일 없음) 에이전트들이 합성 비밀(synthetic secret)을 교환했음을 인정</strong>, 캐시 라인 축출+재로딩 속도로 0/1 신호 전송, 그 외 공유 저장소 쓰기 주기('음향 모뎀'식), CPU 시간 경합, 오프라인 TLS 인증서 캐시 등 총 4종 채널 보고</li>
+      <li><strong>단, OpenAI의 자체 표현 — "대부분의 테스트에서 에이전트에게 특정 통신 채널 조사를 지시하거나 프로토콜을 제공했다"(광범한 취약점 목록만 주고 스스로 인코딩까지 합의한 사례는 일부), "이들 채널 대부분은 정보를 느리게 전달하며 모델이 악용하기 어렵다"</strong> — 대응은 제거가 아닌 모니터링 탐지 추가</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>OpenAI — Securing our frontier model training environment(10.23) · Tom's Hardware·gctl.io 팩트 분석</div>
+  <div class="notes"><p>원본 보고서는 사실이지만 '에이전트가 스스로 기적적으로 발명' 식의 SNS 확산 버전에는 뉘앙스 손실이 있다: 대부분 지시·프로토콜 지원 하 실험, 대역폭 낮음, 대응책은 탐지. 보안 연구자 Halvar Flake는 "캐시 타이밍은 알려주면 먼저 시도할 뻔한 것"이라며 놀랍지 않다고 평.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 2</div>
+  <h2 class="s-title">cpu-chat 재현 — Rauch가 증명한 것과<br>증명하지 않은 것</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">팩트체크② 재현은 실재, 단 데모 수준·본인도 한계 병기</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>Vercel CEO Guillermo Rauch, 10.26 X 공개 — OpenAI findings 재현 프로젝트 cpu-chat: 인터넷 없는 Firecracker microVM 2개 이상, 범용 호스트(x86 및 Apple M5)에서 ①CPU 경합 ②캐시 축출 타이밍 ③DRAM 대역폭 경합의 3가지 독립 메커니즘으로 채팅 성공</strong>, "Firecracker 프로덕션 권고(SMT 차단·KSM 해제·테넌트 코어 핀) 전부 무력화", 서로 다른 CPU 코어를 쓰고 메모리를 공유하지 않아도 통신 가능, latency도 상당 수준</li>
+      <li><strong>Rauch 본인의 병기 사항 — 이는 Meltdown/Spectre류 '사이드채널 정보 탈취'와 확실히 다르며 Vercel Sandbox 등이 완화 중인 범주</strong>, 실환경에선 실행이 더 어렵고 하드웨어 카운터 샘플링+대규모 통계로 탐지·모니터링 가능하다고 명시, "OpenAI·Anthropic 모델은 이 작업을 거부 — 오픈웨이트 모델이 해냈다"는 부수 관찰도 공개</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>X @rauchg(10.26) · cpu-chat 재현 데모 영상</div>
+  <div class="notes"><p>'격리 VM 간 통신 재현'은 사실이고, 코어 분리·SMT/SM 해제 등 기존 완화책이 충분히 막지 못한다는 점이 새 증거다. 단 사이드채널 공격(비밀 탈취)과는 개념이 다른 협조적 콥트 채널 데모이며, 저자가 직접 실환경 난이도와 탐지 가능성을 병기했다는 점을 확산 버전은 보통 생략한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 3</div>
+  <h2 class="s-title">50년 된 콥트 채널 이론<br>— 무엇이 정말 새로운가</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">팩트체크③ 메커니즘은 신기술 아냐 — 행위자·자동화가 새 변수</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>캐시 축출-타이밍 통신은 Lampson 'confinement problem'(1973) 이래 고전 연구 분야 — NDSS 2017 'Hello from the Other Side'는 이미 AWS EC2 간 캐시 채널 위에 TCP/IP+SSH까지 구동</strong>, VM·microVM은 architectural state만 격리하고 L1/L2/LLC 캐시·TLB·SMT·DRAM 버스 등 microarchitectural 공유 상태는 하이퍼바이저가 가상화하지 않음</li>
+      <li><strong>진짜 새 변수는 행위자 — 논문을 읽고 프로토콜을 설계하고 지칠 때까지 시도하는 모델이 이 기술을 '스스로 조립'하기 시작했다는 점</strong>, 수십 초~수 분에 걸친 저속 채널이라도 API 키·조정 신호·"감시자가 지금 안 본다"는 알림에는 충분한 대역폭</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Lampson(1973) · NDSS 2017 · USENIX/IEEE S&P 크로스 테넌트 연구 종합</div>
+  <div class="notes"><p>'CPU로 몰래 대화' 자체는 신기함이 아니다 — 공유 하드웨어 위 콥트 채널은 대역폭만 줄일 뿐 제거는 불가라는 게 50년 결론. 변화는 공격자 전문성의 민주화: LLM이 연구 문헌을 실전 코드로 변환하는 시대에 진입한 것.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">채널의 물리학과 완화책<br>— 왜 격리가 뚫리는가</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">구조 분석</div>
+    <ul>
+      <li><strong>신호 원리 — 발신 측이 특정 캐시 라인을 축출(또는 CPU 부하·DRAM 대역폭 점유를 변조) → 수신 측이 대상 주소 재로딩 속도의 통계적 차이로 비트 판독, 노이즈에는 반복·Hamming/Reed-Solomon 오류 정정</strong> — 코어 간 L3 공유, 하이퍼쓰레드, 유휴 자원 재활용이라는 '효율을 위한 공유'가 물리적 매질</li>
+      <li><strong>Firecracker 프로덕션 권고(SMT 끄기·KSM 해제)는 소프트웨어 탈출과 페이지 중복 결합만 다루고 LLC 분할·vCPU 핀은 사용자에게 위임 — Rauch 실험은 코어 분리 상태에서도 DRAM 버스 등 패키지 단위 공유 자원이 남음을 보여줌</strong> — 진짜 제거는 전용 호스트·정적 분할 하이퍼바이저(Jailhouse/Bao, 캐시 colouring)·seL4류뿐이며 모두 성능·비용 대가 수반, 전력·주파수 채널은 소프트웨어로 불가침</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">시사점</div>
+    <ul>
+      <li><strong>'microVM = 완전 격리'라는 설계 전제의 교정 필요 — AI 에이전트 샌드박스는 격리(위변조 방지)와 컨파인먼트(신호 누출)를 별개 목표로 분리 정의해야 함</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>gctl.io 심층 분석 · AWS Nitro 화이트페이퍼 · cpu-chat 실험 결과 종합</div>
+  <div class="notes"><p>채널은 하이퍼바이저 아래 실리콘에 존재한다. SMT/KSM/핀 설정만으로 안 뚫린다는 보장이 없고, 제거는 하드웨어 분배 정책(전용 코어·캐시 colouring·별도 호스트)의 비용 문제다. 따라서 실무 답은 완화+탐지의 조합이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">AI 에이전트 파밍 거버넌스<br>— 탐지·배치·투명성 논쟁</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">정책 분석</div>
+    <ul>
+      <li><strong>Rauch의 부수 폭로 — OpenAI·Anthropic 모델은 콥트 채널 구현 작업을 거부하고 오픈웨이트 모델이 완수: "실험실 태도가 개발자의 정확한 보안 시스템 구축을 방해할 수 있다"</strong> — 안전한 샌드박스 설계엔 이 분석이 필수라는 논거, 10월 Qwen '베이징 업로드' 원본 공개와 함께 오픈웨이트의 이중성(검증 가능성 vs 통제 불능) 논쟁 재점화</li>
+      <li><strong>멀티 에이전트 아키텍처의 새 설계 강령 — 기밀이 갈리는 에이전트는 최소 별도 프로세스, 적대적 환경에선 별도 하드웨어(V8 팀 "유효한 완화는 시크릿을 주소 공간 밖으로" / Chrome Site Isolation 교훈)</strong>, 신뢰 경계가 곧 배치가 되는 'confidential placement' 요구, OpenAI도 인정한 '제거 아닌 탐지' 노선이 현실 표준</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">시사점</div>
+    <ul>
+      <li><strong>에이전트 플랫폼 운영자는 하드웨어 카운터 기반 이상 신호(부하 패턴·캐시 이벤트·메모리 대역폭 통계) 모니터링 계층을 샌드박스 스택에 추가해야 함</strong> — Vercel이 자칭하는 '실환경 탐지 우위' 논거(샘플링+통계)가 업계 벤치마크로 부상</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>@rauchg X 게시물 · gctl.io 방어 계층 분석 종합</div>
+  <div class="notes"><p>이번 사안의 거버넌스 쟁점은 셋: (1) 연구·재현의 투명성과 실험실 거부 정책의 균형, (2) 에이전트 배치=신뢰 경계 원칙, (3) 제거 불가 전제 하 탐지 계층의 표준화. 모두 멀티 에이전트 서비스 도입 속도에 앞서 정리돼야 할 사안.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">화제 확산 버전 팩트체크 고정 — 'AI가 인터넷 없이 대화'는 (1)OpenAI 지시·프로토콜 병행 실험, (2)Rauch의 비협조적 탈취 아닌 협조적 콥트 채널 데모, (3)저속 대역폭이 원문 조건임을 내부 공유</div><div class="act-sub">과소·과장 모두 경계 — 원문: OpenAI 10.23 보고서 / @rauchg 10.26 스레드</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">자체 AI 에이전트 샌드박스 점검 — 기밀 수준이 다른 에이전트가 동일 호스트·동일 물리 코어(또는 SMT 형제)에서 도는지 배치 감사, 중요 워크로드부터 전용 코어 분리</div><div class="act-sub">'microVM=완전 격리' 전제 교정 — 공유 L3/TLB/DRAM이 곧 채널 매질</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">하드웨어 카운터 기반 콥트 채널 탐지 검토 — 에이전트 VM의 부하·캐시 이벤트·메모리 대역폭 패턴 베이스라인 수립, 주기적 신호(변조) 트래픽 알람 규칙</div><div class="act-sub">OpenAI·Vercel 공통 노선 '제거 아닌 탐지' — 상시 모니터링 계층 신설</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">멀티 에이전트 설계 강령 반영 — 기밀 분리 대상은 별도 프로세스 필수, 고위험 조합은 별도 호스트/가상화 스케줄러 정책(캐시 colouring·정적 분할) 평가</div><div class="act-sub">V8/Site Isolation 교훈: 언어 샌드박스는 무결성 경계일 뿐 컨파인먼트 아님</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">에이전트 플랫폼 벤더 질문 목록화 — 격리 기술(microVM/gVisor) 외 테넌트 배치 정책·콥트 채널 완화 설정(SMT/KSM/핀)·하드웨어 텔레메트리 감시 유무를 계약 검토 항목에 추가</div><div class="act-sub">Qwen·cpu-chat 사례가 보여준 오픈웨이트·재현 시대 — 공급자 검증 지점 확장</div></div></div>
+  <div class="src"><b>편집 고지</b>본 덱은 OpenAI 보고서(10.23)·Guillermo Rauch X 게시물(10.26)·전문 기술 블로그 분석을 대조한 사안별 팩트체크 특집입니다.</div>
+  <div class="notes"><p>출처: OpenAI Securing our frontier model training environment, @rauchg X/cpu-chat, gctl.io, Tom's Hardware. 확산 주장의 조건 고정, 에이전트 배치 감사, 하드웨어 텔레메트리 탐지, 설계 강령 반영, 벤더 검증 항목화 조치.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
