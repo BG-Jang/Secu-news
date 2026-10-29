@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>PHP2Shell 프라그네시아 특집 팩트체크 — 2026.10.29 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">PHP2Shell+Fragnesia,<br>한·미·일·대만 방화벽 25대 Root<br>— 팩트체크 특집</h1>
+  <div class="title-date">2026. 10. 29 (THU)</div>
+  <div class="title-meta">
+    <div><div class="n">무인증 15분 Root</div><div class="l">PHP2Shell+커널 결합, 커스텀 비공개 익스플로트</div></div>
+    <div><div class="n">19,000→240→25</div><div class="l">FOFA 스캔→선별→자동 배치 공격 퍼널 실증</div></div>
+    <div><div class="n">AI 도구 정황</div><div class="l">Claude Code+DeepSeek·Kimi 설정 aiscan, 40개 스크립트</div></div>
+  </div>
+  <div class="title-foot">이스라엘 드림(Dream) 리서치, 10.26 공개 — PHP2Shell(CVE-2026-109618/109619, CVSS 9.2)+리눅스 커널 권한 상승 Fragnesia(CVE-2026-46300, CVSS 7.8) 결합으로 한국·미국·일본·대만 소재 방화벽 서버 25대 root 탈취, 무인증 침투부터 root까지 15분 · 퍼널 — FOFA로 노출 관리 인터페이스 1만 9천 대 식별→5천 대 응답→PHP 8.0.30 신규 브랜치 240대 선별→자동 배치 공격으로 외부 방화벽 24대+미국 정부 연계 조직 내부 방화벽 관리 서버 1대 · AI 정황 — 공격 인프라에 Anthropic Claude Code 설치, FOFA API 키와 DeepSeek·Kimi 설정 오펜시브 플랫폼 aiscan 발견, 약 40개 스크립트 구조에서 AI 보강 개발 흔적 · 단, 중국 연계는 '가능성' 단계 — 특정 조직·정부 개입 미확인, 추가 자격증명 탈취·백도어 계정 생성 성공 여부 불명, 벤더명은 보안상 비공개(통지 완료)<br>단일 사안 심층 팩트체크</div>
+  <div class="notes"><p>2026년 10월 29일자 특집 다이제스트. 뉴스1이 보도한 'PHP 취약점으로 한미 서버 25대 장악, 중국 연계 정황' 기사(원 출처: Dream 리서치 10.26 발표, The Hacker News 후속)를 원문 대조로 팩트체크한다. 25대의 구성(외부 방화벽 24+정부 연계 내부 관리 서버 1), 공격 퍼널 수치, AI 도구 증거의 실체와 함께 '중국 연계' attribution의 한계, 다크웹 포럼의 반론(PoC 실전 무용론), 그리고 여전히 살아 있는 위협(웹셸 22대·역방향 SSH 터널)을 정리한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 1</div>
+  <h2 class="s-title">보도 내용 검증 —<br>25대는 무엇이고 어떻게 뚫렸나</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">팩트체크① 수치·연계는 원문과 일치 — '미국 정부 내부망'은 연계 조직 환경</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>Dream 원문 기준 25대 = 미국·일본·대만·한국의 외부 노출 방화벽 24대(web셸 심음) + 미국 정부 연계 조직 내부의 방화벽 관리 서버 1대</strong> — 내부 서버는 직접 노출이 아니라 root된 방화벽에서 뚫은 역방향 SSH 터널로만 도달 가능, 최초 root(10.23 18:14 UTC) 직후 크래시돼 낙종한 1대를 정부 조직이 별도 작전(10.24)으로 재침투해 확보</li>
+      <li><strong>공격 사슬 — PHP session.upload_progress 메커니즘 타깃의 커스텀 PHP2Shell 구현(appweb 관리 서버, PHP 8.0.30+고 메모리 한계가 조건)+Fragnesia 커널 LPE로 root</strong>, Dream 회수 악성코드는 공개 PoC 사본이 아닌 '표적 플랫폼 맞춤 독립 개발 비공개 빌드', 인증 없이 15분 내 장악</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Dream Research — Chained PHP2Shell Exploit Roots 25 Servers · The Hacker News(10.28) 대조</div>
+  <div class="notes"><p>'한국 포함 4개국 25대'와 '15분 무인증 장악'은 Dream 원문 사실. 다만 '미국 정부 기관 내부망 침투'는 공식 정부 그 자체가 아닌 '정부 연계(affiliated) 조직' 환경이며, 3번째 서버는 터널 경유 내부 관리 서버라는 구조적 뉘앙스가 있다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 2</div>
+  <h2 class="s-title">'중국 연계'와 'AI 해킹' 주장의<br>실체 — 증거와 한계</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">팩트체크② attribution은 가능성 단계 — AI 도구는 설치·설정 증거 수준</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>중국 연계 근거 — 공격 코드 내 중국어 명령어, 중국 표준시(CST) 사용, 표적 4개국(한·미·일·대만)이 태평양 전역 중국 국가 연계 작전의 주요 표적이라는 정세 판단</strong> — Dream 스스로도 특정 해킹조직·중국 정부 개입은 확인 못 했다고 명시, '가능성 제기'가 정확한 표현</li>
+      <li><strong>AI 활용 증거 — 공격 인프라에 Anthropic Claude Code 설치 흔적, FOFA(인터넷 자산 검색) API 키와 DeepSeek·Kimi LLM으로 설정된 오펜시브 보안 플랫폼 aiscan 발견, 약 40개 공격 스크립트의 코드 구조·주석 스타일 일관성에서 AI 보강 개발 정황</strong> — 단 'AI가 자율 침투'가 아니라 '공격자 개발 과정의 AI 도구화'로 읽는 것이 원문에 부합</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Dream Research · The Hacker News — Claude Code/aiscan/DeepSeek·Kimi artifact 분석</div>
+  <div class="notes"><p>'클로드·딥시크·키미가 해킹에 쓰였다'는 보도는 사실이나, 증거는 설치·API 키·코드 스타일 수준의 정황이며 어느 모델이 어떤 결정을 내렸는지까지는 입증되지 않았다. Unit 42의 ==SHELLUSER== 실전 에이전트 사례와 구분해야 한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 3</div>
+  <h2 class="s-title">'실전 무용론'부터 살아 있는 터널까지<br>— 놓치면 안 되는 맥락</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">팩트체크③ PoC 평판은 나빴다 — 그래서 '맞춤 빌드'가 핵심 신호</div>
+  <div class="blk">
+    <div class="blk-label">개요</div>
+    <ul>
+      <li><strong>PHP2Shell 공개 PoC의 야생 성능은 저평가 — XSS 포럼에서 "libphp.so 오프셋이 빌드마다 달라 브루트포스 불가, 실전 무용(unexploitable crap)"이라는 평가가 회자</strong>, THN도 실제 악용은 제한적이라 보도 — 바로 그 때문에 이번 캠페인은 '특정 방화벽 플랫폼(PHP 8.0.30·appweb)에 맞춘 오프셋 확보형 커스텀 무기화'가 사건의 본질</li>
+      <li><strong>위협은 종료되지 않음 — root된 방화벽 중 22대가 웹셸 유지 상태(parked), 미국 정부 연계 조직으로의 역방향 SSH 터널은 "아마도 아직 가동 중", 공격자가 지문 채취한 1만 9천 대 targets를 재방문 가능</strong>, AD 대상 LDAP 서비스 계정 비밀번호 복호화·비밀번호 스프레이·백도어 계정 생성 시도는 성공 여부 불명 — 전체 침해 범위 미확정</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · Flare 다크웹 분석(XSS 포럼 인용) · Dream 잔존 위협 평가</div>
+  <div class="notes"><p>'PoC가 안 뚫린다'는 세간의 담론과 정반대로, 표적 지정형 맞춤 익스플로트는 실제로 뚫었다는 것이 이번 주 최대 교훈. 벤더명 비공개(통지 완료) 상태이므로 업계는 자기 방화벽 관리 인터페이스의 인터넷 노출 자체를 전수 점검해야 한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">19,000→5,000→240→25의 퍼널<br>— 산업급 표적화 파이프라인 해부</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">구조 분석</div>
+    <ul>
+      <li><strong>5단계 자동화 퍼널 — ①FOFA로 전 세계 노출 관리 인터페이스 19,000대 식별 ②커스텀 버전 스캐너로 온라인+OS 버전 확인(약 5,000대 응답) ③4개국+신규 릴리스 브랜치(PHP 8.0.30) 필터로 240대 압축 ④자동 배치 러너가 체인 익스플로트·웹셸 심기·root 검증·CSV 기록 ⑤생존 표적에서 AD·내부망으로 확장</strong> — 각 단계가 상용 OSINT+AI 보강 개발의 조합, 공격자 1인이 운영 가능한 규모</li>
+      <li><strong>관리 인터페이스라는 '한 가지 구성 실수'가 신원 인프라까지 직결되는 경로 증명</strong> — 방화벽 관리면(appweb)은 EDR 사각지대+웹셸이 퍼블릭 디렉터리에 상주해도 눈에 잘 안 띄는 구조, 벤더 미공개로 패치 대기 조직은 탐지에 의존해야 하는 상황</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">시사점</div>
+    <ul>
+      <li><strong>방어측도 퍼널로 역산 — FOFA·Shodan에 자기 관리 인터페이스가 노출돼 있는지 오늘 검색하는 것이 1단계, 공격자의 시야(attack surface snapshot)를 선점 제거</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Dream 퍼널 기술 상세 · FOFA 노출 검색 관행 종합</div>
+  <div class="notes"><p>이 캠페인은 랜섬웨어식 무차별과 다르다: OSINT 선별→버전 확정→맞춤 체인→자동 검증의 산업급 표적화. 자기 자산을 공격자 눈(FOFA)으로 먼저 보는 역산 점검이 새 기본 동작이 됐다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">오늘부터의 대응 프로토콜<br>— 방화벽·AD·포렌식 3계층</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">대응 절차</div>
+    <ul>
+      <li><strong>1계층(방화벽) — 관리 인터페이스 인터넷 노출 전수 차단·OOB 관리망 이관, PHP 8.0.x 기반 관리 웹 보유 장비는 벤더 공지 전이라도 웹셸 IOC 검사(퍼블릭 디렉터리 신규 .php, 이상 cron/역방향 SSH 세션: 방화벽→외부 상시 연결)</strong> · 2계층(커널·런타임) — PHP2Shell 패치+Fragnesia(CVE-2026-46300) 커널 패치 동시 적용, memory_limit 등 공격 조건 제거 설정</li>
+      <li><strong>3계층(AD) — LDAP 서비스 계정 자격증명 즉시 회전, 비정상 LDAP 대량 조회·계정 열거·패스워드 스프레이(조직 테마 비밀번호 패턴) 탐지 룰, 신규 생성 계정 감사</strong>, 침투 흔적 발견 시 격리 후 포렌식 — 터널 경유 내부 이동 특성상 경계 장비 로그와 DC 로그의 시간축 상관 분석 필수</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">중장기</div>
+    <ul>
+      <li><strong>경계 장비를 '웹 애플리케이션'으로 취급 — 관리 콘솔에 WAF·MFA·IP allowlist 적용, OSINT 노출 감사(FOFA/Shodan)를 분기 정례화, 벤더명 비공개 공지에 대비한 자체 취약 런타임 인벤토리 구축</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Dream 헌팅 가이드 · 업계 관행 종합</div>
+  <div class="notes"><p>패치 대기 동안 살 수 있는 시간은 탐지뿐: 방화벽→외부 상시 아웃바운드(터널)와 웹셸 파일, AD 열거 행동의 3종 세트가 핵심 IoC. 자격증명 선제 회전은 '성공 여부 불명' 단계에서 피해 확산을 막는 수단.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">FOFA/Shodan에서 자사 방화벽·장비 관리 인터페이스 노출 검색 — 발견 시 즉시 인터넷 차단·관리망(OOB) 격리, PHP 8.0.x 기반 관리 웹 보유 장비 전수 식별</div><div class="act-sub">공격 퍼널의 1단계가 곧 공격자 시야 — 오늘 선제 제거</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">웹셸·터널 IOC 수색 — 관리 웹 퍼블릭 디렉터리 신규/변경 .php, 방화벽→외부 상시 아웃바운드 SSH 세션, 이상 cron·스크래치 파일 점검, 발견 시 격리 포렌식</div><div class="act-sub">22대 parked + 정부 연계 터널 '아직 가동 가능성' — 공격 진행 중 사안</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">PHP2Shell(CVE-2026-109618/109619)+Fragnesia(CVE-2026-46300) 패치 동시 적용 — 웹만 보고 커널 방치 금지, 벤더 패치 전은 memory_limit 하향 등 공격 조건 제거</div><div class="act-sub">체인 방어는 두 경계 모두에서 성립해야 함</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">AD 방어 강화 — LDAP 서비스 계정 자격증명 회전, 대량 열거·패스워드 스프레이·신규 백도어 계정 탐지 룰, 방화벽 로그와 DC 로그 시간축 상관 분석 배치</div><div class="act-sub">성공 여부 불명 단계 — 피해 제한과 범위 확정의 병행</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">'보안 뉴스 해석력' 정비 — 벤더명 비공개·attribution 가능성 단계·PoC와 실전 격차 등 뉘앙스를 사내 레포트 기준에 반영, AI 도구 증거는 '개발 보강' 수준임을 구분 표기</div><div class="act-sub">과장된 재확산(예: 자율 AI 국가 해킹)은 판단 오류 유발</div></div></div>
+  <div class="src"><b>편집 고지</b>본 덱은 Dream Research 원문·The Hacker News·뉴스1 보도를 대조한 사안별 팩트체크 특집입니다. 벤더·제품명은 원문대로 비공개입니다.</div>
+  <div class="notes"><p>출처: Dream Research(dreamgroup.com 블로그), The Hacker News(10.28), 뉴스1(10.29, 김정현 기자 기사 원 링크). 노출 역산 검색, 웹셸·터널 수색, 이중 패치, AD 강화, 보도 해석력 정비가 오늘의 조치.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
