@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>오픈AI 커널 LPE 948 특집 — 2026.11.05 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">AI가 리눅스 커널에서<br>Root 취약점 948개를 찾다<br>— 오픈AI 연구 특집</h1>
+  <div class="title-date">2026. 11. 05 (THU)</div>
+  <div class="title-meta">
+    <div><div class="n">$180만 = 커널 한 개</div><div class="l">LPE 하나당 $1,279 — 포상금의 16~55배 남는 장사</div></div>
+    <div><div class="n">석 달 새 5.7배</div><div class="l">GPT-5.6 Sol 166개 → 신모델 948개</div></div>
+    <div><div class="n">인간도 몰랐던 기법 10종</div><div class="l">외부 전문가가 "처음 본다"고 한 공격법</div></div>
+  </div>
+  <div class="title-foot">오픈AI가 11월 4일 공개한 연구 'A thousand fewer paths to root' — 아직 미공개 차기 사이버 모델로 리눅스 커널 대상 에이전트 파이프라인(정찰→분석→재현→공격 코드→패치)을 10월 중순 가동, 후보 2,308개 중 1,724개를 동적으로 재현하고 그중 비특권 로컬 계정이 root를 탈취하는 LPE 취약점 948개에 대해 작동하는 공격 코드와 개별 패치를 생성했다. 총 API 비용 $1,213,430(약 17억 원), LPE 하나당 평균 $1,279 — Pwn2Own·TyphoonPWN 상금 기준 환산 시 16~55배의 '수익'. 강화된 Google kernelCTF 환경에서도 정보유출 PoC 25개·LPE 21개를 확보했는데 이는 올해 kernelCTF 인정 제로데이 전체(26개)에 육박하는 규모. 표본 분석에서 외부 전문가가 처음 본 신규 익스플로테이션 기법 10종 발견(메모리 캐시 배치 2, 페이지 배치 2, 무실행 데이터 변형 5, 타입 혼동 1 — 안전상 세부 비공개). 사람 연구자는 최종 검토·신고만 담당. 오픈AI의 결론: "당분간 최신 패치 없는 OS의 일반 계정은, 자원 있는 공격자에게 root와 사실상 같다"<br>단일 사안 심층 특집</div>
+  <div class="notes"><p>2026년 11월 5일자 특집 다이제스트. Threads(@choi.openai)에서 확산된 '오픈AI가 리눅스 취약점 948개 발견' 타래를 오픈AI 원문(openai.com/index/a-thousand-fewer-paths-to-root, 11.4)과 전수 대조했다. 타래의 핵심 수치(2,308/1,724/948/$1,213,430/$359·$3,922/166개→948개/기법 10종/61-43-299)는 모두 원문과 일치함이 확인됐다. Pwn2Own·TyphoonPWN 상금 비교는 타래 저자의 계산(오픈AI "포상금 기준으로 남는 장사" 표현에 근거). 이 덱은 사실 검증 위에 '보안 산업에 무엇이 바뀌는가'를 덧씌운다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 1</div>
+  <h2 class="s-title">무엇이 자동화됐나 —<br>정찰부터 패치까지 다섯 단계</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">사람은 마지막 검토·신고만 · 통제된 연구 환경에서 수행 — 악용 사례 아님</div>
+  <div class="blk">
+    <div class="blk-label">파이프라인 실측</div>
+    <ul>
+      <li><strong>①Scout(정찰): 커널 폴더·파일을 훑어 비특권 사용자가 건드릴 수 있는 보안 관련 코드 5,034곳(약 280만 줄, 커널 전체의 7%) 선별 — 비용 $3,426</strong> / <strong>②Analyst(분석): 12시간 만에 중복 제거 후보 2,308개 — $316,549</strong> / <strong>③재현: 후보마다 테스트 코드를 직접 짜서 KASAN 켠 격리 VM에서 반복 실행, 30시간에 1,724개(74.7%) 실버그 확인 — 미재현 중 '모델 분석 오류'는 고작 3.1%, 68.9%는 애초 특권 필요</strong></li>
+      <li><strong>④위험도 선별·공격 개발: 1,724개를 정보유출 313·권한상승 1,238로 분할, SMEP/SMAP/KASLR 켠 일반 배포판급 VM에서 시험 → 유출 PoC 291개 + 작동하는 LPE 공격 코드 1,169개</strong> / <strong>⑤변형 분석→패치: 같은 원인 묶어 서로 다른 패치 948개(=고유 LPE 수)</strong> — 성공 공격 코드 1건 평균 $359, 실패 69건 건당 $3,922(실패가 10배 비쌈)</li>
+      <li><strong>역사: 6월 22일 Daybreak 확장+Patch the Planet(오픈소스 보안 지원)에서 GPT-5.5 Cyber로 커널 LPE 공격 코드 24개 신고 → 7월 말 GPT-5.6 Sol로 파이프라인 프로토타입, LPE 166개/$513,690 → 10월 중순 미공개 신모델로 948개/$1,213,430</strong> — 같은 최신 커널 대상, 그 사이 커널은 계속 보강됐는데 성과는 5.7배</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>OpenAI — A thousand fewer paths to root(11.4) 원문 전 수치 대조</div>
+  <div class="notes"><p>오탐통계 주의: '재현 실패의 68.9%가 특권 필요 케이스'는 모델이 버그를 잘못 본 것이 아니라 위험도 판단의 차이 — 실제 오탐(존재하지 않는 버그)은 3.1%. 이 숫자가 파이프라인 성숙도의 핵심 지표다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 2</div>
+  <h2 class="s-title">경제학이 무너졌다 —<br>커널 제로데이 1개의 원가</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">LPE당 $1,279 vs 커널 대회 상금 $2만~7만 — kernelCTF 올해 인정 제로데이 26개에 21개 근접</div>
+  <div class="blk">
+    <div class="blk-label">비용과 가치의 역전</div>
+      <ul>
+      <li><strong>엔드투엔드 $1,213,430로 고유 LPE 948개 — 건당 $1,279(약 180만 원)</strong> : 타래 저자는 Pwn2Own($2만)·TyphoonPWN($7만)의 커널 LPE 상금과 대조해 948개 기준 $1,890만~$6,630만(16~55배) 가치를 산출했다. 오픈AI 원문도 "공개 포상금 기준으로 이미 채산성이 있었다"고 명시 — <em>상금 액수 자체는 타래 저자의 계산</em></li>
+      <li><strong>가장 단단한 표적에서도 통했다 — Google kernelCTF(공격 표면 축소·완화 강화 커널) 환경 실행에서 정보유출 PoC 25개 + LPE 21개 확보, 올해 kernelCTF가 인정한 제로데이 LPE 총량은 26개</strong> : 한 번의 파이프라인이 1년치 대회 실적을 거의 갈아먹은 셈(단, SLAB_VIRTUAL 완화는 호환 문제로 제외하고 돌린 실험임을 원문이 병기)</li>
+      <li><strong>공급 측 과잉의 증거 — 스캔 완료 후 10일 안에 찾아낸 LPE 중 61개는 이미 다른 기여자 패치가 반영됨, 43개는 스테이징 패치 대기, 299개는 공개 신고·논의 중</strong> : 여러 AI 연구팀이 같은 커널을 동시에 훑고 있다. '숨은 제로데이'의 시대 종료 — 발견 독점이 사라지면 값어치는 선점 속도와 패치 품질로 이동한다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>OpenAI 원문(kernelCTF·61/43/299 단락) · 타래 저자 상금 환산(별도 표기)</div>
+  <div class="notes"><p>블랙마켓과 합법 포상금은 별개지만, '발굴 원가가 대회 상금의 1/16~1/55'라는 비율은 공격 경제학의 중력 변화를 보여준다. 동시에 방어측에도 같은 원가 곡선: 취약점 발굴 기반 방어가 대중화된다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 3</div>
+  <h2 class="s-title">기법 10종과 패치의 문제 —<br>모델이 '발명'하기 시작했다</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">외부 커널 전문가 진품 "처음 보는 기법" · AI 최초 패치는 길이 과잉·변형 누락 — 반복으로 품질 향상</div>
+  <div class="blk">
+    <div class="blk-label">두 개의 경계선</div>
+    <ul>
+      <li><strong>에이전트 공격 코드 166개 표본 분석에서 미지의 리눅스 익스플로테이션 기법 10종: 커널 메모리 캐시에 원하는 객체를 미리 깔아두는 신방법 2, 성공률을 높이는 메모리 페이지 배치 2, 코드 실행 없이 데이터만 변형해 권한 획득 5, 타입 혼동 1</strong> — 외부 전문가 블라인드 검토에서도 "처음 본다"였고 오픈AI는 안전상 세부 비공개. 모델이 알려진 패턴의 재조합을 넘어 기법을 발명하는 단계에 들어섰다는 증거다</li>
+      <li><strong>패치 품질은 초기 단계: 최초 생성 패치는 필요 이상 길거나 같은 결함 변형을 놓침 — 정적 검사·인접 코드 관례 준수·변형 분석이라는 커널 커뮤니티 방식을 지시·반복으로 학습시켜 끌어올렸고, 사람 전문가 패치의 결함을 AI가 잡아낸 사례도 있다</strong> : 다만 최종 병합은 여전히 사람 멘테이너 검토를 통과해야 하는 구조</li>
+      <li><strong>동시 발견의 강화: 10월 PHP 결함에서 서로 다른 팀이 서로 다른 모델로 3주 내 같은 취약점 도달(7·8월 신고 교차) — 커널에서도 61개가 이미 남의 패치로 막혀 있었다</strong> : '누가 먼저 찾았나'의 경쟁이 무의미해지는 속도로 수렴 중. 코드가 존재하는 한 모델 세대 교체 때마다 다시 발견된다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>OpenAI 원문(신규 기법·패치 품질 단락) · PHP 동시 발견 사례는 타래 인용(별건)</div>
+  <div class="notes"><p>'무실행 데이터 변형 5종'은 특히 주의 — 기존 탐지 모델이 '코드 실행'에 최적화되어 있다면 이 기법들은 사각지대다. EDR·커널 모니터링 벤더에 전달해야 할 관측 포인트.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">'948'가 보안 산업에<br>의미하는 것</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">해석 프레임</div>
+    <ul>
+      <li><strong>취약점의 희소성이 붕괴한다 — 커널 같은 최난도 코드에서도 건당 $1,279에 LPE가 나오는 시대라면, '미발견 제로데이'는 자산이 아니라 재고다</strong> : 모델 세대가 바뀔 때마다 모든 기반 소프트웨어가 다시 훑힌다(오픈AI의 공식 권고). 벤더는 "우리에겐 보고 안 온 0day"라는 방어를 영원히 할 수 없다</li>
+      <li><strong>보안 팀의 병목 이동이 현실화 — 이번 주 내내 반복되는 패턴: 발견 비용 ↓↓, 검증·우선순위·패치 배포 원가 그대로</strong> : 오픈AI 스스로 재현 단계부터 자동화한 이유가 그것이고(8월 타래 예측의 실증), 노스웨스턴 연구(AI 패치 32.7%가 증상 차단)가 말하듯 '고친 척' 검수도 사람이 한다. 산업의 다음 제품은 '발견'이 아니라 '종결(closure)'다</li>
+      <li><strong>오픈AI의 마지막 문장이 이 연구의 요지 — "당분간 최신 패치를 안 한 OS의 일반 계정은 자원 있는 공격자에게 root와 사실상 같다" + 격리(샌드박스·Firecracker·gVisor) 겹겹이 권고</strong> : AI 에이전트를 루트가 아닌 계정으로 돌려도, 커널 업데이트가 밀리면 그 격리는 무의미해진다. 패치 슬래그(slack)가 곧 침해 확률인 시대의 공식 선언</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>OpenAI 원문 결론부 · 타래 저자 과거 관찰(병목 이동·N-hour) 종합</div>
+  <div class="notes"><p>'승부가 누가 많이 찾느냐에서 누가 빨리 고치고 덜 깨지게 짓느냐로 옮겨간다'는 타래 전망에 동의한다. 알트만의 "라우터·OS부터 다시 짜는 회사가 나온다"와 같은 계열의 주장이며, 형식 검증·기능 축소(saturation 제거) 권고가 원문에 포함되어 있다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">이번 주 전체 그림 —<br>AI는 공격과 방어의 같은 연료를 태운다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">주간 맥락 연결</div>
+    <ul>
+      <li><strong>같은 한 주: 오버워치는 베이퍼팬더가 딥시크+ARTEX로 14개국 동시 침투(계획 에이전트 14억 토큰)한 것을 폭로했고, 오픈AI는 방어측 에이전트가 커널에서 LPE 948개를 찾아내는 영상을 공개했다</strong> — 공격과 방어가 동일한 토큰 경제 위에 선다. 차이는 통제(오픈AI는 격리 환경·조정 공개·비공개 세부의 3중 안전장치)이며, 이것이 '무기'와 '연구'를 가르는 기준선이다</li>
+      <li><strong>공격측에도 발견 원가 곡선이 적용되면 — 방어 패치 분석→익스플로트 생성의 'N-hour'(패치 공개 후 워킹 익스플로잇까지 1시간대)과 결합해, 공방 모두 '발견'이 아니라 '배포 속도'에서 승부가 난다</strong> : 오늘 아침판의 APT 결함(CVE-2026-109518)이 그 실례 — 결함 공개부터 전 세계 패치 경쟁이 이미 시작됐다</li>
+      <li><strong>한국 조직에의 함의: 리눅스 커널 기반(서버·클라우드·안드로이드)이면 예외 없고, 특히 멀티테넌트·컨테이너 호스팅은 '비특권 로컬 계정'이 곧 고객 계정</strong> : 커널 패치 지연 용인 관행, 컨테이너 inside 사용자 권한 설계, AI 에이전트 실행 계층의 root 회피가 이번 주 안에 점검해야 할 3종 세트다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>OpenAI 연구 · 오버워치·GTIG 주간 보고서 종합 독해</div>
+  <div class="notes"><p>'AI 안보 딜레마'의 균형표: 방어 AI가 찾은 취약점의 개 공격 AI가 쓸 수 있는 숫자와 같다. 다만 발견→신고→패치→배포의 제도적 파이프라인이 존재하는 쪽(방어)이 구조적으로 유리하며, 그 유리함은 '배포 속도'를 지키는 한에서만 유효하다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">커널 패치 슬래그 전수 측정 — 리눅스 서버·컨테이너 호스트·안드로이드 단말의 커널 버전 대 최신 안정판 격차 일수화, 멀티테넌트(고객 계정이 비특권 로컬로 존재) 환경 최우선 갱신. "패치 안 한 OS의 일반 계정 = root와 사실상 같다"를 사내 기준 문구로</div><div class="act-sub">오픈AI 결론 — 발견 속도가 방어 유예 시간을 소진시켰다</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">AI 에이전트 실행 계층 점검 — 사내 Claude Code·Codex·자동화 에이전트가 root/관리 계정으로 도는 곳 전수 확인, 전용 비특권 계정 + 컨테이너/VM 격리(Firecracker·gVisor) 적용, 에이전트 실행 로그 수집</div><div class="act-sub">격리의 의미가 커널 최신화에 달려 있다 — 둘 다 해야 성립</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">발급량 폭증 대비 처리 역량 — 벤더·AI 스캔 보고서 유입 증가에 대비해 취약점 검증(재현 테스트) 표준 절차 수립, '고친 척' 검수(증상 차단 vs 원인 제거) 체크리스트 도입, 종결(closure) KPI 신설</div><div class="act-sub">병목은 발견이 아니라 처리 — 오픈AI가 재현부터 자동화한 이유</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">커널 하드닝 확인 — SMEP/SMAP/KASLR 등 배포판 기본 완화 활성화 감사, 자체 빌드 커널은 완화 옵션 점검, '코드 실행 없는 데이터 변형' 기법 대응으로 무결성 감시(중요 구조체 값 변경) 룰 검토</div><div class="act-sub">신규 기법 5종이 노리는 사각지대 선제 메우기</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">모델 세대 교체 = 재스캔 주기 — 기반 소프트웨어(OS·브라우저·이미지 라이브러리·TCP/IP 스택)에 대한 AI 정적 감사의 정기화 검토, 신규 코드 작성 시 최소 기능 원칙·형식 검증 도입 검토, 방어측 AI 도구(Fiddler/Dreadnode류) 시장 동향 관찰</div><div class="act-sub">"공개된 취약점은 더 약한 모델로도 공격 코드가 나온다" — 재고 관리의 시대</div></div></div>
+  <div class="src"><b>편집 고지</b>본 덱은 OpenAI 원문(11.4)을 1차 출처로 하며 Threads 타래(@choi.openai) 주장을 전수 대조했습니다 — 핵심 수치는 모두 원문 일치. Pwn2Own·TyphoonPWN 상금 비교는 타래 저자 계산, kernelCTF 실험은 SLAB_VIRTUAL 완화 제외 조건임을 원문이 병기합니다.</div>
+  <div class="notes"><p>오늘 요약: 커널 패치 격차 측정·갱신, AI 에이전트 비특권 실행, 취약점 종결 역량 강화, 커널 하드닝 감사, 세대별 재스캔 제도화. 큰 그림 — 발견이 값싸진 세상에서 유일한 방어 자산은 배포 속도다.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
