@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>자산·취약점 관리 플랫폼 비교분석 — RiskMap vs withVTM PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+<div class="deck">
+<!-- 1 타이틀 -->
+<section class="slide title-slide">
+  <div class="s-tag">Platform Comparison · 2026.08</div>
+  <h1 class="s-title">자산·취약점<br>관리 플랫폼<br>비교분석<br><br>RiskMap<br>vs<br>withVTM</h1>
+  <div class="title-date">다온기술 × 위드네트웍스 · CAASM vs VTM</div>
+  <div class="title-meta">
+    <div><div class="n">4중</div><div class="l">수집 체계 (RiskMap)</div></div>
+    <div><div class="n">GS1급</div><div class="l">인증 (withVTM)</div></div>
+    <div><div class="n">특허5</div><div class="l">건 (RiskMap)</div></div>
+  </div>
+  <div class="title-foot">수집의 물리량 vs 운영의 지능 — 같은 철학, 다른 엔지니어링</div>
+  <div class="notes"><p>국내 CAASM·취약점 관리 시장 비교분석: 다온기술 RiskMap(특허 5건, 4중 수집, RAL) vs 위드네트웍스 withVTM(GS인증 1등급, 에이전트리스, VRS). 2026년 8월 공개 자료 기준.</p></div>
+</section>
+
+<!-- 2 요약 -->
+<section class="slide">
+  <div class="s-tag">Executive Summary</div>
+  <h2 class="s-title" style="font-size:28px">한눈에 보는<br>두 제품</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">RiskMap — 다온기술 (2013)</div>
+    <ul>
+      <li><strong>"국내 최초 CAASM 플랫폼"</strong> — Agent·Radar·Connector·Credential Scan <strong>4중 수집 체계</strong></li>
+      <li><strong>RAL(Risk Acceptance Level)</strong> 기반 위험 관리, 특허 5건(4 등록 + 1 출원)</li>
+      <li>AI 코파일럿(자연어 질의응답) · RiskMap 1.6 (2026) · 슬로건 "Blind Spot Zero"</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">withVTM — 위드네트웍스 (2009)</div>
+    <ul>
+      <li><strong>"취약점을 실제 위협과 연계해 관리"</strong> — 에이전트리스 스캔, 멀티 스캐너 통합(Nessus/Qualys/OpenVAS)</li>
+      <li><strong>VRS(AI 위험도 스코어링)</strong>, 보안 디지털 트윈(3D) · <strong>GS인증 1등급</strong>(KTL, 2026.04)</li>
+      <li>withVTM V3.0 (2026) · 표어 "무엇을 먼저 보호해야 하는가"</li>
+    </ul>
+  </div>
+  <div class="src"><b>공통점</b>둘 다 나라장터 디지털서비스몰 등록 — N2SF·망분리 대응 자산 현행화라는 같은 시장 겨냥</div>
+  <div class="notes"><p>요약: RiskMap은 CAASM + 4중 수집 + RAL + 특허 5건, withVTM은 VTM 철학 + 에이전트리스 + 멀티 스캐너 + VRS + GS인증 1등급. 둘 다 나라장터 등록, N2SF 대응이 공통 화두.</p></div>
+</section>
+
+<!-- 3 RiskMap -->
+<section class="slide">
+  <div class="s-tag">Deep Dive 1 · RiskMap</div>
+  <h2 class="s-title" style="font-size:28px">RiskMap:<br>수집의 물리량<br>"단 한 대도<br>놓치지 않겠다"</h2>
+  <span class="badge b-warn">에이전트 발 심층 정확도 노선</span>
+  <div class="blk">
+    <div class="blk-label">핵심 역량</div>
+    <ul>
+      <li><strong>4중 자산 수집:</strong> 에이전트(OS/패치/SW 직접 수집) + Radar(L2/L3·ARP·스위치 연동 비식별 자산 능동 탐지) + Connector(AWS/Azure/GCP API) + Credential Scan</li>
+      <li><strong>AI 코파일럿:</strong> "신규 취약점 상위 10건" 자연어 질의 → 조회·집계·우선순위·담당자 지정·조치 가이드 (전용 모델 서버 필요)</li>
+      <li><strong>Advanced:</strong> EOS 자산 관리, SSL 인증서 만료, 불법 라이선스·비인가 SW 탐지</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">1.6 신기능 (2026) & 특허</div>
+    <ul>
+      <li><strong>Relay Server</strong> — 지사·폐쇄망·망분리 구간 자산 중앙 통합 (N2SF 전환 대응), 백업·복구 신설, macOS 에이전트 추가</li>
+      <li><strong>특허 5건:</strong> 위험도 관리, 네트워크 기반 미식별 자산 탐지, 고유 속성 기반 변화 감지·중복 제거, DHCP/고정IP 무관 완전 자산 식별(출원)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>riskmap.co.kr · 보안뉴스 "다온기술, RiskMap 1.6 출시" · ISEC 2026 미리보기</div>
+  <div class="notes"><p>RiskMap 심층: 4중 수집 체계와 스위치/ARP 연동 Radar가 물리적 강점. AI 코파일럿은 LLM 기반 UX 효율. 1.6에서 Relay Server로 망분리 구간 대응, macOS 지원 추가. 특허 5건 포트폴리오.</p></div>
+</section>
+
+<!-- 4 withVTM -->
+<section class="slide">
+  <div class="s-tag">Deep Dive 2 · withVTM</div>
+  <h2 class="s-title" style="font-size:28px">withVTM:<br>운영의 지능<br>"1000개 중<br>지금 할 10개"</h2>
+  <span class="badge b-crit">에이전트리스 기동성 노선</span>
+  <div class="blk">
+    <div class="blk-label">핵심 역량</div>
+    <ul>
+      <li><strong>에이전트리스 스캔:</strong> IP/MAC·OS·SW·서비스·오픈포트·연결 관계 자동 발견 — 섀도 IT 탐지, 모 대기업 도입 후 <strong>관리 자산 35% 증가</strong>(제조사 발표)</li>
+      <li><strong>VRS(AI 위험도 스코어링):</strong> CVSS + 비즈니스 중요도 + 네트워크 위치 + 데이터 민감도 + TI 기반 공격 가능성 + 피해 규모 + 패치 난이도의 6차원 우선순위</li>
+      <li><strong>멀티 스캐너 통합:</strong> Nessus·Qualys·OpenVAS 결과 재해석 — 벤더 종속 없음. 다크웹 제로데이 정보 수집</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">V3.0 신기능 (2026)</div>
+    <ul>
+      <li><strong>보안 디지털 트윈(3D):</strong> ISEC 2026 첫 공개 — 인프라를 3D 가상 재현, 위험 등급별 조치 유도</li>
+      <li><strong>제로트러스트 인텔리전스 허브:</strong> 자산 위험 컨텍스트를 정책 엔진에 실시간 제공, 취약 단말 동적 통제 · ITSM 네이티브(ServiceNow/Jira/BMC) + 규제 템플릿(ISMS-P·PCI-DSS·N2SF) 증적 자동 수집</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>위드네트웍스 블로그 · 보안뉴스 "withVTM V3.0 GS인증 1등급" · 지디넷 (ISEC 2026)</div>
+  <div class="notes"><p>withVTM 심층: 에이전트리스 기동성, 6차원 VRS 스코어링, 멀티 스캐너 벤더 중립 통합. V3.0에서 3D 디지털 트윈과 제로트러스트 인텔리전스 허브 추가. GS인증 1등급, 한국주택금융공사 레퍼런스.</p></div>
+</section>
+
+<!-- 5 비교: 수집 & 위험관리 -->
+<section class="slide">
+  <div class="s-tag">Compare 1</div>
+  <h2 class="s-title" style="font-size:28px">근본 차이:<br>에이전트 혼용<br>vs 에이전트리스</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">자산 수집 방식</div>
+    <ul>
+      <li><strong>RiskMap:</strong> 에이전트로 설치 SW·보안구성까지 정밀 수집 — 라이선스 감사·비인가 앱 차단 요구에 유리. 단, 배포 부담 존재</li>
+      <li><strong>withVTM:</strong> 스캔 기반 원격 파악 — 대규모·빈번 변동 환경의 빠른 전개에 유리, 별도 구축 부담 낮음</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">위험 관리: RAL vs VRS</div>
+    <ul>
+      <li><strong>RAL(RiskMap):</strong> 조직의 "수용 가능 위험 수준" 정책 기준으로 조치 대상 자동 선별 — 거버넌스형, 정책 명확성</li>
+      <li><strong>VRS(withVTM):</strong> 다차원 가중치 AI 스코어링 — 분석형, 위협 인텔리전스 반영 폭이 넓음</li>
+      <li><strong>핵심 질문:</strong> 우선순위 기준을 직접 정의할 의지(RAL) vs 벤더 모델에 위임(VRS)</li>
+    </ul>
+  </div>
+  <div class="src"><b>평가</b>"CVSS 만능주의" 비판에서 출발한 같은 문제의식, 서로 다른 해법 — 정책 중심 vs 데이터 중심</div>
+  <div class="notes"><p>비교 1: 수집은 에이전트 심층 정확도(RiskMap) vs 에이전트리스 기동성(withVTM). 위험관리는 RAL 거버넌스형 vs VRS 분석형. 조직의 우선순위 정의 의지가 선택 기준.</p></div>
+</section>
+
+<!-- 6 비교: AI & 생태계 -->
+<section class="slide">
+  <div class="s-tag">Compare 2</div>
+  <h2 class="s-title" style="font-size:28px">AI 활용축과<br>생태계 통합</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">AI 전략 — 정면 충돌보다 차별화</div>
+    <ul>
+      <li><strong>RiskMap:</strong> "쓰기 편한 보안 도구" — LLM 코파일럿 대화형 UX·운영 효율 (대시보드 빌더 병행)</li>
+      <li><strong>withVTM:</strong> "판단해주는 두뇌 + 보이는 인프라" — VRS 스코어링 + 3D 디지털 트윈 예측·시뮬레이션</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">생태계 — 공급사 DNA vs 서비스 DNA</div>
+    <ul>
+      <li><strong>다온기술:</strong> Trellix·CrowdStrike·Logpresso 총판 병행 — 솔루션 공급·구축 역량과 결합, EPP/EDR API 수집</li>
+      <li><strong>위드네트웍스:</strong> Radware·Fortinet 파트너 + MSSP 자체 관제 — 운영 리소스가 부족한 조직은 withVTM+MSSP 조합에 매력</li>
+    </ul>
+  </div>
+  <div class="src"><b>평가</b>향후 차별화 경쟁은 "AI로 무엇을 대신해주는가"의 구체성으로 판가름</div>
+  <div class="notes"><p>비교 2: AI는 RiskMap LLM UX vs withVTM 분석 모델·시뮬레이션. 생태계는 모회사 DNA(공급사 vs 서비스)가 반영 — MSSP 결합 여부가 운영 열위 조직의 관전 포인트.</p></div>
+</section>
+
+<!-- 7 시나리오 추천 -->
+<section class="slide">
+  <div class="s-tag">Use Cases</div>
+  <h2 class="s-title" style="font-size:28px">시나리오별<br>추천</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">RiskMap이 적합한 경우</div>
+    <ul>
+      <li>설치형 에이전트 정밀 인벤토리 필요 (SW 라이선스 감사, 비인가 앱 차단)</li>
+      <li>"수용 가능 위험 수준"을 정책·감사에 활용하려는 공공·금융 기관</li>
+      <li>DHCP·비인가 기기 탐지가 중요한 대규모 내망, macOS 포함 멀티 OS 관제</li>
+    </ul>
+  </div>
+  <div class="blk">
+    <div class="blk-label">withVTM이 적합한 경우</div>
+      <ul>
+      <li>에이전트 불허 정책·빈번한 자산 변동 — 즉시 가시성 확보 환경</li>
+      <li>Nessus/Qualys 기존 자산의 통합 재해석, ISMS-P·PCI-DSS 증적 자동화·ITSM 워크플로우가 급한 기업</li>
+      <li>제로트러스트에 위험 컨텍스트 공급, 3D 트윈 경영진 보고, MSSP 결합 중견기업</li>
+    </ul>
+  </div>
+  <div class="src"><b>공통 권고</b>POC로 '우리 환경의 미탐지 자산 수'와 '조치 워크플로우 적합도' 직접 비교가 가장 정확</div>
+  <div class="notes"><p>시나리오 추천: 정밀 원장·거버넌스 중심이면 RiskMap, 기동성·운영 자동화·관제 결합이면 withVTM. 최종 선택 전 POC로 미탐지 자산 수와 워크플로우 적합도 검증 권고.</p></div>
+</section>
+
+<!-- 8 평가 요약 -->
+<section class="slide">
+  <div class="s-tag">Scorecard</div>
+  <h2 class="s-title" style="font-size:28px">평가 요약</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>자산 식별 깊이(에이전트):</strong> RiskMap ★★★★★ — withVTM ★★★☆☆ <span style="color:var(--text-3)"> (4중 수집·스위치 연동 우위)</span></li>
+      <li><strong>도입 기동성:</strong> RiskMap ★★★☆☆ — withVTM ★★★★★ <span style="color:var(--text-3)"> (에이전트리스 강점)</span></li>
+      <li><strong>우선순위 방법론:</strong> RAL ★★★★☆ — VRS ★★★★★ <span style="color:var(--text-3)"> (VRS 변수 폭)</span></li>
+      <li><strong>컴플라이언스 자동화:</strong> RiskMap ★★★☆☆ — withVTM ★★★★★ <span style="color:var(--text-3)"> (규제 템플릿+증적)</span></li>
+      <li><strong>AI 활용:</strong> 코파일럿 ★★★★☆ — VRS·트윈 ★★★★☆ <span style="color:var(--text-3)"> (서로 다른 축)</span></li>
+      <li><strong>기술 IP 공개성:</strong> 특허 5건 ★★★★★ — GS 1등급 ★★★★☆</li>
+      <li><strong>생태계 통합:</strong> RiskMap ★★★★☆ — withVTM ★★★★★ <span style="color:var(--text-3)"> (ITSM 네이티브+멀티 스캐너)</span></li>
+    </ul>
+  </div>
+  <div class="src"><b>주의</b>정량 수치(자산 35% 증가, 감사 90% 단축)는 제조사 발표 값 — 독립 검증되지 않음</div>
+  <div class="notes"><p>스코어카드: 식별 깊이·IP 공개성은 RiskMap 우위, 기동성·우선순위·컴플라이언스·생태계는 withVTM 우위, AI는 무승부(다른 축). 제조사 발표 수치는 미검증임을 명시.</p></div>
+</section>
+
+<!-- 9 결론 -->
+<section class="slide">
+  <div class="s-tag">Conclusion</div>
+  <h2 class="s-title" style="font-size:28px">우열이 아닌<br>역할 분담</h2>
+  <hr class="rule-double">
+  <div class="trend-card">
+    <div class="trend-kicker">① 카테고리 경계의 소멸</div>
+    <div class="trend-body">Tenable·Qualys처럼 국내도 '자산 식별 + 취약점 + 위험 기반 조치 추적' 단일 플랫폼으로 수렴 — 두 제품은 같은 구매 의사결정 테이블에 올라감</div>
+  </div>
+  <div class="trend-card">
+    <div class="trend-kicker">② N2SF가 공통 경쟁 축</div>
+    <div class="trend-body">망분리 환경의 '자산 목록과 실제 네트워크 불일치'가 국내 1번 페인포인트 — Relay Server(RiskMap) vs CTEM 체계(withVTM)</div>
+  </div>
+  <div class="trend-card">
+    <div class="trend-kicker">③ 최종 선택의 4가지 질문</div>
+    <div class="trend-body">(1) 에이전트 허용 여부 (2) 기존 스캐너 자산 (3) 규제 부담 유형 (4) 운영 인력 규모 — 원장 완전성 최우선이면 RiskMap, 발견-판단-조치-감사 자동화 최우선이면 withVTM</div>
+  </div>
+  <div class="src"><b>결론</b>"자산에서 시작하는 위험 기반 보안"이라는 같은 철학, 서로 다른 엔지니어링 전통</div>
+  <div class="notes"><p>결론: 카테고리 수렴, N2SF 공통 축, AI 차별화 경쟁. 최종 선택은 에이전트 허용·기존 스캐너·규제 부담·운영 인력 4가지 질문으로 좁혀진다.</p></div>
+</section>
+
+<!-- 10 출처 -->
+<section class="slide">
+  <div class="s-tag">Sources</div>
+  <h2 class="s-title" style="font-size:28px">참고 자료</h2>
+  <hr class="rule-double">
+  <div class="blk" style="margin-top:8px">
+    <ul>
+      <li><strong>RiskMap 공식 사이트</strong> (riskmap.co.kr) · 다온기술 (daont.co.kr/riskmap)</li>
+      <li><strong>위드네트웍스 공식 블로그</strong> — "[솔루션 리뷰] 위드네트웍스 '위드VTM 3.0'" (2025-11)</li>
+      <li><strong>보안뉴스</strong> — "다온기술, RiskMap 1.6 출시" · "withVTM V3.0, GS인증 1등급 획득" · "[ISEC 2026 미리보기] 다온기술"</li>
+      <li><strong>지디넷/다음뉴스</strong> — "위드네트웍스, ISEC 2026서 withVTM 신규 버전 공개" (2026-08-12)</li>
+      <li><strong>전자신문</strong> — "[2026 상반기 혁신상품 대상] 위드네트웍스" (2026-06-23)</li>
+      <li><strong>데이터넷</strong> — "위드VTM V3.0, GS인증 1등급" · "withVTM 공공 조달 등록"</li>
+    </ul>
+  </div>
+  <div class="src"><b>편집 고지</b>Hermes Research Team · 2026.08.28 — 모든 사실은 위 공개 자료 근거, 제조사 발표 정량 수치는 독립 검증되지 않음</div>
+  <div class="notes"><p>참고 자료: 공식 사이트, 위드네트웍스 블로그, 보안뉴스 3건, 지디넷, 전자신문, 데이터넷. 원문 보고서(RiskMap vs withVTM 비교분석, 2026-08-28) 기반.</p></div>
+</section>
+
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>

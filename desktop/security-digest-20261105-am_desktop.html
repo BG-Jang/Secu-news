@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.05 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Daily Digest · Morning Edition</div>
+  <h1 class="s-title">아침 정보보안<br>다이제스트<br>— 공급망과 AI 침투 주간</h1>
+  <div class="title-date">2026. 11. 05 (THU)</div>
+  <div class="title-meta">
+    <div><div class="n">APT가 루트를 넘긴다</div><div class="l">CVE-2026-109518 검증 완료 패키지 스왑</div></div>
+    <div><div class="n">체이널리시스 전면 정지</div><div class="l">온패스 공격 고객 비밀번호 노출 확인</div></div>
+    <div><div class="n">구독형 AI로 대통령실까지</div><div class="l">딥시크+ARTEX 14개국 동시다발 침투</div></div>
+  </div>
+  <div class="title-foot">데비안·우분투 패키지 관리자 APT에서 검증 완료 패키지를 악성 .deb로 바꿔치기해 루트 코드 실행이 가능한 결함 CVE-2026-109518 공개(11.4) — 데비안은 고정판 배포, 우분투는 26.10·26.04·24.04·22.04 신규 빌드 출시, 위험도는 APT 개발팀 '치명적' vs 우분투 High(CVSS 4.0 7.7). 체이널리시스는 11월 4일 블로그에서 '온패스 공격'으로 일부 고객 비밀번호 노출을 공식 확인하고 KYT(UI·API)·주소 스크리닝·로그인 페이지까지 오프라인 확대, Reactor·Data Solutions·Chain은 계속 정지 중. 크라우드스트라이크 오버워치는 베이퍼팬더가 딥시크로 구동한 ARTEX 컨트롤러 하나로 10월 17일부터 11일간 최소 14개국 기관을 공격한 정황 공개 — 단일 침입 계획 에이전트 입력 토큰 약 14억 개, 유럽 대통령실 등 고가치 표적 포함. 크라우드스트라이크는 AI 거버넌스 기업 Fiddler와 적대적 AI 방어 Dreadnode를 총 4억 9,500만 달러에 인수 추진<br>국내외 주요 정보보안 이슈 요약 및 심층 분석 — 아침판</div>
+  <div class="notes"><p>2026년 11월 5일자 아침 24시간 보안 다이제스트. 오늘 네 기사는 '신뢰의 하한선이 내려가는 주간'으로 읽힌다. 소프트웨어 설치의 최하층(APT), 가상자산 수사의 최상층 인프라(체이널리시스), 국가 통치 기관(대통령실 침투), 그리고 이 모든 위협에 대한 산업측 답(M&A)가 하루치 뉴스에 담겼다. 각 기사는 데비안·우분투 어드바이저, 체이널리시스 공식 블로그, 보안뉴스·크라우드스트라이크 오버워치, TechCrunch 등 1차 출처로 대조 검증했다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">APT 패키지 스왑 —<br>설치 행위가 루트 침해가 된다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">CVE-2026-109518 · 재시도 기본 활성화 = 데비안 12·우분투 22.04+ · 악용 사례 보고 없음</div>
+  <div class="blk">
+    <div class="blk-label">결함 구조</div>
+    <ul>
+      <li><strong>APT(Debian·Ubuntu 패키지 관리자)의 다운로드 재시도 로직(Acquire::Retries, 데비안 12·우분투 22.04부터 기본 켜짐)에서 검증 경쟁 발생 — HTTP 트래픽을 조작할 수 있는 중간자(악성 미러·프록시·DNS 변조)가 리다이렉트와 정상적인 일시 서버 오류로 재시도를 유발해, 서명·해시 검증을 마친 패키지를 자기 것으로 교체하면 설치 코드가 루트로 실행된다</strong> — Max Justicz 보고, 데비안·우분투·APT 개발팀이 11월 4일 동시 공지</li>
+      <li><strong>패치 현황: 데비안 고정판 배포(구형 지원 종료 데비안 11용 2.2.5도 공개), 우분투는 11.4 14:25 UTC에 26.10=3.3.3ubuntu0.1 / 26.04=3.2.1ubuntu0.1 / 24.04=2.8.4ubuntu0.1 / 22.04=2.4.15ubuntu0.1 출시, 데비안 testing은 당일 14:58 UTC에도 취약 버전 3.3.5</strong> — 우분투는 파생 배포판도 영향받는다고 밝혔으나 미공개 악용 사례와 임시 우회책은 어느 어드바이저에도 없다</li>
+      <li><strong>정리해야 할 두 가지 뉘앙스 — 위험 표기는 APT 개발팀 '치명적' vs 우분투 High(CVSS 4.0 7.7)로 갈리고, 세 어드바이저 모두 HTTP 경로의 공격만 기술할 뿐 HTTPS 소스가 안전한지는 확인하지 않았다</strong> : "HTTPS 미러 쓰면 안전"은 원문 뒷받침 없는 권고다. 데비안 11·우분투 20.04는 기본 비노출이지만 스크립트로 재시도를 켠 환경은 노출된다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Debian DSA(debian-security-announce 11.4) · ubuntu.com CVE-2026-109518 · deity 메일링 · The Hacker News(11.4)</div>
+  <div class="notes"><p>코어 공급망 결함의 전형: 수억 대 서버·클라우드 VM·컨테이너 빌드의 apt-get 경로가 잠재 노출면. 실행 우선순위는 (1) APT 자체를 최우선 패치 항목으로, (2) 재시도 0 고정은 검증된 우회책은 아니나 공격 트리거 제거 시도로 가치가 있음(원문 미확인 표기 유지), (3) CI/컨테이너 베이스 이미지 재빌드 시 APT 버전 확인.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">체이널리시스 —<br>수사 인프라가 뚫리고 멈췄다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">11.4 공지: 온패스 공격으로 일부 고객 비밀번호 노출 · 계정 잠금 · 제품군 순차 오프라인</div>
+  <div class="blk">
+    <div class="blk-label">공식 블로그 타임라인</div>
+    <ul>
+      <li><strong>10.30 "다중 전선 사이버 공격" 인지 공지(당시 시스템 무단 접근 증거 없음, Reactor·Data Solutions 선제 오프라인) → 11.2 컴플라이언스 제품(KYT 등)은 자금세탁 탐지 중요성을 들어 계속 가동 결정 → 11.4 오전 "온패스 공격(on-path attack)이 일부 고객 비밀번호를 노출" 확인, 해당 계정 강제 잠금·비밀번호 재설정 요구</strong> — 같은 날 이상 활동 감지로 KYT(UI+API)·주소 스크리닝·로그인 페이지까지 오프라인 확대, Reactor·Data Solutions·Chain(Beta)는 계속 정지</li>
+      <li><strong>회사측 명시: "계정이 부당하게 접근됐다는 증거는 아직 없다", 공격 벡터는 봉쇄·수습 완료, 비밀번호 재설정 링크 클릭 금지(직접 로그인 페이지 이동)</strong> — 그리고 현재 시점에선 체이널리시스 측 재설정 자체가 불가하므로 타 서비스에서 동일 비밀번호 재사용 시 거기서 먼저 변경하라 권고</li>
+      <li><strong>생태계 파장: KYT·Reactor는 거래소 컴플라이언스와 사법 수사의 backbone</strong> — 회사도 "AML 탐지 역할"을 명시하며 가동 중단 판단을 저울질한 끝에 전 정지로 선회했다. 바이낸스 등 진행 중인 대형 사건 수사와 각 기관 AML 모니터링에 공백이 발생한다(구체 금액·기간은 추정 단계)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Chainalysis 공식 블로그 'Updated Nov 4: Security Incident Information' 원문 · SecurityWeek(11.3) 대조</div>
+  <div class="notes"><p>'암호화되지 않은 세션 비밀번호' 등 국내 정리의 구체 표현은 원문에 없다 — 원문은 "on-path attack exposed a subset of customer passwords". 노출 범위가 계정 전체가 아닌 '일부 고객'이고 계정 접근 증거 없음이 공식 입장임을 구분할 것. 공급망 관점 교훈: ARTEX 연쇄(Chainalysis→WorkOS→Chainstack)의 첫 도미노가 결국 여기였다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">딥시크+ARTEX —<br>컨트롤러 하나가 14개국을 돌았다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">오버워치 11.4: 단일 ARTEX 컨트롤러, 10.17부터 11일간 최소 14개국 · Storm-0940 건과 별개</div>
+  <div class="blk">
+    <div class="blk-label">폭로 내용</div>
+    <ul>
+      <li><strong>크라우드스트라이크 오버워치가 중국 연계 베이퍼팬더(Vapor Panda)의 ARTEX 캠페인 상세 공개 — 공격자는 주로 딥시크(DeepSeek)로 ARTEX를 구동하고 상용 LLM 구독 하나를 보조 활용, 단일 침투의 계획 에이전트가 약 14억 입력 토큰 소비</strong> : 유럽 국가 대통령실 전산망을 포함해 동시다발 침투가 성공했고, 팔콘 텔레메트리에서 기존 보고서에 없던 블러드알케미(BLOODALCHEMY) 백도어 배포와 C2 인프라가 확인됐다</li>
+      <li><strong>10월 17일부터 11일간 단일 ARTEX 컨트롤러가 최소 14개국 기관을 타깃 — 컨트롤러에서 공격 도구·표적 파일·에이전트 대화 기록이 간헐적으로 노출될 만큼 작전이 벌려 있었다</strong> : 크라우드스트라이크는 이 활동을 'Storm-0940'으로 보고된 ARTEX 건과는 별개로 규정(그건 IT 관리 업체 백업 탈취 경로의 M365 침투)</li>
+      <li><strong>핵심 평가 — "AI 에이전트 악용이 단일 침투에서 인간 지휘 하의 다수 동시 공격으로 확대"</strong> : 공개 리소스(오픈소스 프레임워크+상용 LLM 구독)만으로 확장형 멀티 에이전트 침투 체계가 구축됐다. '월 수만 원대 구독이면 국가 요인도 뚫린다'는 서사는 이 데이터 위에 성립하지만, 어디까지나 속도·물량의 문제이지 신기술 제로데이 발명이 아니다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>CrowdStrike Overwatch(보안뉴스 11.4 보도) · CrowdStrike 'Vapor Panda uses ARTEX' 원문 종합</div>
+  <div class="notes"><p>연쇄 정리: ARTEX 무기화는 국내 금융사(개인 공격자+딥시크) → Storm-0940(M365 2,250곳) → 북한 Onyx·Pearl Sleet(MS 10.29) → 베이퍼팬더 대규모(오늘)로 한 달 반 안에 네 번 관측됐다. 같은 도구가 다른 행위자에게 복제 유통되는 '탈중앙화 무기화'가 본질이며, 도구 차단이 아니라 에이전트형 침투의 패턴 탐지로 대응해야 한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 4</div>
+  <h2 class="s-title">크라우드스트라이크 M&A —<br>방어측도 AI로 '사서' 간다</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">Fiddler AI + Dreadnode 총 $4.95억 인수 추진 · 11.4 에이전틱 보안 제품군 동시 발표</div>
+  <div class="blk">
+    <div class="blk-label">거래와 맥락</div>
+    <ul>
+      <li><strong>크라우드스트라이크가 Fiddler AI(AI 모델 거버넌스·관측 — 사내 배포 LLM의 환각, 데이터 유출, 프롬프트 인젝션 실시간 감시)와 Dreadnode(적대적 AI 모의침투·에이전트 레드팀 자동화)를 총 4억 9,500만 달러에 인수하기 위해 막바지 협상</strong>(TechCrunch 11.3 등 보도) — 회사가 블로그에 'Dreadnode 인수' 입장을 함께 올리며 사실상 공식화 국면</li>
+      <li><strong>같은 날(11.4) Falcon 플랫폼에 에이전틱 SOC 확장(에이전트 내부 위협 탐지), 에이전틱 어드버서리 에뮬레이션, 클라우드 AI 보안, 엔터프라이즈 브라우저 보안을 일괄 발표</strong> — 인수와 제품 출시가 하루에 겹친 것은 "AI 에이전트가 공격자이자 자산"이라는 시장 판단의 선언이다</li>
+      <li><strong>산업 해석: 이번 주 뉴스줄(LLM재킹·ARTEX 연쇄·대통령실 침투)이 전부 '공격에 쓰인 AI'였고, M&A는 그 거울상 — 방어측은 에이전트 가시성(Fiddler)과 공격 시뮬레이션(Dreadnode) 양끝을 동시에 확보</strong> : EDR/XDR 1위의 다음 전장은 'Agentic AI Security' 레이어다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>TechCrunch(11.3) · CrowdStrike 블로그(11.3~4) · CSO Online 종합</div>
+  <div class="notes"><p>거래 조건은 "막바지 협상" 단계로 종결 전 — 인수 성사 시 통합·로드맵 리스크는 전형적으로 2분기 이상. 구매측 관점에서는 기존 AI 가시성 벤더 계약의 갱신·종료 조항을 점검할 시점이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">구조 분석 —<br>'검증된 것'을 믿지 못하는 주</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">해석 프레임</div>
+    <ul>
+      <li><strong>네 기사는 같은 질문을 반복한다 — '검증을 통과한 것'이 정말 안전한가: APT는 GPG 서명+SHA-256을 통과한 뒤에 패키지를 바꾼다(검증 시점과 설치 시점의 이격), 체이널리시스는 고객에게 보내는 정당한 비밀번호 재설정 이메일 자체를 공격자가 사칭 수단으로 쓸 수 있어 '링크 클릭 금지'를 요구한다(신뢰 채널의 위조 가능성), ARTEX는 정상 도구와 합법 구독만으로 침투 체계를 조립한다(악성코드 없이 뚫린다)</strong> — 방어 모델이 전제하던 '서명 있음=안전, 공식 메일=진짜, 정품 도구=무해' 세 명제가 이번 주에 모두 반례를 만났다</li>
+      <li><strong>공격의 새 공통분모는 '전환점(handing-off) 공격' — 검증→저장→설치, 통지→사용자 행동, 도구→작전처럼 신뢰가 넘어가는 순간의 간극을 노린다</strong> : APT의 재시도 경쟁, 체이널리시스의 온패스, ARTEX의 에이전트 위임은 모두 '인계 인수가' 구간에서 계약 위반을 일으킨다</li>
+      <li><strong>그래서 방어 원칙도 하나로 수렴 — 단일 검증 스냅샷을 믿지 말고 설치 직전 재검증(재다운로드 시 해시 재확인), 행동 요구의 대역 외 확인(링크 대신 직접 이동), 에이전트형 자동화의 행위 관측(무엇을 했는지 로그)</strong> : 제로 트러스트가 '사람'에서 '객체·행위'로 확장되는 중이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>데비안/우분투 어드바이저 · 체이널리시스 공지 · 오버워치 분석 교차</div>
+  <div class="notes"><p>'공급망 보안'이 의존성과 서명의 문제가 아니라 시간축(검증 시점≠사용 시점)의 문제라는 재정의가 이번 주 최대의 교훈이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">ARTEX 6주사 —<br>도구 하나와 다섯 행위자의 지도</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">캠페인 계보(모두 실측 보도 기준)</div>
+    <ul>
+      <li><strong>9월 말 국내 은행·카드사 — 중국 광둥 거주 개인 공격자가 ARTEX+딥시크 결합, 금융권 연쇄 침해(CrowdStrike) / 10월 초 ConnectWise 백업 탈취 → Storm-0940의 M365 고객 2,250곳 '기계 속도' 침투(MS) / 10월 17일~ 베이퍼팬더 단일 컨트롤러 11일간 14개국·대통령실 포함, 입력 토큰 14억(오버워치) / 10월 하순~ 북한 Onyx·Pearl Sleet 실전 투입(MS) / 10~11월 Chainalysis·WorkOS·Chainstack 연쇄(Web3·API 인프라)</strong> — 개발자 중단 선언에도 fork는 이미 유통</li>
+      <li><strong>행위자 유형이 개인 범죄자 → 국가 배후(중국) → 북한 조직 → 인프라 공급망 피해로 퍼진 순서가 곧 '무기 확산 속도'의 실측값</strong> : 과거 악성코드 툴킷은 언어·장벽으로 확산에 년 단위가 걸렸고, 이번 도구는 6주다. 오픈소스 에이전트 프레임워크는 문서·커뮤니티까지 따라오므로 확산이 더 빠르다</li>
+      <li><strong>탐지의 함정: 행위자마다 IOC가 다르고 같은 도구라도 트래픽 지문이 다르다 — 'ARTEX IOC 목록'을 까는 것으로는 부족하고, 에이전트형 침투의 불변 행동(연속 탐색→경로 개척→권한 이동이 사람 속도 아닌 간격으로 진행되는 패턴)을 잡아야 한다</strong> : CrowdStrike·MS 모두 "기존 방어 체계가 갖춰져 있으면 탐지 가능"이라고 선을 긋는 이유</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>CrowdStrike(10.8·오버워치) · MS Storm-0940·북한 보고서(10.29) · 각 피해사 공지 종합</div>
+  <div class="notes"><p>공급망 위협이 '벤더→고객' 단일 방향이 아니라 '도구→행위자→피해 인프라→그 고객'의 다층 전파가 됐다. 자사가 피해자인 동시에 하류 고객에게 통지 주체가 되는 이중 위치(Chainstack 식)를 사내 시나리오에 추가할 것.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 3</div>
+  <h2 class="s-title">이번 주 실행 설계 —<br>패키지·계정·에이전트 3중 방어선</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">방어 프로토콜</div>
+    <ul>
+      <li><strong>① 패키지 계층 — 전 데비안/우분투 시스템(서버·CI 러너·컨테이너 베이스 포함)의 APT 버전을 인벤토리하고 고정판으로 즉시 갱신, 배포 전 이미지 재빌드, 미러 트래픽을 사내 신뢰 경로로 수렴(제3자 미러·임시 프록시 금지), apt-get 재시도 0은 트리거 제거 시도로 병행하되 '원문 미검증 우회책'임을 대장에 기록</strong> : 설치를 공격 표면으로 취급하는 하루가 향후 사고를 막는다</li>
+      <li><strong>② 계정·통지 계층 — 체이널리시스 고객은 공지대로 링크 없이 직접 로그인해 비밀번호 재설정, 재사용된 비밀번호는 전 서비스에서 선제 변경, 사내에서도 '보안 통지 = 발신 확인 후 행동' 절차를 표준화(피셔가 가장 잘 위조하는 건 정당한 보안 메일)</strong> : 비밀번호 재설정 요구가 오면 채널을 바꿔 확인하는 습관이 온패스 공격의 카운터</li>
+      <li><strong>③ 에이전트 계층 — 사내 AI 에이전트·자동화 스크립트의 행위 로깅(어떤 도구로 무엇을 실행했는지), LLM API 키 하드 쿼터(전일 LLM재킹 권고 유지), EDR에 에이전트형 침투 탐지 룰 검토, Fiddler류 가시성 도구가 없어도 '에이전트가 만든 코드·설정의 별도 승인 경로'는 오늘부터 가능</strong> : 방어 M&A를 기다릴 필요 없이, 공격이 쓰는 속도 차이를 줄이는 게 1차 목표다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>어드바이저·공지 기반 종합 설계 · GTIG LLM재킹 권고 연계</div>
+  <div class="notes"><p>3중 방어선은 각각 이번 주 네 기사에 대응한다: ①APT, ②체이널리시스+mSecure류 통지 리스크, ③ARTEX·LLM재킹. 예산 없이 되는 것들부터 — 버전 갱신, 링크 안 클릭하기, 에이전트 승인 경로.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">APT 버전 전수 점검·갱신 — 데비안 고정판/우분투 신규 빌드(26.10=3.3.3ubuntu0.1, 26.04=3.2.1ubuntu0.1, 24.04=2.8.4ubuntu0.1, 22.04=2.4.15ubuntu0.1) 적용, CI·컨테이너 베이스 이미지 재빌드, 서명 검증 통과 후 설치 전 재확인 원칙 수립</div><div class="act-sub">CVE-2026-109518 — 수억 대 리눅스의 설치 경로가 공격면</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">체이널리시스 고객 대응: 공지 메일의 링크 클릭 금지, 직접 로그인 후 비밀번호 재설정(현재는 사측 재설정 불가 안내 유의), 동일 비밀번호 재사용 서비스 선제 변경, KYT/Reactor 의존 컴플라이언스·수사 절차에 대체 수단·예외 프로세스 가동</div><div class="act-sub">'계정 접근 증거 없음'은 방심 근거가 아니다 — 노출=회전</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">ARTEX·에이전트 침투 탐지 점검 — 연속 탐색→경로 개척→권한 이동을 비정상 간격으로 수행하는 행위 패턴 룰 검토, BLOODALCHEMY 백도어 IOC 대입, 사내 AI 에이전트의 실행 로그·권한 범위 즉시 파악</div><div class="act-sub">14개국을 돈 컨트롤러의 지문을 우리 로그로 먼저 찾기</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">미러·프록시 신뢰 경로 정비 — 사외 미러 사용 중단·사내 검증 미러 수렴, 프록시 경유 다운로드의 TLS 체인 감사, 재시도 옵션(Acquire::Retries) 사용 현황 실태조사(우회책은 원문 미검증 — 참고용)</div><div class="act-sub">MitM이 설 자리를 없애는 것이 근본 방어</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">'보안 통지 위조' 훈련 — 비밀번호 재설정·계정 잠금류 메일을 발신 확인 후 처리하는 사내 표준 절차 공지, 중요 시스템은 대역 외 확인(전화·메신저) 2단계 도입. 공급망 이중 위치 시나리오(피해자이면서 통지 주체) 탁상 연습</div><div class="act-sub">공격자가 가장 많이 위조하는 건 정당한 보안 메일이다</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">Agentic AI 보안 로드맵 — Fiddler/Dreadnode 인수 진행 상황 관찰(기존 벤더 계약 영향 점검), 자사 AI 거버넌스 성숙도 평가, 요인·요람급 자산에 대한 AI 기반 실시간 침투 시나리오를 위협 모델에 상설화</div><div class="act-sub">방어 산업이 움직이는 방향 = 위협의 실체</div></div></div>
+  <div class="src"><b>편집 고지</b>본 아침판은 Debian/Ubuntu 어드바이저, Chainalysis 공식 블로그(11.4 갱신), CrowdStrike 오버워치·보안뉴스(11.4), TechCrunch(11.3) 원문을 대조했습니다. 국내 정리의 'CVSS 치명적' 표기는 우분투 공식 High(7.7)와 병기했고, 'HTTPS 미러 안전', '암호화되지 않은 세션 비밀번호' 등 원문 미확인 표현은 채택하지 않았습니다.</div>
+  <div class="notes"><p>오늘 요약: APT 갱신·이미지 재빌드, 체이널리시스 통지 절차 준수, 에이전트 침투 행위 탐지, 미러 신뢰 경로 정비, 통지 위조 훈련. 큰 그림 — 검증된 것을 다시 검증하고, 공식 메일을 다시 확인하고, 에이전트를 다시 감시하는 '이중 확인의 주간'.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
