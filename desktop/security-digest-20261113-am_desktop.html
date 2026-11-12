@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.13 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Daily Digest · Morning Edition</div>
+  <h1 class="s-title">아침 정보보안<br>다이제스트<br>— 공급망의 자격증명</h1>
+  <div class="title-date">2026. 11. 13 (FRI)</div>
+  <div class="title-meta">
+    <div><div class="n">Apify 침해</div><div class="l">전 고객 API 토큰 회수·2FA 재설정 권고 — AI 데이터 파이프라인 파장</div></div>
+    <div><div class="n">오퍼레이션 엔드게임</div><div class="l">Gootloader·CastleRAT·StealC C2 235대 압류 — 탈취 자격증명 640만 건 확보</div></div>
+    <div><div class="n">SCKit 실측</div><div class="l">ScreenConnect 지원 세션 악용 툴킷 — 이미 패치된 CVE-2026-84869 경유</div></div>
+  </div>
+  <div class="title-foot">체코의 웹 스크레이핑·브라우저 자동화 플랫폼 Apify(고객사 8만, 마이크로소프트·삼성·T모바일·유럽집행위 포함)가 11월 9~10일 내부 시스템 비인가 접근을 받아 내부 자격증명을 폐기하고 고객 API 토큰·프록시 비밀번호를 회전, GitHub 등 외부 OAuth를 차단했습니다(The Hacker News·BleepingComputer). 유로폴과 9개국 사법당국은 '오퍼레이션 엔드게임'으로 Gootloader·CastleRAT·StealC의 C2 서버 235대와 도메인 257개를 압류·싱크홀하고 탈취 자격증명 640만 건을 확보했습니다(BleepingComputer·Europol). 원격 지원 도구 ScreenConnect의 활성 세션을 악용하는 툴킷 'SCKit'이 실공격에서 확인됐습니다(The Hacker News·Blackpoint Cyber). 여의도 FISCON 2026에서는 "AI 해킹은 기계 속도, 방어는 수동 점검에 갇혀 있다"며 금융권 사이버 팬데믹 경고와 에이전트 AI 킬 스위치 권고가 나왔습니다(머니투데이)<br>국내외 주요 정보보안 이슈 요약 및 심층 분석 — 아침판</div>
+  <div class="notes"><p>2026년 11월 13일자 금요일 아침 다이제스트. 오늘의 축은 '신뢰된 통로의 자격증명' — AI 데이터 수집 플랫폼의 내부 토큰, 스틸러 인프라에 쌓인 640만 건의 피해자 자격증명, 원격 지원 세션의 인증 쿠키까지, 오늘 네 사안 모두 '합법적으로 통과한 자격'이 공격 도구가 된 지점에서 터졌다. 사용자 브리핑을 BleepingComputer·Europol 발표·Blackpoint Cyber APG 분석과 교차 대조했으며, 브리핑의 두 가지 과장을 정정했다(아래 각 장 참조).</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">Apify 침해 —<br>AI 데이터 파이프라인의<br>토큰이 돌았다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">11.9~10 비인가 접근 · 11.10 12:13 UTC 탐지 · 내부 자격증명 폐기·세션 강제 종료</div>
+  <div class="blk">
+    <div class="blk-label">확인 사항 (Apify 공식 공지·BleepingComputer)</div>
+    <ul>
+      <li><strong>체코의 웹 스크레이핑·브라우저 자동화 플랫폼 Apify가 11월 9~10일 내부 시스템 일부에 비인가 제3자 접근을 받았다고 공식 발표했다 — 다음 날 12:13 UTC 탐지 직후 공격자 접속 차단, 내부 자격증명 무효화, API 토큰 회전, 활성 세션 강제 종료를 단행했다</strong></li>
+      <li><strong>예방 조치로 GitHub 등 외부 통합 OAuth 연결을 해제했고(안전 확인 후 재연결 안내 예정), 피해 고객에게는 Apify API 토큰과 프록시 비밀번호가 회전됐다고 통지했다</strong> — 회사는 "플랫폼에 저장된 계정 데이터가 영향을 받았다는 정황은 발견되지 않았다"고 밝히면서도, <strong>"2FA 코드가 노출됐을 수 있다"며 콘솔에서 2단계 인증 재설정을 권고했다(비밀번호는 안전하다고 안내)</strong></li>
+      <li><strong>고객사 8만 곳 — 마이크로소프트·삼성·T모바일·액센추어·지멘스·유럽집행위원회·로슈가 공식열거  목록에 포함</strong> — 생성형 AI 붐과 함께 LLM·에이전트의 실시간 데이터 수집 계층으로 얹혀진 플랫폼이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Apify 공지 · BleepingComputer(11.12) · The Hacker News</div>
+  <div class="notes"><p>정정 1건: 브리핑은 고객사를 '삼성, 지멘스, T모바일, 액센츄어 등'으로 적었지만 공식 목록에는 마이크로소프트와 로슈도 포함된다. 더 중요한 정정은 위험의 성격 — 직접 유출 증거는 아직 없고, 노출 의심 항목은 2FA 시드다. 2FA 시드가 새면 공격자는 비밀번호만으로 2FA를 뚫는다: '비밀번호 안전' 발표와 '2FA 재설정 권고'를 나란히 읽어야 하는 이유다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">오퍼레이션 엔드게임 —<br>스틸러 창고를<br>터뜨리다</h2>
+  <hr class="rule-double">
+  <div class="badge b-good">C2 서버 235대 압류 · 도메인 257개 무력화 · 탈취 자격증명 640만 건 식별</div>
+  <div class="blk">
+    <div class="blk-label">작전 성과 (Europol·BleepingComputer 11.12)</div>
+    <ul>
+      <li><strong>유로폴·유로저스트 조정 아래 불가리아·캐나다·덴마크·독일·몰도바·네덜란드·폴란드·영국·미국 9개국과 민간 파트너가 합동으로 Gootloader(2020년부터 활동한 로더)·CastleRAT(작년 등장 RAT)·StealC(자격증명·암호화폐 지갑 스틸러)의 인프라를 타격했다</strong> — 세 패밀리 모두 랜섬웨어 조직에 초기 침투 수단을 공급해 온 공급망이다</li>
+      <li><strong>범죄자 인프라에서 식별된 피해자 데이터셋 640만 건 — 감염 기기에서 훔친 자격증명으로, 암시장에서 판매돼 랜섬웨어 등 후속 공격에 쓰일 예정이었다</strong> — CastleRAT 피해자 데이터는 HaveIBeenPwned·DIVD·CheckjeHack·NoMoreLeaks·Sekoia·Shadowserver·NL-NCSC 플랫폼으로 공개 통지된다</li>
+      <li><strong>같은 작전의 연속선 — 6월 SocGholish·Evil Corp 서버 106대+WordPress 감염 사이트 1만5천 건 정화, 같은 달 Amadey·StealC 인프라 326개 서버·142 도메인 차단과 자격증명 약 2,700만 건 회수(피해 시스템 38만5천 곳), 1년 전 Rhadamanthys·VenomRAT·Elysium 서버 1,000대 이상 타격</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Europol 발표 · BleepingComputer(11.12)</div>
+  <div class="notes"><p>'640만 건'은 이번 주 압수분이고, 6월 Amadey·StealC 단계에서 이미 2,700만 건이 회수된 전력이 있다 — 누적 스틸러 피해 규모가 얼마나 거대한지의 척도다. 기업 실무 관점: 임직원 이메일이 HaveIBeenPwned 등에 올라있다면 그건 구식 유출이 아니라 '현재 유통 중인 열쇠'일 수 있다. 패스워드 교체+MFA 재등록이 필요하다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">SCKit —<br>지원 기사님을 노린다:<br>세션 하이재킹의 완성형</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">Blackpoint Cyber APG 포착 · CVE-2026-84869(CVSS 9.9, 이미 패치·KEV 등재) 경유</div>
+  <div class="blk">
+    <div class="blk-label">공격 메커니즘 (The Hacker News·Blackpoint Cyber)</div>
+    <ul>
+      <li><strong>SCKit은 새 취약점이 아니라 이미 패치된 CVE-2026-84869(부적절한 권한 관리·승인 누락, CVSS 9.9 — guest 세션에서 호스트 확인 없이 파일 전송·실행)를 쓰는 툴킷이다</strong> — 공격 시퀀스는 플랫폼 내장 Run Command로 기존 ScreenConnect 설치 확인 → 공격자 MSI('sc.msi') 다운로드 실행 → 배치 드로퍼('sckit-run.bat') → 'ns.mo7sen[.]dev'에서 PowerShell 디코더('sckit-decoder.ps1') 수신</li>
+      <li><strong>무단 ScreenConnect Access 클라이언트 2개를 심어 영속 원격 제어를 확보하고, RelayTrap 컴포넌트로 지원 연결을 요격한다 — 감염 엔드포인트를 조사하러 온 기술자의 워크스테이션을 역방향으로 감염시키는 '역시도(reverse-pivot)' 기능</strong></li>
+      <li><strong>기술자 기계에서 로컬 브라우저 데이터·프로세스 메모리를 뒤져 인증된 관리 세션(.ASPXAUTH 쿠키)을 탈취, 자격증명 없이 그 기술자가 관리하는 다른 고객 엔드포인트로 명령을 배포한다 — 기존 에이전트를 통해 NT AUTHORITY\SYSTEM 권한으로 소프트웨어 배포까지 수행</strong> — 악용된 CVE는 9월 11일 CISA KEV 등재(연방 패치 기한 9월 14일), 과거 XMRig 채굴 유포에 쓰인 것과 같은 결함이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News(11.12) · Blackpoint Cyber APG</div>
+  <div class="notes"><p>정정 2건: 브리핑은 '활성 세션 토큰을 메모리에서 가로채는 신종 기법'으로 서술했지만, 실측은 '패치 안 한 CVE-2026-84869로 발판 → 기술자 역감염 → 세션 쿠키 탈취'의 3단 구조였다. 토큰 가로채기는 진입 후 두 번째 단계다. 핵심 교훈은 패치 격차 그 자체 — KEV 등재 두 달 반이 지나도 미패치 엔드포인트가 공격면을 제공한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 4</div>
+  <h2 class="s-title">FISCON 2026 —<br>"방어가 수동 속도다"<br>금융권 팬데믹 경고</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">11.12 여의도 · 금보원 피격 사흘 뒤 개막 — VIP 없이 실무자 중심 축소 개최</div>
+  <div class="blk">
+    <div class="blk-label">현장 진단 (머니투데이 보도)</div>
+    <ul>
+      <li><strong>금융정보보호 콘퍼런스 FISCON 2026가 11월 12일 여의도에서 개막 — 사흘 전 자체 시스템이 해킹된 금융보안원의 박상원 원장은 "전문 기관임에도 유출 사고가 발생해 송구하다"고 사과하며, VIP 일정을 제외한 실무자 중심 행사로 진행했다</strong></li>
+      <li><strong>발표자들의 공통 진단: 공격자는 자동화 AI 에이전트로 초단위 '기계 속도' 취약점 스캔·우회 공격을 하는데, 금융사 방어는 수동 점검과 경직된 컴플라이언스에 갇혀 있다 — 금융망 전체 마비, '사이버 팬데믹' 가능성이 경고로 나왔다</strong></li>
+      <li><strong>에이전트 AI가 새 사각지대로 지목 — 프롬프트 인젝션 방어를 넘어 에이전트의 과도한 권한 실행 방지, 메모리 조작 탐지, AI 레드티밍 검증 의무화, 그리고 오작동·폭주 시 즉시 권한 회수·세션 차단이 가능한 '인간 개입 킬 스위치' 설계가 필수 요구사항으로 제시됐다</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>머니투데이 · 보안뉴스(FISCON 개막 보도)</div>
+  <div class="notes"><p>아이러니한 배치다 — 'AI 해킹 속도'를 경고하는 기관이 바로 그 속도에 뚫렸다. 어제 특집 덱에서 정리한 대로 금보원 사고의 구멍은 기술이 아니라 절차(계정 승인·제출 관행·위탁 감독)였고, 오늘 FISCON의 킬 스위치 권고도 결국 '절차의 자동화'를 요구한다. 경고와 사고가 같은 주체에 겹칠 때 권고의 신뢰도는 실행으로만 회복된다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">토큰이 새는 계층 —<br>Apify 사태가 보여주는<br>AI 공급망의 지오메트리</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">구조 분석</div>
+    <ul>
+      <li><strong>Apify는 '데이터 수집 SaaS'이지만 실질 기능은 세 겹이다: 고객 네트워크 내부로 나가는 프록시 자격, GitHub 등 코드 저장소와 맺은 OAuth, 그리고 에이전트 워크플로우를 실행하는 API 토큰 — 이번 회수는 세 겹을 한꺼번에 돌렸다</strong> — SaaS 하나 침해에 연쇄 재인증이 필요한 이유가 이 결합도에 있다</li>
+      <li><strong>위험의 본사는 유출보다 무결성이다: LLM 에이전트가 크롤링 결과를 그대로 학습·판단 재료로 삼는 구조에서, 탈취한 토큰으로 파이프라인에 허위 데이터를 주입하면(Data Poisoning) 기업 AI는 오염된 입력으로 의사결정한다 — 탐지가 거의 불가능한 2차 피해다</strong></li>
+      <li><strong>연속 사고 문법 — Fireworks AI(클라우드 경유)·mSecure 비밀번호 관리자·OpenCode API 키 유출 등 'AI 인프라 자격증명' 사고가 올해 나란히 쌓였다: 모델 자체를 뚫지 않아도, 모델에게 먹이는 통로와 통로의 열쇠를 뚫면 된다</strong> — 에이전트 시대 공급망 실사의 대상은 벤더 소프트웨어가 아니라 벤더가 가진 우리 명의의 자격이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>BleepingComputer 보도 종합 · Apify 공지</div>
+  <div class="notes"><p>Apify 고객 중 AI 파이프라인에 이 플랫폼을 쓰는 팀은 오늘 두 가지를 해야 한다: 회수된 토큰으로 도는 자동화가 살아있는지(깨진 통합 방치=우회 경로), 그리고 그 자동화의 출력이 어떤 판단에 쓰이는지. '토큰 회전'은 회사 측 조치일 뿐, 의존성 목록은 각 기업이 직접 그려야 한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">세 개의 구멍, 하나의 문법 —<br>'합법 자격'의 무기화</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">Apify 내부 토큰 · 스틸러 자격증명 뱅크 · ScreenConnect 관리 세션</div>
+  <div class="blk">
+    <div class="blk-label">쟁점 분석</div>
+    <ul>
+      <li><strong>오늘 세 기술 사안은 겉보기 플랫폼이 전혀 다르지만 동일 문법을 쓴다 — 악성 코드 주입 없이, '이미 신뢰된 자격'으로 경계를 통과한다: Apify는 내부 시스템에 도달한 자격증명 폐기로, 엔드게임은 훔친 640만 개 로그인으로, SCKit는 승인된 원격 지원 세션과 .ASPXAUTH 쿠키로 움직인다</strong></li>
+      <li><strong>방어의 대응 단위도 같아진다: 경계 차단이 아니라 자격의 수명 관리 — 단기 토큰·세션 즉시 만료·권한 최소화가 Apify에는 회수 조치로, 기업에는 "원격 지원 세션 종료 즉시 자격 만료" 권고로, 스틸러 대응에는 MFA 재등록으로 각각 번역된다</strong></li>
+      <li><strong>그리고 어제의 금보원 사고까지 같은 축에 선다 — 위조 금감원 계정은 '승인이라는 자격 발급 절차'를 통과한 공격이었다: 네 사고를 관통하는 질문은 하나, "당신 시스템이 신뢰하는 자격의 발급·검증·회수 주기는 누가, 언제 검증했는가"</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>BleepingComputer · Europol · Blackpoint Cyber · 금융보안원 사고 보도 종합</div>
+  <div class="notes"><p>'identity-first 보안'이 슬로건에서 실무가 되는 지점이다. EDR은 악성을 잡지만 유효 세션은 못 잡는다 — 이상 시간대 관리 접속, 세션 수명 이탈, 지원 도구 프로세스의 아웃바운드 패턴처럼 '자격의 행동'을 감시하는 룰이 이번 주 모두의 공통 액션 아이템이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">Apify 사용 조직 — 통지 확인 후 API 토큰·프록시 비밀번호 회전 완료 검증, 콘솔에서 2FA 재등록, 해제된 GitHub OAuth 재연결 전 최소 권한 재확인</div><div class="act-sub">공식 통지 대상은 개별 이메일 — 스팸함 점검</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">ScreenConnect 전deployment 패치 상태 재확인 — CVE-2026-84869(KEV, 9.9) 미적용 엔드포인트 색출, 무단 Access 클라이언트 등록 목록 감사, sc.msi·sckit-run.bat·ns.mo7sen[.]dev IOC 차단 규칙 적용</div><div class="act-sub">SCKit — 패치 격차 두 달 반이 공격면</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">원격 지원 도구 거버넌스 — 세션 종료 즉시 자격 만료 정책, 기술자 워크스테이션 분리(관리 세션과 개발·일반 사용 격리), 지원 연결의 guest→host 파일 실행 경로 차단</div><div class="act-sub">MSP·IT 서포트 조직이 1순위 표적</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">엔드게임 통지 확인 — 임직원 이메일의 HaveIBeenPwned 노출 점검, 일치 계정 비밀번호 교체+MFA 재등록, 동일 비밀번호 재사용 사내 확산 차단</div><div class="act-sub">640만 건 중 CastleRAT 피해분 공개 통지 시작</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">AI 파이프라인 자격 인벤토리 — 스크레이핑·자동화 API의 토큰-소유자-소비 워크플로우 대장화, 데이터 주입 탐지(출력 분포 이상 감시) 설계 착수, FISCON 권고(레드티밍 의무·킬 스위치) 사내 적용 기준 수립</div><div class="act-sub">에이전트 시대의 공급망 실사는 자격 단위다</div></div></div>
+  <div class="src"><b>편집 고지</b>본 아침판은 사용자 제공 브리핑을 BleepingComputer(Apify·엔드게임)·Europol 발표·The Hacker News/Blackpoint Cyber(SCKit)·머니투데이(FISCON)와 교차 대조했습니다. 정정 사항: ① Apify 고객사 공식 목록에는 마이크로소프트·로슈도 포함(브리핑 생략) ② SCKit은 신취약점이 아니라 패치된 CVE-2026-84869 경유이며 세션 탈취는 2단계 ③ 엔드게임의 640만 건은 이번 주 식별분으로, 6월 단계 2,700만 건과 구분됩니다. Apify 고객 데이터 직접 유출 정황은 회사 발표상 없음(2FA 시드 노출 의심 상태).</div>
+  <div class="notes"><p>오늘 요약: Apify 토큰·2FA 회전 확인, ScreenConnect 패치 감사+IOC 차단, 기술자 워크스테이션 격리, 하브빤 통지 점검, AI 자격 인벤토리 착수. 이번 주 한 문장 — 공격이 '취약점'이 아니라 '자격'을 사냥하는 동안, 방어의 단위는 자산 목록에서 자격 수명 관리로 옮겨가야 한다.</p></div>
+</section>
+
+</div>
+
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
