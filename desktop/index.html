@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보안 다이제스트 아카이브 — PC 16:9</title>
+<style>
+:root{--paper:oklch(98% 0.012 45);--ink:oklch(18% 0.012 45);--ink-2:oklch(32% 0.014 45);--ink-3:oklch(48% 0.012 45);--accent:oklch(42% 0.20 25);--rule:oklch(84% 0.010 45)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:'Segoe UI','Noto Sans KR',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:48px 28px 80px}
+.tag{font-family:Consolas,'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1{font-weight:800;font-size:42px;line-height:1.1;margin-top:12px;letter-spacing:-.01em}
+.sub{font-family:Consolas,monospace;font-size:13px;letter-spacing:.08em;color:var(--ink-3);margin-top:12px}
+.rule{border:none;border-top:3px solid var(--ink);position:relative;margin:22px 0 8px}
+.rule::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--ink)}
+.search{width:100%;margin:22px 0 10px;padding:12px 14px;border:1.5px solid var(--rule);background:#fff;font-size:15px;color:var(--ink)}
+.search:focus{outline:none;border-color:var(--ink)}
+.month{font-family:Consolas,monospace;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink-3);margin:30px 0 6px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+.row{display:flex;align-items:center;gap:20px;padding:15px 6px;border-bottom:1px solid var(--rule);text-decoration:none;color:inherit}
+.row:hover{background:oklch(95% 0.014 45)}
+.date{flex:0 0 64px}
+.date b{font-size:22px;font-weight:800;display:block;line-height:1}
+.date i{font-family:Consolas,monospace;font-style:normal;font-size:11px;color:var(--ink-3);letter-spacing:.08em}
+.title{flex:1;min-width:0;font-size:15.5px;font-weight:600;line-height:1.4}
+.meta{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.chip{font-family:Consolas,monospace;font-size:10.5px;font-weight:700;padding:3px 8px;border:1px solid var(--rule);color:var(--ink-3);white-space:nowrap}
+.chip.slug{border-color:var(--accent);color:var(--accent)}
+.go{color:var(--ink-3);font-size:17px}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);font-size:12.5px;line-height:1.7;color:var(--ink-3)}
+@media(max-width:640px){.meta{display:none}h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="tag">PC Desktop Edition · 16:9</div>
+<h1>보안 다이제스트 아카이브</h1>
+<div class="sub">61개 호 · PC 화면(1280×720) 최적화 · 최신 2026.11.12</div>
+<hr class="rule">
+<input id="q" class="search" type="search" placeholder="날짜, CVE, 키워드로 찾기" autocomplete="off">
+<div id="list"></div>
+<div class="foot">PC 16:9 버전입니다 — 키보드 ←/→ 또는 드래그로 슬라이드를 이동합니다. 모바일용 세로 판은 <a href="../index.html">기존 아카이브</a>.<br>이 목록 페이지의 검색어 필터는 제목 기준이며, 덱 내 검색은 각 덱에서 Ctrl+F를 사용하세요.</div>
+</div>
+<script>
+var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+var months = Array.prototype.slice.call(document.querySelectorAll('.month'));
+document.getElementById('q').addEventListener('input', function(){
+  var f = this.value.trim().toLowerCase();
+  rows.forEach(function(r){ r.style.display = r.textContent.toLowerCase().indexOf(f) !== -1 ? '' : 'none'; });
+  months.forEach(function(m){
+    var el = m.nextElementSibling, any = false;
+    while (el && !el.classList.contains('month')) {
+      if (el.classList.contains('row') && el.style.display !== 'none') any = true;
+      el = el.nextElementSibling;
+    }
+    m.style.display = any ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
