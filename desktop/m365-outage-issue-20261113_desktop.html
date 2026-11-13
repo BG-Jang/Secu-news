@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Microsoft 365 글로벌 장애 특집 — 2026.11.13 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+.back-btn{position:absolute;top:14px;left:18px;z-index:40;display:inline-flex;align-items:center;gap:7px;padding:7px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--text-2, #555);background:rgba(128,128,128,.10);border:1px solid rgba(128,128,128,.25);border-radius:8px;text-decoration:none;opacity:.75;transition:opacity .2s,background .2s}
+.back-btn:hover{opacity:1;background:rgba(128,128,128,.20)}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<a class="back-btn" href="index.html" title="목록으로 돌아가기">&#8592; 목록</a>
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">창구가 막혔다 —<br>Microsoft 365<br>글로벌 장애 해부</h1>
+  <div class="title-date">2026. 11. 13 (FRI)</div>
+  <div class="title-meta">
+    <div><div class="n">MO1550821 + EX1550543</div><div class="l">Exchange·Teams·SharePoint·Copilot·Defender XDR 동시 영향 — 다운디텍터 13만 건</div></div>
+    <div><div class="n">원인: 서버 실종 + 건강검진 실패</div><div class="l">트래픽 증가 아님 — 보안 연결 프로세스 포화, 최근 네트워크 구성 변경 롤백 중</div></div>
+    <div><div class="n">사이버 공격 증거 없음</div><div class="l">MS 공식 — 단 패치 튜즈데이 이틀 뒤, 원인은 아직 미확정</div></div>
+  </div>
+  <div class="title-foot">11월 12일(목) 오후, Outlook·Teams·Copilot을 비롯한 Microsoft 365 핵심 서비스가 전 세계적으로 연결 장애를 일으켰습니다 — 마이크로소프트는 "트래픽 증가가 아니라 다수 서버가 예기치 않게 사용 불가 상태에 빠져 남은 인프라가 과부하됐다"고 밝히고, 배포 중단·트래픽 재분산·서버 재시작·최근 네트워크 구성 변경 롤백으로 단계적 복구를 진행했습니다(BleepingComputer·SecurityWeek). 이 특집은 두 건의 사고(MO1550821·TM1550488) 시계열, '건강검진 실패'가 서버를 죽이는 구조, 그리고 장애가 남기는 신뢰·실무 질문을 분석합니다<br>Microsoft 365 대규모 장애 심층 특집</div>
+  <div class="notes"><p>2026년 11월 13일자 스페셜 덱. 축: '공격이 아니라도 창구는 막힌다' — 가용성 사안은 기밀성·무결성과 다른 두 개의 축으로, 이번 장애는 그것이 한꺼번에 드러난 사례다. 모든 시각은 ET(동부시간) 기준이며, MS의 공지 언어는 원문 표현('예기치 않게 사용 불가', '구성 변경 롤백 검토')을 그대로 유지했다. 11-13 현재 root cause 미확정 상태의 스냅샷임을 각 장에 병기한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Incident Overview</div>
+  <h2 class="s-title">무엇이, 언제, 얼마나 —<br>확인된 사실 정리</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">11.12 13:26 ET 시작 · Americas Exchange 장애로 출발 → 전 지역·전 서비스 확산</div>
+  <div class="blk">
+    <div class="blk-label">공식 확인 사항 (MS 관리자 센터 공지·BleepingComputer)</div>
+    <ul>
+      <li><strong>11월 12일 목요일, MS는 먼저 Teams 단독 사고(TM1550488, 9:45~10:53 ET)를 겪었다 — 북·남미에서 메시지 발송 지연·실패, 대화 생성 오류, 채팅 조회 문제가 발생했고 '인프라 내 자원 경합(resource contention)'을 원인으로 밝힌 뒤 완전 해결을 통보했다</strong></li>
+      <li><strong>같은 날 13:26 ET부터 광범위 사고(MO1550821)가 시작됐다 — Exchange Online·Teams·SharePoint Online·Microsoft 365 Copilot·Defender XDR 연결 불가, 초기 Americas 표적에서 "어떤 지역 사용자든 영향 가능"으로 확대</strong> — 다운디텍터 피크 약 13만 건의 제보(Outlook·Word·Excel·PowerPoint·SharePoint·OneDrive·Copilot), 구글 워크스페이스 사용자가 아웃룩 클라이언트 경유 접속 장애를 호소한 사례도 보고됐다</li>
+      <li><strong>MS는 "전체 트래픽 증가가 아니라 다수 서버의 예기치 않은 사용 불가가 남은 인프라를 압박한 것"으로 규정하고, 모든 배포 중단 + 전 세계 인프라로 연결 트래픽 재분산 + 영향 서버 재시작을 진행했다</strong> — 저녁 업데이트: 복구 노력이 예상만큼 효과를 내지 못했고, 영향 서버의 '핵심 프로세스'가 포화돼 용량을 상실한 것을 발견; 일부 서버 복귀 후 안정 확인, 서비스 완전 복구 시점은 미확정</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>MS 서비스 헬스(MO1550821·TM1550488) · BleepingComputer(11.12) · InterestingEngineering</div>
+  <div class="notes"><p>'13만 건'은 다운디텍터 사용자 제보 집계로 실제 영향 사용자 수의 대리지표일 뿐이다(중복·과소·과대 보고 포함). 실무적으로 중요한 것은 공지 체계 쪽 신호: EX(MO) 두 어드바이저가 동시에 열리고, Teams 선행 사고와 본 사고의 연관성을 MS가 부인도 확인도 하지 않았다는 점 — '관련 미확인'은 정보 공백이지 무관이 아니다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Root Cause Anatomy</div>
+  <h2 class="s-title">'건강검진 실패'는 어떻게<br>서버를 죽이는가</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">자동 헬스체크 실패 → 서버 배제 → 잔여 인프라 과부하 → 연쇄 포화의 악순환</div>
+  <div class="blk">
+    <div class="blk-label">복구 과정에서 드러된 인과 사슬 (MS 업데이트·SecurityWeek 종합)</div>
+    <ul>
+      <li><strong>1단계 — 서버들이 자동 건강검진(health check)을 통과하지 못해 서비스에서 빠졌다: 헬스체크는 서버 정상성을 판정해 트래픽 배정을 좌우하는 장치로, 그 실패 자체가 '용량 상실'로 작동했다</strong> — MS는 문제 검사 컴포넌트를 우회하는 워크어라운드를 시험했고, 대안 검증 방식이 일부 서버에서 통하면서 확산 적용 중이었다</li>
+      <li><strong>2단계 — 빠진 서버의 몫을 남은 서버가 떠안으면서 과부하: MS는 "트래픽 증가분이 과부하를 설명할 수준이 아니다"라고 명시 — 즉 수요가 늘어난 게 아니라 공급(유효 서버 수)이 줄었다</strong> — 영향 서버에서 elevated processor usage도 관측돼 원인과 결과가 서로를 키우는 구조였다</li>
+      <li><strong>3단계 — 포화의 정체가 '보안 연결을 수립하는 프로세스(a process that establishes secure connections)'로 지목됐다: 이 프로세스가 압도돼 서버들이 요청 처리를 중단한 것</strong> — MS는 장애 시작과 시점이 겹치는 최근 네트워크 구성 변경 소수의 롤백을 진행하며 효과를 모니터링했다(SecurityWeek 21:00 ET 시점에도 root cause 미확정, 사이버 공격 증거 없음)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>MS 공지 원문 · SecurityWeek · InterestingEngineering</div>
+  <div class="notes"><p>교훈은 '생존 편향된 자동화'다: 헬스체크는 아픈 서버를 격리해 트래픽을 지키지만, 격리 기준이 틀리면 healthy한 서버까지 대거 배제해 인위적 용량 붕괴(cascading capacity loss)를 만든다. TLS·토큰 같은 연결 계층 프로세스가 포화 지점이라는 점도 typical — 암호화 연산은 CPU 집약적이고, 요청 재시도는 폭주를 가속한다(백프레셔 없이). 그리고 구성 변경과 장애의 시간적 일치만 확인됐을 뿐 인과는 미확정 상태다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Attack or Not?</div>
+  <h2 class="s-title">'공격 증거 없음'과<br>'원인 불명' 사이의 공백</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">패치 튜즈데이(1,094건) 이틀 뒤 — 악성 아웃룩 제로-day(CVE-2026-124194)과도 시간 겹침</div>
+  <div class="blk">
+    <div class="blk-label">쟁점 분석</div>
+    <ul>
+      <li><strong>MS는 서비스 어드바이저에서 악성 활동 증거를 공개하지 않았고, SecurityWeek도 "여전히 조사 중, 사이버 공격 증거 없음"을 제목급 사실로 명시했다 — 이를 '공격 아님 확정'으로 읽으면 안 된다: 미확정과 무증거는 다른 상태다</strong></li>
+      <li><strong>공백을 채우려는 추측들이 돌았다: 일부 사이트가 '사이버 공격설' 기사 제목을 달았고(SecurityWeek가 직접 반박), 커뮤니티에서는 DNS·윈도우 업데이트 음모론이 단골로 소환됐다 — 패치 튜즈데이(1,094개 결함, 악용 확인된 아웃룩 스푸핑 CVE-2026-124194 포함)로부터 이틀 뒤라는 시간적 근접이 추측에 연료를 줬지만, MS 어드바이저는 해당 취약점을 장애와 연결하지 않았다</strong></li>
+      <li><strong>지금까지의 공식 사실 사슬은 전부 내부 요인 쪽을 가리킨다: 자원 경합 → 서버 사용 불가 → 헬스체크 실패 → 보안 연결 프로세스 포화 → 구성 변경 롤백 — 외부 침투 흔적은 어느 공지에도 없다</strong> — 단 root cause 발표 전까지 최종 판정은 유보가 정답이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>SecurityWeek(공격설 반박 보도) · MS 어드바이저 · BleepingComputer</div>
+  <div class="notes"><p>대량 장애의 2차 피해는 정보다: 'Outage = cyberattack' 식 프레이밍은 피싱 캠페인의 최적 무대다("계정 확인"을 가장한 사칭 메일이 장애 직후 급증하는 패턴). 실제로 이번에도 ransomnews 류 사이트가 공격설 제목으로 트래픽을 모았다 — SecurityWeek가 "Was the outage caused by a cyberattack?" 섹션을 따로 만들어 부재를 명시한 이유. 조직은 장애 기간에 '장애 사칭' 통신 채널(공식 도메인·알림 톤) 검증 지침을 발동해야 한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">하나의 창구에 국가를 걸었다 —<br>M365 단일 의존성의 청구서</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">구조 분석</div>
+    <ul>
+      <li><strong>이번 장애의 영향 목록은 사실상 현대 사무 그 자체다: 메일(Exchange)·회의(Teams)·문서(Word·Excel·PowerPoint)·저장소(SharePoint·OneDrive)·AI 어시스턴트(Copilot)·심지어 보안 관제(Defender XDR)까지 — 보안 도구가 함께 죽은 것이 특히 예민하다: 사고 대응 채널과 모니터링이 같은 창구에 있었다</strong></li>
+      <li><strong>'Exchange 비의존 요소는 기능 유지'라는 MS 단서가 방증하듯, 영향은 결합도 지도를 따라 번졌다 — 아웃룩으로 구글 메일을 쓰던 사용자까지 막힌 것처럼, 클라이언트·인증·동기화 공유 계층이 경계를 넘은 전파 경로였다</strong></li>
+      <li><strong>금보원 사고(11.9)와 이번 장애는 같은 주제를 다른 축에서 때렸다: 하나는 기밀성(신뢰 기관 침해), 하나는 가용성(신뢰 플랫폼 정지) — 금융권·공공의 '제3자 리스크' 실사가 벤더 보안 등급(기밀성 중심)에 치우쳐 있었다면, 이번이 요구하는 것은 벤더 가용성 리스크의 정량화(SLA 크레딧이 아니라 업무 연속 관점)다</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>BleepingComputer·SecurityWeek 영향 보도 종합</div>
+  <div class="notes"><p>Defender XDR 피격은 IR 관점에서 최악의 조합이다: 사고 대응 조직이 가장 필요한 시간에 대응 도구를 잃는다. 최소 연습 과제 — (1) M365 불가 가정의 48시간 커뮤니케이션 플랜(대체 메일·채팅 채널과 직원 연락처), (2) 보안 관제 세컨드 아이(SIEM 로그가 M365 경유라면 이중 수집 경로), (3) Copilot 의존 워크플로우의 수동 폴백. '장애 시' 문서를 이번 주에 한 번 실행해 보는 것만으로 격차가 드러난다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">SLA는 이 문제를<br>해결하지 못한다 —<br>보상 너머의 계약 설계</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">월 99.9% SLA와 '전사 업무 정지'는 양립한다 — 크레딧은 손해가 아니라 위약금</div>
+  <div class="blk">
+    <div class="blk-label">쟁점 분석</div>
+    <ul>
+      <li><strong>클라우드 SLA의 구조적 한계: 가용성 퍼센티지는 월 평균으로 계산돼, 업무 시간대 집중 정지(이번 같은 6시간 안팎)는 크레딧 몇 %로 청산된다 — 그러나 기업의 실제 손실(회의·결재·고객 응대 정지, 보안 관제 공백)은 크레딧과 무관하다: SLA는 손해배상 설계가 아니라 위약금 설계다</strong></li>
+      <li><strong>'배포 중단'이 MS의 첫 조치였다는 점이 역설을 보여준다: 벤더 스스로 변경 관리(change management)를 사고 대응 수단으로 쓸 만큼, 대규모 클라우드의 최대 리스크는 '변경'이다 — 고객 측도 동일하게, M365 조건부 접근 정책·엔터프라이즈 설정 변경의 창( )과 롤백 계획이 지금 있는가</strong></li>
+      <li><strong>투명성 관행 평가: MS는 이번엔 어드바이저+X 실시간 업데이트로 '트래픽 증가 아님', '헬스체크 우회 시험', '구성 롤백 중' 같은 생생한 단계를 공개했다 — 과거 대비 개선이나, root cause·피해 규모(정확한 영향 고객 수) 부재는 여전히 관행의 하한이다: 사고 커뮤니케이션은 '무엇을 알리지 않는가'로 평가된다</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>MS 공지·X 업데이트 타임라인 · SecurityWeek 보도 종합</div>
+  <div class="notes"><p>조달 관점 후속 질문: 계약 갱신 시 '장애 고지 SLA(몇 분 내 통보)', '사고 후 RCA 공개 의무', '다중 지역 페일오버 보장' 조항을 협상 대상으로 올릴 때 이번 장애가 사례로 기능한다. 개별 기업이 바꿀 수 있는 건 작지만, '복구 진행 중' 공지를 액션으로 번역하는 훈련(대체 채널 가동 기준)은 오늘부터 가능하다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 —<br>M365 의존 조직 체크리스트</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">장애 사칭 피싱 경보 발령 — 'M365 복구·계정 확인'을 가장한 메일/문자 차단 규칙 추가, 장애 기간 내 모든 '로그인 재요구' 통신은 공식 채널 이중 검증</div><div class="act-sub">다운디텍터 제보 급증이 곧 피싱 캠페인의 미끼 목록이 된다</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">Defender XDR 관제 공백 보정 — 장애 구간 수집 로그 간극 확인·사후 백필, 관제 세컨드 아이(외부 SIEM·메일 보안) 이중 수집 경로 점검</div><div class="act-sub">보안 도구가 창구 안에 있었다 — 11.12 13:26 ET 이후 공백 시각화</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">M365 불가 48시간 드릴 — 대체 커뮤니케이션(개인 메일·메신저) 가동 기준, 오프라인 결재·회의 폴백, Copilot 의존 업무 수동 절차 확인; 아웃룩 로컬 캐시(OST) 동작 범위 점검</div><div class="act-sub">'장애 시' 문서는 실행해 본 것만 존재한다</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">조건부 접근·인증 정책 변경 관리 정비 — 엔터프라이즈 설정 변경의 창·승인·롤백 계획 문서화, 토큰/세션 만료 정책이 장애 시 재인증 폭주로 번지는 경로 검토</div><div class="act-sub">MS가 첫 조치로 '배포 중단'을 쓴 이유를 거울로 비추기</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">제3자 가용성 리스크 정량화 — 핵심 SaaS의 업무 영향도 매핑(정지 시 중단되는 프로세스), 계약 갱신 시 RCA 공개 의무·고지 SLA 조항 검토, MS root cause 발표 추적 후 자사 폴백 재평가</div><div class="act-sub">기밀성 등급에 가용성 등급을 더하라</div></div></div>
+  <div class="src"><b>편집 고지</b>본 특집은 Microsoft 서비스 헬스 공지(MO1550821·EX1550543·TM1550488)와 X 업데이트를 BleepingComputer(11.12)·SecurityWeek(11.12)·InterestingEngineering 보도로 교차 대조했습니다. '보안 연결 프로세스 포화', '구성 변경 롤백'은 MS 원문 표현이며 root cause는 11-13 현재 미확정입니다. 사이버 공격 증거 없음은 MS 공식 입장이자 SecurityWeek 확인 사항이나, 조사 종료 전 확정 부정이 아님을 각 장에 병기했습니다. 다운디텍터 13만 건은 제보 집계 기준입니다.</div>
+  <div class="notes"><p>오늘 요약: 장애 사칭 피싱 경보, XDR 로그 공백 보정, 48시간 드릴, 변경 관리 정비, 가용성 리스크 정량화. 한 문장 — 기밀성이 뚫리면 데이터가 나가고, 가용성이 막히면 조직이 서서; 이번 주 두 사건은 신뢰를 위탁한 곳의 두 얼굴이 동시에 무너질 수 있음을 보여줬다.</p></div>
+</section>
+
+</div>
+
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
