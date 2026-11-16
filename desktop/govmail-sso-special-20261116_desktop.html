@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>행정기관 이메일 SSO 해킹 특집 — 2026.11.16 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+.back-btn{position:absolute;top:14px;left:18px;z-index:60;display:inline-flex;align-items:center;gap:7px;padding:8px 15px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;color:#f2f2f5;background:rgba(18,19,24,.82);border:1px solid rgba(255,255,255,.28);border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-decoration:none;opacity:.92;transition:opacity .2s,background .2s}
+.back-btn:hover{opacity:1;background:rgba(18,19,24,.95)}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<a class="back-btn" href="index.html" title="목록으로 돌아가기">&#8592; 목록</a>
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">행정의 메일이 뚫렸다 —<br>정부 이메일 SSO 침해<br>사건 해부</h1>
+  <div class="title-date">2026. 11. 16 (MON)</div>
+  <div class="title-meta">
+    <div><div class="n">300여 계정 비정상 접속</div><div class="l">국가정보자원관리원 운영 행정업무용 이메일시스템 — 유출 범위 미공개</div></div>
+    <div><div class="n">침투 경로: 지자체 취약망 → SSO</div><div class="l">통합인증체계 취약점 악용 — 어떤 취약점인지 아직 비공개</div></div>
+    <div><div class="n">통보 11.9 → 공개 11.16</div><div class="l">7일 간극 · 행안부-국정원-KISA 합동점검 · 연말까지 원인 규명 목표</div></div>
+  </div>
+  <div class="title-foot">행정안전부가 11월 16일, 국가정보자원관리원이 운영하는 행정업무용 이메일시스템 등에 대한 외부 해킹을 확인했습니다 — 공격자는 일부 지방정부의 취약한 네트워크를 침입 경로로 삼은 뒤 통합인증체계(SSO)의 취약점을 악용해 접근했고, 현재까지 300여 개 계정에서 비정상 접속이 확인됐습니다. 행안부는 개인정보보호위원회에 유출 사실을 신고하고 당사자들에게 통지했으며, 지방정부 서버와 이메일시스템 간 불필요한 연결 경로를 차단했습니다(연합뉴스·ZDNet·뉴스1). 이 특집은 사고 시계열과 '취약한 말단 → 핵심 인증'이라는 침투 구조, 그리고 이번 주 안보실이 예고한 전수조사·SBOM 드라이브와의 인과를 분석합니다<br>행정기관 업무용 이메일 해킹 심층 특집</div>
+  <div class="notes"><p>2026년 11월 16일자 스페셜 덱. 축: '가장 약한 말단이 가장 강한 자격을 얻는 구조' — 지자체의 취약 네트워크가 국가 행정 이메일의 통합 인증 문턱을 넘는 열쇠가 됐다. 모든 사실은 연합뉴스(11.16 송고)·ZDNet·뉴스1 보도 기준이며, 유출 정보의 종류·규모·공격자가 실제로 확보한 자료 범위는 행안부가 공개하지 않은 상태임을 전 장에 병기한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Incident Overview</div>
+  <h2 class="s-title">무엇이, 언제, 얼마나 —<br>확인되고 공개된 것만</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">비정상 접속 300여 계정 = '접속' 확인 단계 — 유출 확정 범위·종류는 미공개</div>
+  <div class="blk">
+    <div class="blk-label">공식 발표 사항 (행안부, 11.16)</div>
+    <ul>
+      <li><strong>행안부는 지난 9일 유관기관으로부터 행정기관 업무용 이메일 등에 대한 외부 해킹 사실을 통보받고, 16일 사실을 공개하며 관계기관 합동점검 착수를 밝혔다</strong> — 피해 시스템은 국가정보자원관리원이 운영하는 행정업무용 이메일시스템 등('등'으로만 표기되어 추가 대상 여부는 불명)</li>
+      <li><strong>현재까지 300여 개 계정에서 비정상 접속 확인 — 행안부는 개인정보보호위원회에 유출 사실을 신고하고 정보가 유출된 당사자들에게 통지했다</strong> — 다만 유출된 정보의 구체적 종류와 규모, 공격자가 실제로 확보한 자료 범위는 공개하지 않았다: '신고·통지'가 이뤄졌다는 것은 최소 일부 계정에서 유출을 인정한 셈이지만 상단은 미확정이다</li>
+      <li><strong>긴급 조치: 지방정부 서버 ↔ 행정업무용 이메일시스템 간 불필요한 연결 경로 차단, 이메일시스템 보안 설정 강화, 사이버 위협 탐지·대응 보안관제 확대</strong> — 합동점검은 국가정보원·한국인터넷진흥원(KISA)과 함께 정확한 원인·침해 경로를 규명 중이며, 추가 해킹 흔적과 시스템 내부 악성코드 잔존 여부 정밀 점검, 연말까지 원인 규명 및 재발 방지 대책 수립이 목표다(ZDNet)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스(11.16) · ZDNet Korea · 뉴스1 — 행안부 발표 기준</div>
+  <div class="notes"><p>숫자 읽기법: '300여 계정 비정상 접속'은 피해 하한이지 상한이 아니다 — 통보(11.9)부터 공개(11.16)까지 7일 동안 조사가 진행됐고, 합동점검이 '추가 흔적·악성코드 잔존'을 점검 중이라고 밝힌 이상 숫자는 커질 수 있다. 공격 주체(조직·배후)에 대해서는 어떤 공식 발표에도 없다 — 이번 주 보도된 북한 해킹조직 표적 명단(국내 30곳) 등과 결합한 추측이 돌 수 있으나 전부 미확인임을 명시한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Attack Path Anatomy</div>
+  <h2 class="s-title">'취약한 말단'에서<br>'핵심 인증'으로 —<br>경유지 침투의 구조</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">직접 공격 아님 — 지방정부 네트워크를 디딤돌로, SSO 취약점으로 central 시스템 접근</div>
+  <div class="blk">
+    <div class="blk-label">침투 구조 분석 (보도 내용 기반)</div>
+    <ul>
+      <li><strong>1단 — 말단 침입: 공격자는 '일부 지방정부의 취약한 네트워크'를 확보했다</strong> — 지자체는 중앙 부처 대비 보안 인력·장비가 얇은 곳이 많고, 이번 주 안보실이 전수조사에서 지목한 '구성도와 실제 운영 자산의 불일치'가 그대로 적용되는 계층이다: 어떤 포트가 어디와 붙어 있는지 모르는 상태가 공격자에게는 지도가 된다</li>
+      <li><strong>2단 — 신뢰 경계 통과: 지방정부 네트워크는 행정업무용 이메일시스템과 연결 경로(네트워크 접근성)를 갖고 있었고, 공격자는 그 경로 타고 SSO 취약점을 악용해 중앙 시스템에 접근했다</strong> — SSO는 한 번의 인증으로 여러 업무 시스템을 이용하는 통합인증 기술로, 인증 체계 자체에 결함이 있으면 연동된 모든 시스템이 동시에 노출된다(ZDNet 분석): 어떤 종류의 취약점인지(인증 우회·토큰 위조 등)는 합동점검 조사 중으로 비공개</li>
+      <li><strong>3단 — 확장: 300여 계정의 메일함 접근 — 행정 업무 메일은 그 자체가 '다음 침투를 위한 자격증명·문서 저장소'다: 내부 시스템 안내문, 첨부 파일, 다른 시스템 연동 링크가 모여 있어 피벗의 연료가 된다</strong> — 행안부가 '불필요한 연결 경로 차단'을 첫 손조치로 든 것은 이 구조(말단-중앙 상시 연결)가 사고의 통로였음을 방증한다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 · ZDNet Korea 보도 구조 분석 — 세부 취약점 비공개 상태</div>
+  <div class="notes"><p>'레버리지 공격'의 고전: 가장 낮은 보안 등급 지점에서 가장 높은 신뢰 자격을 취득한다. 이번 주 Check Point 사고(웹 포털 → Gaia root → ESXi)와 문법이 동일하다 — 경계 장비·통합 인증처럼 '많은 것을 아는 소수 지점'이 뚫리면 피해 반경이 기하급수적으로 늘어난다. SSO가 무너지면 개별 계정 MFA조차 우회 대상이 될 수 있어, 조사 결과에서 취약점 유형 공개 여부가 핵심이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Timeline & Governance</div>
+  <h2 class="s-title">7일의 침묵, 그리고<br>'연말까지'라는 시한 —<br>거버넌스 기록</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">11.9 통보 → 11.16 공개 · 원인 규명 목표 '연말' — 지난 호들 대비 느린 속도</div>
+  <div class="blk">
+    <div class="blk-label">시계열과 관측점</div>
+    <ul>
+      <li><strong>11월 9일 유관기관 통보 → 16일 공개: 7일 사이 합동점검 착수와 긴급 조치가 진행됐다</strong> — 금보원 사고(확인 다음 날 보도자료)와 비교해 공개 속도가 느리고, 그 사이 사고 사실이 새지 않았다 — 다만 지연 자체보다 '유출 범위 미공개 상태의 신고·통지'가 남는 정보 공백이다: 당사자는 통지를 받았지만 전체 규모는 알 수 없는 구조</li>
+      <li><strong>'연말까지 원인 규명' 시한은 이번 주 정부의 위기 속도와 대비된다 — 어제는 국가안보실이 민·관·군 공동대응 회의(11.13)에서 8월부터의 전수조사 중간 점검과 SBOM 가속을 발표했고, 오늘 행정 이메일 SSO 사고가 공개됐다</strong> — 안보실 지목 문제('구성도와 실제 자산 불일치', '취약점 영향 시스템 색출 지연')의 실례가 하루 뒤 드러난 셈: 이번 사고는 그 조사가 끝나기 전에 터진 증거다</li>
+      <li><strong>연쇄 맥락 — 올해 공공·공급망 침해 계열: 금융보안원 상시평가(11.9), 더존비즈온 APO 백업 2차 피해 확산(공공·산학 13곳+), 노란우산 정황, 코인원 수탁사 해킹 등 '단일 사업자·단일 인증 피격 → 연쇄 노출' 패턴이 반복</strong> — 이번 SSO 사고는 그 목록에 '국가 행정 이메일 + 통합인증'이라는 최상위 항목을 더한다: 개별 기관 보안 성숙도와 무관한 위탁형 리스크의 정점</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 · ZDNet · 데일리시큐(안보실 회의) · 주 내 국내 보도 종합</div>
+  <div class="notes"><p>책임 소재 질문이 남는다: 지자체 네트워크가 '취약'했던 시점의 관리 주체, 이메일시스템과 붙여둔 연결 경로의 승인·점검 이력, SSO 운영 주체의 인증서·토큰 점검 주기 — 합동점검 결과 발표(연말)에 이 항목들이 포함되는지가 관전 포인트다. 지난 금보원 특집에서 쓴 대로 '위탁'은 책임의 이전이 아니라 분산이었다: 이번엔 중앙(관리원)-지자체(경유지)-개인정보위(신고 접수) 3각 구조가 같은 문제를 만든다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">통합 인증의 역설 —<br>'한 번의 로그인'이<br>왜 최대 공격면인가</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <div class="blk-label">구조 분석</div>
+    <ul>
+      <li><strong>SSO는 사용 편의와 보안의 트레이드오프로 소개되지만, 본질은 '신뢰의 집중'이다: 인증 한 지점의 결함이 연동 전체 시스템의 열쇠가 된다 — 이번 사고에서 공격자가 직접 뚫은 것은 지자체 네트워크지만, 가치를 얻은 곳은 중앙 이메일시스템이라는 비대칭이 성립한다</strong> — SSO 취약점 유형(인증 우회/토큰 위조/세션 하이재킹 등)이 공개되지 않은 현 시점에서, 연동 시스템 전체의 토큰·세션 무효화 여부가 피해 상단을 가른다</li>
+      <li><strong>이번 주 관측된 '관리 평면' 사고 3연속과 겹친다: Check Point Gaia IPC 데몬(무인증 소켓 → root), Apache mod_http2(동기화 결함 → RCE), 그리고 이번 SSO — 모두 '내부 신뢰 구간을 전제로 설계된 관리·인증 계층'이 외부 입력에 노출됐을 때의 실패다</strong> — 네트워크 경계 방어가 통과시킨 트래픽 내부에서, 인증·관리 프로토콜은 그 자체로 최후 방어선이어야 한다는 원칙의 재확인</li>
+      <li><strong>방어 설계의 전환점: SSO 유지 + 강화가 현실적 답이다(폐지는 불가) — ① 연동 시스템별 세션·토큰 수명 단축과 이상 탐지(SSO 발급 로그와 실제 사용 패턴 대조) ② 말단-중앙 상시 연결 폐지, 필요 시점만 여는 지터(just-in-time) 접근 ③ 중앙 시스템의 최우선 자산화: MFA 강제·관리 경로 분리·로그 무결성 보관</strong> — '한 번 인증, 모든 시스템'은 '한 번 탈취, 모든 시스템'의 동의어라는 전제로 설계해야 한다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>ZDNet 기술 해설 · 주 내 Check Point·Apache 사고 교차 분석</div>
+  <div class="notes"><p>연동 기관 실무: 이번 통지를 받은 조직은 자발적으로 '우리 계정도 SSO 경유 발급인가'를 확인하고, 필요 최소 권한 재검토와 관리자 세션 감시를 격상해야 한다. 메일이 뚫린 조직의 최대 2차 위험은 내부 발신 피싱 — '행정 메일에서 온 것처럼 보이는' 메일은 다음 주 국내 조직을 노든 가장 설득력 있는 미끼가 된다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">공개 지연, 부재한 두 질문 —<br>'누가 뚫었나'와<br>'언부터 붙어 있었나'</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">공격 주체 미공개 · 최초 침입 시점 미공개 — 합동점검 결과 발표까지의 공백</div>
+  <div class="blk">
+    <div class="blk-label">쟁점 분석</div>
+    <ul>
+      <li><strong>발표에 없는 두 개의 질문: ① 공격 주체 — 정부 발표 어디에도 조직·배후 언급이 없다(북한 연계 등 관측은 전부 미확인) ② 최초 침입 시점 — '비정상 접속' 인지 시점과 실제 침입 시작 사이 간격이 불명</strong> — ZDNet에 따르면 합동점검은 공격자가 최초로 침입한 경로와 SSO 취약점 악용 과정을 집중 조사한다: 이 두 답이 나와야 피해 상한(300계정 이상 여부·기간 내 열람 범위)이 계산된다</li>
+      <li><strong>공개 방식의 함의: 유출 당사자 통지·개인정보위 신고는 개인정보보호법 절차를 따른 것이지만, '국가 행정 시스템 침해'라는 사안의 성격상 보안 취지와 알 권리 사이 줄다리기 있다 — 금보원 사고 당시 '서버 개편' 안내로 하루를 보낸 전례와 비교하면 이번엔 사전 유출 없이 절차대로 진행됐으나, 규모 비공개가 낳는 추측 공백은 같다</strong> — 피해 확산을 막는 범위 내 최대 공개(취약점 유형·침입 기간)가 후속 발표에 필요하다</li>
+      <li><strong>구조적 교훈의 일반화: 이 사고는 모든 '허브-스포크 인증/연결' 구조 조직의 자기 점검 질문이 된다 — 내 허브 시스템과 붙어 있는 가장 약한 스포크는 어디인가, 그 연결은 누가 언제 승인했는가, 인증 발급 로그를 이상 탐지에 쓰고 있는가</strong> — 안보실 전수조사가 '구성도-현실 일치'를 요구하는 이유와 정확히 같은 질문이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 · ZDNet(합동점검 초점) — 쟁점은 보도 공백의 명시적 정리</div>
+  <div class="notes"><p>연말 원인 규명 발표를 기다리며 조직이 해둘 일: 허브-스포크 연결 목록 작성(본 기관이 '말단'으로서 붙어 있는 중앙 시스템 포함), SSO 연동 계정의 토큰 수명·발급 로그 모니터링 규칙, 내부 발신 메일 위변조 탐지(DMARC·발신 위장 필터) 점검. 그리고 이번 주 내내 반복된 문장 — 장부에 없는 연결이 먼저 뚫린다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">이번 사고에서 배운 것 —<br>기관 실무 체크리스트</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">통지·신고 대상 확인 — 자 기관 소속 계정이 '300여 계정'에 포함됐는지 통지 여부 점검, 해당 시 비밀번호 변경 + SSO 세션 강제 만료 + 메일함 규칙(자동 전달·함정함) 이상 감사</div><div class="act-sub">탈취 메일의 고전적 2차 악용 = 자동 전달 설정</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">'행정 발신 사칭' 피싱 경보 격상 — 정부·지자체 명칭을 쓰는 메일/문자에 대한 발신 위장 필터(DMARC 실패 즉시 차단) 강화, 직원 대상 '통지만 믿고 본문 링크는 검증' 지침 발령</div><div class="act-sub">내부 발신 신뢰가 무너진 틈이 다음 공격면</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">허브 연결 목록화 — 자 기관 네트워크가 접근 가능한 중앙·본사 시스템 전수 기록(방화벽 정책 역추출), 그중 '업무상 필요하지만 최근 사용 이력 없음' 경로 제거 착수</div><div class="act-sub">행안부 첫 조치('불필요한 연결 차단')의 사내 등가물</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">SSO·통합인증 구성 감사 — 연동 앱 등록 목록과 리다이렉트 URL 검증 상태, 토큰 수명(접근·리프레시), 관리자 세션 동시성 제한, 발급 로그의 이상 탐지 규칙 부재 확인</div><div class="act-sub">'한 번 탈취, 모든 시스템' 전제로 재설계</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">말단 보안 상향 — 지자체·산하·협력사 등 저성숙 스포크의 탐지 커버리지 격차 해소(엔드포인트 가시성 최소 기준), 안보실 후속 고시(SBOM 적용 분야·일정) 모니터링, 합동점검 결과 발표 시 자 기관 재점검 항목 도출</div><div class="act-sub">이번 주 청구서: 말단의 빚은 허브에서 청구된다</div></div></div>
+  <div class="src"><b>편집 고지</b>본 특집은 연합뉴스(11.16 송고)·ZDNet Korea·뉴스1의 행안부 발표 보도를 교차 대조해 작성했습니다. 유출 정보의 종류·규모, 공격자가 확보한 자료 범위, 공격 주체, 최초 침입 시점은 11-16 현재 모두 미공개이며, 본문 내 구조 분석은 공개된 사실에 기반한 해석임을 각 장에 표기했습니다. '북한 연계' 등 배후 관측은 어떤 공식 발표에도 없는 추측으로 채택하지 않았습니다.</div>
+  <div class="notes"><p>오늘 요약: 통지 대상 확인·계정 초기화, 사칭 피싱 경보, 허브 연결 목록화, SSO 구성 감사, 말단 보안 상향. 한 줄 — 이번 사고는 지자체의 빚이 아니라 국가 인증 체계의 설계 문서에서 청구된 것이다: 신뢰가 모인 곳에 방어를 몰아주지 않은 채 편의만 쌓은 대가.</p></div>
+</section>
+
+</div>
+
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
