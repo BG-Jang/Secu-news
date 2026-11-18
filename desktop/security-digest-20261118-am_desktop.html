@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.18 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+.back-btn{position:absolute;top:14px;left:18px;z-index:60;display:inline-flex;align-items:center;gap:7px;padding:8px 15px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;color:#f2f2f5;background:rgba(18,19,24,.82);border:1px solid rgba(255,255,255,.28);border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-decoration:none;opacity:.92;transition:opacity .2s,background .2s}
+.back-btn:hover{opacity:1;background:rgba(18,19,24,.95)}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<a class="back-btn" href="index.html" title="목록으로 돌아가기">&#8592; 목록</a>
+<section class="slide title-slide">
+  <div class="s-tag">Security Daily Digest · Morning Edition</div>
+  <h1 class="s-title">아침 정보보안<br>다이제스트<br>— 신뢰가 배달된 날</h1>
+  <div class="title-date">2026. 11. 18 (WED)</div>
+  <div class="title-meta">
+    <div><div class="n">Optimizely 공급망 침해(OPTIMJACK)</div><div class="l">CNN·BBC·Zoom 등 178개+ 조직 사이트에 악성 스크립트 — CSP 화이트리스트 우회</div></div>
+    <div><div class="n">Java4Shell 사전 유출</div><div class="l">CVE-2026-114938(CVSS 4.0 9.2) 공개 전 유출 — NCSC 긴급 권고 · Oracle SE 11건 패치</div></div>
+    <div><div class="n">Telegram 샌드박스·MSP 연쇄</div><div class="l">안드로이드 위젯 RCE 2종 시연 / ScreenConnect 68.8만건 악용 시도</div></div>
+  </div>
+  <div class="title-foot">글로벌 A/B 테스트 플랫폼 Optimizely의 Web Experimentation 취약점이 악용돼 CNN·BBC·Fox News·Zoom·Salesforce·GitLab·HSBC·Ledger 등 최소 178개 조직 웹사이트의 공식 스니펫(cdn.optimizely.com)에 악성 로더가 심어졌습니다 — 암호화폐 지갑 주소 가로채기·카드 스키밍과 iOS 익스플로잇 킷(Coruna·DarkSword) 전달까지 관측됐습니다(The Hacker News·BleepingComputer). 같은 날 보안 기업 Calif가 제보한 OpenJDK 무인증 RCE 'Java4Shell'(CVE-2026-114938, CVSS 4.0 9.2) 정보가 공식 공개 전 유출돼 한국 국가사이버안보센터(NCSC)가 공공기관에 긴급 대비 권고를 내렸고, Oracle은 무인증 원격 취약점 11건(최고 CVSS 3.1 8.1)을 수정하는 Java SE 11월 업데이트를 배포했습니다. Telegram 안드로이드 위젯 샌드박스 우회 RCE 2종 시연(NebuSec)과 MSP ScreenConnect 대규모 악용(Huntress), 국내 금융위의 취약점 점검 연 2회 확대 착수, GTIG의 'AI 에이전트 수시간 내 익스플로잇 무기화' 경고가 오늘 브리핑의 나머지 축입니다<br>국내외 주요 정보보안 이슈 요약 및 심층 분석 — 아침판</div>
+  <div class="notes"><p>2026년 11월 18일자 수요일 아침 다이제스트. 축: '신뢰 자체가 배달 수단이 된 날' — 신뢰된 CDN, 신뢰된 런타임, 신뢰된 메신저 샌드박스, 신뢰된 원격관리 도구가 오늘 하루 나란히 뚫리거나 흔들렸다. 사용자 제공 브리핑 기준 편집이며, Java4Shell의 실체(RCE 대 DoS)처럼 원문 검증이 진행 중인 항목은 확정·추정·미확보를 슬라이드마다 분리 표기한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">Optimizely 공급망 침해 'OPTIMJACK' —<br>178개 조직 사이트가<br>공식 CDN으로 악성코드를 배달</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">cdn.optimizely.com 도메인 + 유효 TLS 인증서로 배포 — 도메인 기반 CSP 화이트리스트 무력화</div>
+  <div class="blk">
+    <ul>
+      <li><strong>11월 17일(UTC) Optimizley 공식 공지: Web Experimentation 서비스 취약점을 악용한 공격자가 일부 고객 프로젝트의 'Project JavaScript' 필드에 악성 로더를 삽입</strong> — 보안 모니터링 기업 Report URI가 크롤링한 1,611개 스니펫 중 최소 178개 조직(188개 스니펫)에서 악성 코드 확인(BleepingComputer)</li>
+      <li><strong>CNN·BBC·Fox News·Zoom·Salesforce·GitLab·HSBC·Ledger 등 방문자에게 track.js가 클립보드 복사 시 암호화폐 지갑 주소를 공격자 주소로 바꿔치기하고 결제 폼의 카드번호·만료일·CVV를 탈취</strong> — 약 9시간 만에 약 6,600~7,040달러가 공격자 주소로 유입된 것이 관측됐다</li>
+      <li><strong>iOS 방문자에게는 boot.js가 버전을 식별해 숨겨진 iframe으로 Coruna(iOS 13.0~17.2.1)·DarkSword(iOS 18.4~18.7) 익스플로잇 킷을 조건부 전달</strong> — Smartsheet처럼 1차 제거 후 오프라인 폴백 버전으로 재감염된 사례가 나와 공격자 접근 유지 여부가 쟁점이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · BleepingComputer(Report URI 크롤링 집계) · Optimizely 공식 공지</div>
+  <div class="notes"><p>웹 공급망 공격의 고전 문법이 또 반복됐다: ① 고객 웹사이트마다 매일 실행될 권리를 가진 서드파티 스크립트 ② 그 벤더 내부의 약한 고리(프로젝트 편집 기능) ③ 신뢰된 도메인+유효 인증서라는 '배달 속임수'. 방어의 출발점은 마케팅·테스트 스크립트를 결제·인증 페이지에서 완전히 배제하는 것이고, CSP도 도메인 화이트리스트가 아니라 논티스(nonce)·해시 기반이어야 이 공격을 막는다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">Java4Shell 사전 유출 —<br>패치 전에 새어나간<br>OpenJDK 무인증 RCE 정보</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">CVE-2026-114938(CVSS 4.0 9.2 reported) — 조율된 공개 일정 전에 유출, NCSC 공공기관 긴급 권고</div>
+  <div class="blk">
+    <ul>
+      <li><strong>보안 기업 Calif가 발견·제보한 OpenJDK 17.0.6 이상 무인증 원격 코드 실행 결함의 세부 정보가 공식 공개 전에 외부로 유출(Endor Labs 분석)</strong> — 한국 국가사이버안보센터(NCSC)도 공공기관에 무인증 Java RCE 대비 사전 권고를 전파한 것으로 알려짐</li>
+      <li><strong>Oracle은 11월 17일(현지시간) 월간 보안 업데이트(CSPU)로 모두 무인증 원격 악용이 가능한 Java SE 취약점 11건(최고 CVSS 3.1 8.1)을 수정 예고(The Hacker News)</strong> — 단 CVE-2026-114938이 이 11건에 포함되는지는 공식 확인되지 않음(미확보)</li>
+      <li><strong>실체 검증 진행 중: Upwind·Equixly 등 일부 분석은 Base64 디코더 크래시(DoS) 버그일 가능성을 제기</strong> — RCE 확정 여부와 무관하게 Java 17 운영 서버·컨테이너 이미지의 자산 식별과 패치 준비는 오늘 시작해야 하는 조치다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · Endor Labs 분석 · NCSC 권고(국내 보도 종합)</div>
+  <div class="notes"><p>지난 10월 PHP2Shell과 같은 패턴 — 런타임 핵심 결함 정보가 코디네이티드 공개 전에 유출되는 사고가 한 달 반 만에 재발했다. 정보 유출 자체는 방어할 수 없으므로, 대응 속도가 곧 리스크다: jcmd·컨테이너 베이스 이미지 인벤토리로 가동 중인 모든 JVM 버전을 즉시 식별해 두는 SBOM 기반 체계가 준비된 조직과 otherwise인 조직의 격차가 이번에도 갈릴 것이다. 점수(9.2)와 RCE 여부는 원 발표 전 추정치로 취급할 것.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">Telegram 위젯 샌드박스와 MSP 원격관리 —<br>신뢰된 통로 두 곳이<br>동시에 뚫렸다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">seccomp '감사 모드'·ioctl 미필터링 확인 / ScreenConnect CVE-2026-84869(9.9) 68.8만건 악용 시도</div>
+  <div class="blk">
+    <ul>
+      <li><strong>NebuSec이 Telegram for Android 13.2.2(7303)의 봇 위젯 격리(별도 프로세스+seccomp)를 우회하는 RCE 익스플로잇 2종을 시연</strong> — 공개 소스코드 분석 결과 모든 위젯이 단일 프로세스 메모리를 공유하고 ioctl 시스템 콜이 필터링되지 않았으며, 새 seccomp 필터는 새 프로세스 생성만 막고 나머지는 기록만 하는 감사 모드로 설정돼 있었다(The Hacker News)</li>
+      <li><strong>Kaspersky는 텔레그램 위젯을 악용한 WebRAT 유포를 별도 포착</strong> — 벤더가 패치로 만든 격리가 발표 단계에서 이미 우회된 사례: 샌드박스 '존재'와 샌드박스 '효과'는 다른 감사 항목이다</li>
+      <li><strong>Huntress: 10월 20일~11월 16일 사이 42개 MSP의 ConnectWise ScreenConnect 서버에서 클라이언트 측 치명적 결함(CVE-2026-84869, CVSS 9.9)을 악용한 68만8천건 이상의 악성 파일 실행 요청 탐지(Cybersecurity Dive)</strong> — N-able도 N-central 17개 추가 취약점을 패치하는 등 원격지원·메신저 샌드박스 우회가 집중 공격받는 중</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News(NebuSec·Kaspersky) · Cybersecurity Dive(Huntress) · N-able 패치 공지</div>
+  <div class="notes"><p>MSP 침해는 피해 단위가 '한 기업'이 아니라 '그 MSP가 관리하는 모든 고객'이다 — ScreenConnect 한 대가 뚫리면 그 아래 클라이언트 네트워크 전체가 라테랄 무브 출발점이 된다. 오늘 확인 항목: 자사가 쓰는 원격관리 도구의 인터넷 노출 여부, 패치 적용 상태, 그리고 MSP와의 계약에 패치 기한·침입 통보 의무가 명시돼 있는지.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 4</div>
+  <h2 class="s-title">금융위 '연 2회 점검'과 GTIG 경고 —<br>정적 주기와<br>기계 속도의 충돌</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">대형 금융사 취약점 점검 연 1회→2회 확대 · GTIG: 패치 공개 후 수시간 내 AI 익스플로잇 무기화</div>
+  <div class="blk">
+    <ul>
+      <li><strong>금융보안원 상시평가 시스템 피격과 다우오피스·더존비즈온·메타엠 등 연쇄 침해 여파로, 금융위원회가 대형 금융사 대상 보안 취약점 점검을 연 2회로 확대하고 연말 CEO 서명 전수점검을 본격화(뉴스핌)</strong> — 최근 국내 수탁·SaaS 연쇄 침해에 대한감독당국의 반응의 첫 제도화 조치</li>
+      <li><strong>같은 시기 Google Threat Intelligence Group(GTIG) 보고서(11.16): 공격자들이 ARTEX·CAIRN·CyberStrikeAI·PentAGI 등 오픈소스 멀티에이전트 프레임워크와 LLM을 결합해 벤더 패치 차분 분석부터 1-Day 익스플로잇 작성·투입까지 수시간 내 자동화(The Hacker News, Aviatrix 분석 병행)</strong></li>
+      <li><strong>중국어권 PhaaS 플랫폼 Jieyou는 LLM 챗봇으로 비숙련 공격자의 정교한 스피어피싱을 즉시 생성하도록 지원하고, 탈취한 클라우드 AI 키를 APIMart·JetNight 같은 지하 프록시로 재판매하는 LLMjacking 생태계까지 결합</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>뉴스핌 · The Hacker News(GTIG 보고서) · Aviatrix 분석</div>
+  <div class="notes"><p>연 2회 점검은 규제 강도를 높이는 긍정적 조치지만, 공격 주기가 '연'이 아니라 '시간'이 된 상황에서 정적 주기 점검만으로 따라갈 수 없다는 것이 오늘 브리핑의 구조적 긴장이다. 답은 병행: 정기 점검(거버넌스) + 실시간 가상 패치·이그레스 통제(런타임). 국내 금융·공공 보안 체계가 첫 축에 집중돼 있다는 점이 이번 GTIG 발표와 겹쳐 읽힌다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">OPTIMJACK 해부 —<br>서드파티 자바스크립트는<br>왜 항상 이기는가</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>구조적 비대칭: 마케팅·A/B 테스트 스크립트는 '페이지 로드 시마다 실행될 권리'를 계약으로 확보한 코드</strong> — 벤더 한 곳이 뚫리면 그 고객 수천 개 사이트가 같은 순간에 공격 표면이 된다. 이번 주 OPTIMJACK는 Report URI 집계 기준으로 1,611개 스니펫 중 188개가 오염, 조직으로는 최소 178곳 — 탐지된 것은 빙산의 윗면일 가능성이 높다</li>
+      <li><strong>CSP가 뚫린 이유: 스크립트가 cdn.optimizely.com이라는 '허용된 도메인'과 Optimizley의 유효한 TLS 인증서로 배달됐다</strong> — script-src를 도메인 화이트리스트로 걸어둔 사이트는 이 공격에 구조적으로 무방비. 논티스·해시 기반 CSP와 서드파티 스크립트의 connect-src 분리(외부 통신 차단)가 실제 방어선이다</li>
+      <li><strong> 페이로드 설계의 노골함: 클립보드 지갑 주소 치기, 결제 폼 카드 정보 탈취, iOS 버전별 익스플로잇 킷 조건부 전달, 제거 대비 오프라인 폴백 버전까지 한 로더에 담겼다</strong> — Smartsheet 재감염 사례가 보여주듯 '1차 제거'와 '접속 차단'은 별개 사건이다: Optimizely API 토큰 전량 교체·프로젝트 편집 이력 감사까지 끝내야 사고가 종결된다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · BleepingComputer · Report URI 데이터 종합 분석</div>
+  <div class="notes"><p>실무 체크리스트: ① 결제·인증 페이지에서 서드파티 스크립트 전수 목록화 후 제거(결제 위젯은 Cross-Origin iframe로 격리) ② CSP script-src를 nonce/hash 기반으로 전환 ③ 서드파티 스크립트의 외부 도메인 통신(connect-src) 감시 알림 설정 ④ 벤더 계정 MFA·API 토큰 회전 정책 확인 — '공급망'을 논의할 때마다 이 목록이 첫 장이 되어야 한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">런타임 공급망의 두 번째 경고 —<br>PHP2Shell에서 Java4Shell까지,<br>유출은 반복된다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>한 달 반 전 PHP2Shell, 오늘 Java4Shell — 공통점은 '코디네이티드 공개 전에 세부 정보가 새었다'는 것</strong> — 취약점 공개 프로세스의 신뢰가 흔들리면 방어자가 할 수 있는 유일한 합리적 대응은 '공개 전 패치 준비 완료'다: 정보 유출을 막지 못한다면 준비 시간을 당기는 수밖에 없다</li>
+      <li><strong>JVM 자산 식별이 곧 방어 속도: Oracle JDK뿐 아니라 Eclipse Temurin·Amazon Corretto·Azul Zulu 등 배포판별 패치 릴리스 주기가 다르다</strong> — jcmd·프로세스 인벤토리·컨테이너 베이스 이미지 SBOM으로 '지금 돌아오는 JVM' 목록을 만들어 두면, CVE 확정 발표 시점의 대응이 며칠에서 몇 시간으로 줄어든다</li>
+      <li><strong>진위 검증 리스크도 자산: RCE(9.2 보고) 대 Base64 디코더 DoS 가능성이라는 양론이 정리판·속보 사이에서 섞여 흐르고 있다</strong> — NCSC 권고 수준의 '사전 대비'는 합리적이되, 사내 공지·우선순위 산정은 NVD·Oracle 공식 확인 후 확정하는 2단계 프로토콜을 지키는 것이 소음에 의한 운영 마비를 막는다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Endor Labs · Upwind·Equixly 분석 · The Hacker News 종합</div>
+  <div class="notes"><p>런타임 결함의 위력은 '모든 것이 그 위에서 돈다'는 데 있다: 웹 앱 하나하나가 아니라 JVM을 베이스로 한 컨테이너 전체가 대상이다. 이번 주 내 할 일은 크게 셋 — JVM 인벤토리(SBOM) 착수, 배포판별 패치 추적 워치 설정, 그리고 '유출 정보 기반 긴급 조치 vs 공식 확인 후 전면 패치'의 이원 의사결정 라인 문서화다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 3</div>
+  <h2 class="s-title">'격리했습니다'의 허점 —<br>샌드박스는 선언이 아니라<br>audit mode가 아닌 필터다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>Telegram의 방어와 우회가 한 주 안에 나란히 공개된 것이 핵심: 봇 위젯용 QuickJS를 별도 프로세스로 분리하고 seccomp 필터를 추가했다는 발표 직후, NebuSec은 ① 필터가 적용되지 않는 위젯 버그 ② 위젯+커널 버그 체이닝 두 경로로 뚫었다</strong> — 소스코드상 감사 모드(기록만 하는 필터)와 ioctl 미필터링이 그 허용 조건이었다</li>
+      <li><strong>MSP 원격관리 도구 쪽도 같은 구조: ScreenConnect 한 대의 인터넷 노출이 42개 MSP·68.8만건 악성 실행 요청이라는 규모로 증폭됐다(CVE-2026-84869, 9.9)</strong> — '격리된 관리 채널'이라는 설계 가정과 실제 배치(인터넷 노출·패치 지연) 사이의 격차가 공격자가 진입하는 그 틈이다</li>
+      <li><strong>교훈은 공통의 감사 질문으로 수렴한다: "격리가 우회 가능한가"가 아니라 "격리가 어떤 권한 집합을 남기고, 그 집합에서 무엇이 필터링되지 않았는가"</strong> — ioctl처럼 넓은 시스템 콜 하나, 새 프로세스 생성만 막는 감사 모드 하나가 전체 격리를 무효화한다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News(NebuSec 시연·소스코드 분석) · Cybersecurity Dive(Huntress 집계)</div>
+  <div class="notes"><p>샌드박스 설계 리뷰 체크포인트: ① deny-list(일부 허용)인가 allow-list(원칙 금지)인가 — 감사 모드는 사실상 deny-list다 ② ioctl·socket 같은 광역 콜의 처리 ③ 격리 대상 간 메모리 공유 여부(Telegram 위젯은 단일 프로세스 공유로 드러남) ④ 방어 발표와 실제 릴리스 코드의 일치 여부를 제3자가 검증할 수 있는지. 자사 제품·내부 플랫폼 샌드박스에도 오늘 이 네 질문을 적용할 것.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">Optimizely 스니펫 전수 점검 — 자사 웹사이트의 cdn.optimizely.com 프로젝트 스크립트 편집 이력 감사, 의심 스니펫 제거 후 Optimizely 계정 MFA·API 토큰 전량 교체, 재감염 대비 오프라인 폴백 변형까지 대조</div><div class="act-sub">Smartsheet 사례: 1차 제거 후 숨겨진 버전으로 재감염</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">결제·인증 페이지 서드파티 스크립트 제거 + CSP를 nonce/hash 기반으로 전환(connect-src 분리) — 도메인 화이트리스트식 CSP는 이번 공격에 무력했다</div><div class="act-sub">카드 스키밍·클립보드 치환 탐지: 결제 폼 외부 통신 알림</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">ScreenConnect·N-central 등 원격관리 도구 인터넷 노출·패치 상태 전수 확인 — MSP 이용 기업은 공급자 패치 적용 증빙 요청, 관리 채널 접근 허용 목록 최소화</div><div class="act-sub">CVE-2026-84869(9.9) — 42개 MSP에서 68.8만건 악용 시도 관측</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">JVM 인벤토리(SBOM) 착수 — jcmd·컨테이너 베이스 이미지 스캔으로 가동 중인 Java 17+ 자산 목록화, Oracle CSPU 11건 적용 배포판별 추적(Java4Shell 포함 여부 공식 확인 전까지 사전 대비 유지)</div><div class="act-sub">Temurin·Corretto·Zulu 등 배포판별 릴리스 주기 차이 고려</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">Telegram 업무 사용 점검 — 위젯·봇 기반 자동화를 쓰는 채널은 WebRAT 벡터로 노출될 수 있음, 업무 기기에서의 메신저 위젯 실행 정책 검토</div><div class="act-sub">Kaspersky 포착: 텔레그램 위젯 악용 WebRAT 유포</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">정기 점검 + 런타임 방어의 이원화 — 금융권은 연 2회 점검 체계와 병행해 실시간 가상 패치(Inline IPS)·아웃바운드 이그레스 통제·OIDC 단기 토큰 전환 로드맵 수립, AI 키 탈취 재판매(LLMjacking) 대비 클라우드 AI 자격 감사</div><div class="act-sub">GTIG: 패치→무기화 수시간 — 주기 점검만으로는 못 따라간다</div></div></div>
+  <div class="src"><b>편집 고지</b>본 아침판은 사용자 제공 브리핑을 The Hacker News·BleepingComputer·Cybersecurity Dive·Endor Labs·뉴스핌 보도 기준으로 정리했습니다. Java4Shell(CVE-2026-114938)의 CVSS 9.2와 RCE 여부는 제보 기관 보고치이며 Upwind·Equixly의 DoS 가능성 반론이 진행 중 — 확정 전 추정치로 표기했습니다. CVE-2026-114938의 Oracle CSPU 포함 여부, NCSC 권고 전문, 금융위 시행 세부는 본 호에서 독립 확보하지 못한 미확보 항목입니다.</div>
+  <div class="notes"><p>오늘 요약: Optimizely 스니펫 감사·토큰 교체, 결제 페이지 CSP 전환, 원격관리 도구 노출 점검, JVM 인벤토리 착수, 메신저 위젯 정책 검토, 정기+런타임 이원화 로드맵. 한 문장 — 오늘의 네 사건은 모두 '이미 신뢰하기로 결정한 것'(CDN·런타임·샌드박스·원격관리)에서 터졌다: 신뢰는 계약으로 끝나는 게 아니라 매일 검증되는 상태다.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
