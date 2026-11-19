@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.19 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">AI 비서 '피클'과<br>계정 위임의 대가 —<br>카톡 정지·플랫폼 차단 특집</h1>
+  <div class="title-date">2026. 11. 19 (THU)</div>
+  <div class="title-meta">
+    <div><div class="n">사건 개요</div><div class="l">피클(Pickle) 카카오톡 연동 11일 공개 → 카카오 제동 하루 만에 중단 — 이용자 계정 정지 사례 확산</div></div>
+    <div><div class="n">보안 쟁점</div><div class="l">'PC 카톡 원격 제어'식 권한 위임 — 대화가 해외 서버·AI 모델 제공자로 전달되는 구조</div></div>
+    <div><div class="n">플랫폼 반응</div><div class="l">카카오 법적 검토 · 코레일 접근 차단 · 미국 항공사도 AI 에이전트 예매 차단 선언</div></div>
+  </div>
+  <div class="title-foot">와이콤비네이터 출신 한인 스타트업 Pickle, Inc.의 개인 AI 에이전트 '피클'이 국내 앱스토어 무료 1위(10~11일)에 오르며 화제가 됐지만, 11월 11일 선보인 카카오톡 연동이 하루 만에 중단되고 카카오가 정책·법령 검토에 착수했습니다. 카카오는 "이용자가 PC 카카오톡 접속 권한을 피클에 맡기고 피클이 원격 제어하는 것과 동일한 상황"으로 파악한다고 밝혔습니다(인사이트코리아·서울신문·시대일보). 같은 흐름 속에서 코레일은 12일 피클을 포함한 매크로·AI 에이전트의 예매 접근을 차단했고(경향신문), 미국 유나이티드 항공도 AI 에이전트 항공권 예매 차단을 선언했습니다. 이용자 측에서는 피클 연동 후 네이버 보호조치·계정 정지를 겪었다는 사례가 이어지고 있으며, 피클의 개인정보 처리방침은 국내 서비스 운영 중 시행일이 12월 8일인 상태입니다<br>사안별 심층 분석 — 스페셜 다이제스트</div>
+  <div class="notes"><p>2026년 11월 19일자 스페셜 다이제스트. 축: '편의의 열쇠는 내 비밀번호였다' — OAuth도 API 합의도 없이, 이용자가 아이디·비밀번호를 건네는 순간 AI 에이전트가 '사람'이 된다. 경향신문·인사이트코리아·시대일보·서울신문 보도와 피클 공식 도움말·처리방침 정리 자료를 교차 대조해 제작했으며, 이용자별 정지 사례는 개별 확인이 불가능한 후기에 의존함을 각 슬라이드에 명시한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 1 · 개요와 타임라인</div>
+  <h2 class="s-title">돌풍에서 차단까지,<br>피클 열흘의 기록</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">앱스토어 무료 1위(10~11일) → 카톡 연동 공개(11일) → 카카오 제동·연동 중단(12일) → 코레일 차단(12일)</div>
+  <div class="blk">
+    <ul>
+      <li><strong>피클(Pickle, Inc.)은 샌프란시스코의 한인 창업 스타트업(박채근 대표, YC 2025 겨울 기수, 시드 약 60억 원)이 만든 '행동하는 AI 비서'</strong> — 질문엔 답하지 않고 대신 한다: 고객센터 전화 대행, 주문·예약, 메일 확인. 네이버·티맵·쿠팡·정부24 등과 연동되며 10~11일 국내 애플 앱스토어 생산성 무료 1위(클로드·제미나이·챗GPT 제침), 16일에도 앱스토어 3위·플레이스토어 5위(시대일보)</li>
+      <li><strong>핵심 구조가 논란의 씨앗: 피클은 사용자 휴대폰이 아니라 회사 클라우드의 '자체 브라우저'로 사이트에 접속하고, 이용자가 아이디·비밀번호를 '금고'에 위임한 계정으로 로그인한다</strong> — 플랫폼과의 사전 API 협의 없이 사람처럼 클릭·입력하는 방식(시대일보·디지털마케터 정리)</li>
+      <li><strong>11일 카카오톡 연동 공개 → 하루 만에 중단</strong> — 피클은 이용자에게 '연결 속도 문제'라고 안내했지만 카카오와 API 사용을 사전 협의하지 않은 상태였고(시대일보), 카카오는 12일 입장문에서 "이용자 보호 관점에서 정책·법령상 문제 소지를 확인 중"이라고 밝혔다(인사이트코리아)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>인사이트코리아(11.17) · 시대일보(11.16) · 경향신문(11.12) · 서울신문(11.12·13) 종합</div>
+  <div class="notes"><p>보안 관점에서 이 열흘이 중요한 이유는: 사고가 아니라 '설계'가 문제였기 때문이다. 뚫린 것이 아니라 처음부터 비밀번호 위임으로 만들어져 있었고, 플랫폼들이 뒤늦게 차단한 것은 침해 대응이 아니라 접근 통제 선언이다. 피해·가해 구도가 없는 대신, 이용자 편의·플랫폼 통제·개인정보 3축의 구조적 충돌이 남는다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 2 · 카톡 정지와 계정 위임</div>
+  <h2 class="s-title">'원격 제어'로 본 카톡 연동 —<br>정지·보호조치는 왜 터지나</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">카카오: "PC 카톡 아이디·비밀번호 권한을 피클에 제공하고 원격 제어하는 것과 동일한 상황"</div>
+  <div class="blk">
+    <ul>
+      <li><strong>카카오의 정확한 문제 정의(시대일보·인사이트코리아): 연동이란 이용자가 PC 카카오톡(서브디바이스)의 접속 권한을 피클에 위임하고 피클이 원격으로 카카오톡을 제어하는 것</strong> — 이 위임 과정에서 개인정보 보안의 '예상치 못한 문제'가 발생할 수 있다고 명시. 대화 확인·전송 기능에는 채팅방 사진 열람까지 포함됐다는 이용자 보고가 있었다(인사이트코리아)</li>
+      <li><strong>이용자 단의 정지 사례: 피클 연동 후 네이버 보호조치(도용 의심 로그인 차단)·게시물 작성 제한·심지어 영구 이용제한을 겪었다는 후기가 블로그·커뮤니티에 축적</strong>(정리 블로그 — 개별 계정 확인 불가, anecdote 기준) — 원인으로 지목되는 것은 ① 에이전트의 초고속 페이지 이동(단시간 수십 회 요청 = 봇 판정) ② 미승인 자동 발행·댓글 어뷰징 누적 ③ 피클 서버 IP에서의 로그인 = '비정상 환경 접근' 판정</li>
+      <li><strong>보안 시스템 논리상 이것은 오탐이 아니라 정상 작동</strong> — 계정 도용 방어는 '평소와 다른 기기·IP의 로그인'을 막는 것이고, AI 에이전트는 구조적으로 항상 '다른 기기·다른 IP의 로그인'이다. 플랫폼 입장에서는 피클과 실제 탈취자 세션을 구분할 근거가 없다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>카카오 입장문(11.12) · 인사이트코리아 · 시대일보 · 이용자 사례는 공개 후기·정리 블로그 기준</div>
+  <div class="notes"><p>'계정 정지'의 실체를 분해하면 두 층: ① 플랫폼 정책 위반 제재(자동화 어뷰징) ② 도용 방지 시스템의 자기방어(보호조치). 이용자가 회복하려면 보호조치는 본인인증+비밀번호 변경으로 풀리지만, 자동화 판정에 의한 제한은 에이전트 연결 해제 소명 없이는 반복된다. 더 근본적인 함정: 정지된 계정이 카카오톡이면 피해자는 '내 계정'을 잃을 뿐 아니라 그 안에 쌓인 대화·파일·인증 수단을 통째로 잃는다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">News 3 · 플랫폼 차단과 규제 공백</div>
+  <h2 class="s-title">코레일·항공사까지 —<br>'AI 에이전트 차단'의<br>글로벌 도미노</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">코레일 매크로 차단 고도화(11.12) · 유나이티드 항공 AI 예매 차단 선언 · 아마존-퍼플렉시티 소송 쟁점</div>
+  <div class="blk">
+    <ul>
+      <li><strong>코레일(11.12, 경향신문 단독): 피클을 포함한 매크로·AI 에이전트 등 자동화 프로그램 전반 접근 차단 — "공정하고 안정적인 승차권 예매 환경을 위해 매크로 차단 솔루션을 고도화하고 자동화 프로그램의 접근·이용행위 보안정책을 강화"</strong> — 이날부터 피클 통한 KTX 예매 기능 구동 불가</li>
+      <li><strong>미국 유나이티드 항공(12일): AI 에이전트의 자사 웹·앱 항공권 예매 차단 선언 — 스콧 커비 CEO "솔직히 말해 또 다른 중개인을 만들고 싶지 않다"</strong> — 9월 아마존은 메타 AI 에이전트 '뮤즈'의 자사 쇼핑몰 접근·대리 구매를 차단한 바 있다(경향신문)</li>
+      <li><strong>규제 시계는 아직 정각 전: 피클은 국내에서 운영 중이지만 개인정보 처리방침·이용약관 시행일은 12월 8일 — 데이터는 미국 서부 AWS에 저장되고 대화·기억·카메라 프레임·도구 실행 결과가 오픈AI·앤트로픽·구글·xAI 등 해외 모델 제공자에게 전달될 수 있다(시대일보)</strong> — 개인정보위 '에이전틱 AI 개인정보 처리 안내서'는 연내, 개정 개인정보 보호법은 내년 3월 시행 예정</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>경향신문(11.12) · 시대일보(11.16, 처리방침 분석) · 인사이트코리아</div>
+  <div class="notes"><p>차단의 동기는 각기 다르다: 코레일은 공정성(암표·매크로), 항공사는 유통(중개자 배제), 카카오는 계정 보안+사업 이해(자체 AI 비서 '카나나 스페이스' 다음 달 CBT 예정). 그러나 수단은 동일하다 — 로그인하는 에이전트를 봇으로 분류해 끊기. 규제 공백의 실체도 뚜렷하다: 이미 국내에서 가장 사적인 데이터(대화)를 다루는 에이전트가 시행일 이전의 약관으로 운영되는 '레그 타임 랙'이 바로 지금이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1 · 구조 해부</div>
+  <h2 class="s-title">비밀번호 위임이라는 원죄 —<br>피클 아키텍처의<br>신뢰 경계 분석</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>설계의 신뢰 경계: 비밀번호·카드번호는 휴대폰에서 암호화되어 '금고'에 격리되고 입력 순간만 풀리며 AI 모델에는 전달되지 않는다(피클 공식 설명) — 단 아이디와 카드 번호 마지막 4자는 AI가 읽을 수 있다</strong> — 캡차·PASS·카카오페이 승인·카드사 전화 인증은 사람이 화면을 넘겨받는 '휴먼 인 더 루프' 설계. 이 부분은 긍정적으로 평가할 만하다</li>
+      <li><strong>그럼에도 경계가 무너지는 지점: 대화 내용·기억·카메라 프레임·도구 실행 결과가 모델 제공자(OpenAI·Anthropic·Google·xAI)로 전달된다 — '비밀번호를 안 본다'와 '내 데이터를 안 본다'는 전혀 다른 명제</strong> — 카톡 연동으로 읽히는 대화·사진은 그 자체로 타인 개인정보이며, 제3자(메시지 상대)의 동의는 어느 절차로도 취득되지 않는다</li>
+      <li><strong>처리방침과 현실의 간극 두 가지: ① 티맵을 수탁업체로 기재했으나 티맵은 "최종 이용자 식별 정보를 전달받지 않으며 위수탁 관계가 아니다"라고 반박(시대일보) ② 국외 이전 동의를 거부하면 서비스 이용 자체가 중단·계정 삭제되는 선택지 없는 동의 구조</strong> — 여기에 시행일(12.8) 이전 운영이 더해지며 '약관대로 하지 않아도 검증할 수 없는' 회색 기간이 만들어진다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>피클 공식 도움말·처리방침(보도 인용 기준) · 시대일보 분석 · 디지털마케터 체험 정리(11.10)</div>
+  <div class="notes"><p>공격 표면으로 번역하면: 피클 계정 하나 = 네이버+쿠팡+코레일+정부24+카톡 등 연결 서비스 전부의 세션 보유 지점. 피클 자체가 침해되면(서버·금고) 단일 공급망 사고로 연결 계정이 연쇄 탈취될 수 있고, 피클 내부 모델 로그에 대화가 남으면 그 사본은 사용자 통제 밖 해외 사업자에 존재한다. '금고가 안전하다'는 전제가 성립해도 남은 리스크가 이만큼 크다는 것이 본질이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2 · 법적 쟁점과 대응 프로토콜</div>
+  <h2 class="s-title">'이용자의 도구'라는 방패와<br>약관이라는 창 —<br>AIA 접근권의 법·실무</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">9th Cir. 퍼플렉시티 가처분 취소: "접근 주체는 AI가 아닌 이용자" — 단 약관 규제 권한은 부정하지 않음</div>
+  <div class="blk">
+    <ul>
+      <li><strong>미국 선례: 아마존이 '코멧' 에이전트의 대리 접속을 CFAA(컴퓨터사기남용방지법)로 막으려 했으나, 제9연방항소법원은 8월 1심 가처분을 취소 — AI를 도구로 활용한 주체는 이용자이며 CFAA 근거 접근 금지는 성립하기 어렵다고 판단</strong>(인사이트코리아·국립대 교수 분석 인용) — 다만 "약관을 통한 접근 규제 권한까지 부정하는 것은 아니다"라고 명시: 플랫폼은 여전히 약관으로 싸울 수 있다</li>
+      <li><strong>국내 쟁점의 축: ① 이용자가 개인정보 활용에 동의했다면 보호만을 이유로 접근을 막긴 어렵다 — 그러나 "사람의 접근과 AI의 대리 접근은 별개"(국립대 교수, 인사이트코리아) ② 카톡 대화처럼 타인의 정보가 포함된 데이터는 이용자 동의만으로 제3자 제공이 정당화되지 않는다 ③ 플랫폼 약관(자동화 금지) 위반 vs 이용자의 자기 데이터 접근권</strong> — 개인정보위의 연내 안내서가 1차 기준선이 될 전망</li>
+      <li><strong>이용자·기업 대응 프로토콜: 지금 피클류 에이전트를 쓴다면 ① 메인 계정(카톡·네이버 블로그·금융)은 절대 연결하지 않는다 — 정지는 복구 비용이 비대칭적 ② 쓸 경우 전용 보조 계정으로 범위를 제한하고 ③ 캡차·결제 승인은 자동 위임이 아니라 반드시 사람이 유지하며 ④ 연결 해제와 비밀번호 변경, 2단계 인증이 '정지 해제의 공식 절차'임을 알아 둔다</strong> — 기업은 임직원 개인 기기의 에이전트-업무 계정 연동을 통제 대상에 오늘 포함해야 한다(계정 탈취가 아니라 합법적 위임 형태라 기존 DLP에 안 잡힌다)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>인사이트코리아(판례·전문가) · 경향신문 · 네이버 보호조치 절차 정리 종합</div>
+  <div class="notes"><p>이 사안의 최종 병목은 기술도 법도 아니라 '동의의 단위'다. 이용자는 지금 "AI에게 내 계정을 맡긴다"는 하나의 동의 버튼으로 자기 데이터·타인 데이터·플랫폼 약관·보안 체계를 동시에 처분한다. 제도의 답은 세분화된 위임(스코프별 OAuth, 에이전트 신원 확인, 감사 가능한 대리 세션)이고, 그 표준화 경쟁에서 카카오·네이버가 '내부 AI는 허용 + 외부 AI는 차단'의 이중 기준으로 흐르면 또 다른 플랫폼 권력 논쟁으로 번질 것이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘의 조치 사항</h2>
+  <hr class="rule-double">
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">피클 등 계정 위임형 AI 에이전트에 연결한 계정 목록 확인 — 메인 카카오톡·네이버·금융·공인인증 성격 계정은 즉시 연결 해제, 비밀번호 변경 + 2단계 인증 적용</div><div class="act-sub">도용 방어 시스템은 에이전트를 '탈취자'로 분류한다 — 정지는 시간문제</div></div></div>
+  <div class="act-row"><div class="act-tag t-now">즉시</div><div><div class="act-head">이미 보호조치·이용제한을 받았다면: 에이전트 연결 해제 → 중복·자동 생성 게시물 삭제 → 고객센터 본인인증·소명(외부 도구 해제 명시) 순서 진행 — 영구 제한 소명은 회차 제한, 1차 소명 준비가 승패</div><div class="act-sub">보호조치(도용 의심)는 비번 변경으로 풀리나 어뷰징 판정은 재발 즉시 누적</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">에이전트를 쓴다면 원칙 설정 — 전용 보조 계정·범위 최소화, 결제·PASS·전화 인증은 사람 승인 유지, 카톡 대화 등 타인 포함 데이터의 AI 열람 금지(상대방 동의 없음)</div><div class="act-sub">피클 처리방침 시행 12.8 이전 — 약관 검증 불가 기간임을 기억할 것</div></div></div>
+  <div class="act-row"><div class="act-tag t-soon">금주</div><div><div class="act-head">기업 IT: 임직원 개인 AI 에이전트-업무 계정 연동 통제 정책 — SaaS 세션 정책에서 '비정상 환경 로그인' 기준 점검, 외부 에이전트의 OAuth 승인(서드파티 앱 접근) 감사 착수</div><div class="act-sub">합법적 위임 형태라 기존 DLP·UEM에 탐지되지 않음</div></div></div>
+  <div class="act-row"><div class="act-tag t-mon">지속</div><div><div class="act-head">규제 시계 추적 — 개인정보위 '에이전틱 AI 개인정보 처리 안내서'(연내)·개정 개인정보 보호법(2027.3 시행) 대비, 자사 서비스의 외부 에이전트 접근 정책(약관·bot 판정·API 개방) 입장 정리</div><div class="act-sub">코레일·항공사·카카오 차단 선례 = 약관+기술 차단이 사실상의 표준</div></div></div>
+  <div class="src"><b>편집 고지</b>본 특집은 경향신문(11.12 코레일 단독)·인사이트코리아(카카오 입장·판례)·시대일보(11.16 처리방침·티맵 반박)·서울신문 보도를 교차 대조했습니다. 이용자 계정 정지 사례는 개별 확인이 불가능한 공개 후기·정리 블로그 기준으로 '사례 보고'로만 취급했습니다. 피클의 '연결 속도 문제' 안내는 시대일보 보도 내용이며, 카카오와의 실제 협의 여부는 양측 공식 문서가 아니라 매체 취재 기준입니다. 퍼플렉시티 판결은 아마존-퍼플렉시티 간 가처분 단계 결정(9th Cir., 8월)으로 본안 판단이 아님에 유의.</div>
+  <div class="notes"><p>오늘 요약: 메인 계정 즉시 연결 해제, 정지 시 공식 소명 절차, 보조 계정 원칙, 기업 통제 정책, 규제 추적. 한 문장 — AI에게 건넨 비밀번호는 '편의의 열쇠'가 아니라 '나로 행세할 수 있는 모든 권리'다: 위임의 범위를 정하지 않은 위임은, 나중에 회수할 수 없다.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
