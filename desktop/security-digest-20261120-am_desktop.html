@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.20 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+.back-btn{position:absolute;top:14px;left:18px;z-index:60;display:inline-flex;align-items:center;gap:7px;padding:8px 15px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;color:#f2f2f5;background:rgba(18,19,24,.82);border:1px solid rgba(255,255,255,.28);border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-decoration:none;opacity:.92;transition:opacity .2s,background .2s}
+.back-btn:hover{opacity:1;background:rgba(18,19,24,.95)}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<a class="back-btn" href="index.html" title="목록으로 돌아가기">&#8592; 목록</a>
+<section class="slide title-slide">
+  <div class="s-tag">Security Daily Digest · Morning Edition</div>
+  <h1 class="s-title">아침 정보보안<br>다이제스트<br>— 쉘이 열린 곳들</h1>
+  <div class="title-date">2026. 11. 20 (FRI)</div>
+  <div class="title-meta">
+    <div><div class="n">PHP 대규모 RCE 패치</div><div class="l">phpAfterShell(CVE-2026-126714, CVSS 4.0 9.2) 포함 치명적 7종·총 18건 — 전 라인업 긴급 업데이트</div></div>
+    <div><div class="n">4대 DB 엔진 RCE 연구</div><div class="l">TEMPORARY 권한만으로 OS 장악 — PostgreSQL·MySQL·Oracle·ClickHouse PoC 공개</div></div>
+    <div><div class="n">진트(Xint)의 NGINX2Root</div><div class="l">국내 AI가 11년 묵은 NGINX 결함 5건 중 4건 자율 탐지 — KISA 긴급 권고</div></div>
+  </div>
+  <div class="title-foot">어제 하루는 '쉘'이 화제였습니다. PHP Foundation이 지원 전 라인업(8.2.36·8.3.37·8.4.28·8.5.13·8.6.0)에서 세션 역직렬화 TOCTOU 결함 'phpAfterShell'(CVE-2026-126714) 등 치명적 7종을 포함해 18개 취약점을 일괄 수정했고, 연구원 Zheng Yu(Depthfirst)는 테이블 조회 권한 하나 없는 DB 계정이 TEMPORARY 테이블 생성 권한만으로 OS 셸에 이르는 익스플로잇을 공개했습니다. 국내에서는 티오리의 AI 플랫폼 '진트(Xint)'가 NGINX 11년 잠복 결함(NGINX2Root) 5건 중 4건을 코드 5만 줄 90분 분석으로 자율 탐지해 KISA가 긴급 권고를 발령했습니다. 더존비즈온 연쇄 유출이 42곳을 넘기고, 러시아 '콜드렐릭'의 클라우드 신원 사칭 침투가 클라우드 영속성의 민낯을 보여줬습니다<br>국내외 주요 정보보안 이슈 요약 및 심층 분석 — 아침판</div>
+  <div class="notes"><p>2026년 11월 20일자 금요일 아침 다이제스트. 축: '쉘이 열린 곳들' — 웹 스택(PHP), 데이터베이스, 프록시(NGINX), 클라우드 신원이라는 서로 다른 레이어에서 동시에 원격 코드 실행·계정 장악 사례가 나왔다. 사용자 제공 브리핑 기준 편집이며, CVE 점수는 NVD API 원문으로 대조했다(CVE-2026-126714 CVSS 4.0 9.2 Critical 확인, PostgreSQL CVE-2026-116331은 NVD 현재 8.8 High·Awaiting Analysis, Oracle Text CVE-2026-114819는 벤더 채점 9.9 Critical).</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">PHP, 18개 취약점<br>긴급 패치 —<br>'phpAfterShell'이 열쇠</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">CVE-2026-126714 CVSS 4.0 9.2(Critical·NVD 확인) — 파일 세션 쓰기 중단을 노린 TOCTOU 역직렬화 RCE</div>
+  <div class="blk">
+    <ul>
+      <li><strong>PHP Foundation이 11월 19일(현지시간) 지원 중인 전 라인업(8.2.36·8.3.37·8.4.28·8.5.13·8.6.0)에서 RCE·세션 변조·로컬 권한 상승을 포함해 총 18개 취약점을 일괄 수정</strong> — 그중 CVSS 9.2 치명적 결함 7종. 지난 10월 PHP2Shell 사태의 후속 격이라 워드프레스 계열 워프리그를 다시 흔드는 일정이다(The Hacker News·BleepingComputer)</li>
+      <li><strong>Depthfirst가 'phpAfterShell'로 명명한 CVE-2026-126714는 파일 기반 세션(기본값)의 pwrite()·ftruncate() 쓰기 중단 찰나를 파고든다</strong> — 새 세션 데이터 앞부분과 이전 세션 뒷부분이 한 파일에 섞이게 유도하면, 다음 session_start()에서 공격자 문자열이 유효한 직렬화 객체로 복원돼 RCE가 된다(NVD 원문: 'Partially overwritten session files can lead to remote code execution')</li>
+      <li><strong>NGINX(fastcgi_keep_conn on)·Apache(mod_proxy_fcgi enablereuse=on) 지속 연결 환경의 php://input 불완전 읽기 RCE(CVE-2026-129289), 무인증 원격 코드 실행(CVE-2026-115560·129496), FPM 로컬 권한 상승(CVE-2026-129291)이 같은 배치</strong> — 즉시 업그레이드가 답이며, 지연 시 session.upload_progress.enabled 비활성화·FastCGI 연결 재사용 제한이 임시 방패</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>NVD API(CVE-2026-126714) · The Hacker News · BleepingComputer</div>
+  <div class="notes"><p>확정 vs 보도 구분: CVE-2026-126714의 9.2 Critical은 NVD 채점(CVSS 4.0, security@php 원채점) 원문 확인. '치명적 7종·총 18건'과 나머지 CVE 번호는 매체 보도 기준이며 개별 CVE의 NVD 레코드는 순차 생성 중이다. 세션 파일 뒤섞기(TOCTOU) 결함은 상태 조건이 아니라 쓰기 중단이라는 시간성 공격이라 WAF로는 못 막는다 — 버전 업데이트 외 실질 방어 없음.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">테이블 하나 없이<br>OS 셸을 얻다 —<br>4대 DB 엔진 RCE 공개</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">Oracle Text(CVE-2026-114819, 벤더 채점 9.9·NVD 확인) + ORDS GraphQL 체이닝 — 로그인 없이 무인증 RCE 시연</div>
+  <div class="blk">
+    <ul>
+      <li><strong>연구원 Zheng Yu(Depthfirst)가 11월 19일 PostgreSQL·MySQL·Oracle Database·ClickHouse 4종에 대한 RCE 익스플로잇 연구를 공개</strong> — 핵심 전제는 '애플리케이션 테이블 조회 권한조차 없는 계정'. TEMPORARY 테이블 생성 권한 하나만 있으면 쿼리 파서·옵티마이저의 C/C++ 메모리 손상을 트리거해 DB 서버 OS 명령 실행에 이른다(The Hacker News)</li>
+      <li><strong>대상별 현황: PostgreSQL CVE-2026-116331(11월 12일 패치, min/max 집계 최적화의 타입 혼동 — NVD 현재 8.8 High·분석 대기), MySQL Server/Cluster CVE-2026-101786(10월 20일 CPU 패치), ClickHouse는 v26.9 및 백포트로 이미 수정</strong> — 각 배포 시점보다 늦게 따라가는 관리 환경이 실질 표적이다</li>
+      <li><strong>Oracle은 노출된 웹 엔드포인트에서 Oracle Text(9.9)와 ORDS GraphQL(CVE-2026-91609, 10월 CPU)을 체이닝해 계정 로그인 없이 RCE 도달</strong> — DB를 '내부 자산'으로 취급하고 네트워크 노출을 방치한 구성이 이번 연구에서 가장 아픈 지점이었다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · NVD API(CVE-2026-116331·114819) · 사용자 브리핑</div>
+  <div class="notes"><p>NVD 원문 대조: PostgreSQL CVE-2026-116331 설명은 'Type confusion in PostgreSQL min/max aggregate optimization allows an object creator to execute arbitrary code as the operating system user' — 점수는 현재 8.8 High(분석 대기)로, 브리핑의 '치명적' 프레이밍보다 낮게 매겨진 상태임을 병기한다. Oracle CVE-2026-114819는 secalert(오라클) 원채점 9.9 Critical 확인. 방어 지침: 최신 패치 + 앱 계정에서 TEMPORARY 생성 권한 회수 + ClickHouse format_binary_max_string_size 등 위험 옵션 통제.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">진트(Xint)가 연<br>NGINX2Root —<br>90분, 인간 개입 없이</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">KISA 11월 19일 긴급 보안 업데이트 권고 — NGINX 공식 1.30.7·1.31.9 업그레이드 또는 http2 off 임시 조치</div>
+  <div class="blk">
+    <ul>
+      <li><strong>전 세계 웹사이트의 29.7%, 한국 서버 기반 웹사이트의 58.9%가 사용하는 NGINX에서 11년간 숨었던 HTTP/2 RCE 등 치명적 결함 5건(NGINX2Root) 중 4건을 티오리의 AI 플랫폼 '진트(Xint)'가 자율 탐지</strong> — 코드 약 5만 줄을 1시간 30분에 분석, 인간 전문가가 10여 년 놓친 흐름 제어·프록시 메모리 손상 결함을 포착했다(연합뉴스·연합뉴스TV)</li>
+      <li><strong>AI가 찾은 경로를 바탕으로 연구진이 10분 만에 실전 PoC를 검증</strong> — 탐지(AI) → 검증(인간)의 역할 분담이 실제 성립한 사례로, AI 취약점 발굴 파이프라인의 신뢰 구간을 보여준다</li>
+      <li><strong>방어측 'AI 대 AI' 균형의 전환점</strong> — 그동안 AI는 공격자의 1-Day 무기화 도구로만 조명됐다. 국내 보안 기업이 글로벌 핵심 인프라의 잠복 결함을 선제 발굴·패치로 이끈 이번 사례는 KISA 권고와 리눅스 배포판 패치 지연 대응(공식 업그레이드 우선)이라는 실무 지침으로 이어졌다(SK쉴더스 분석)</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>연합뉴스 · 연합뉴스TV · SK쉴더스 분석 · KISA 공지</div>
+  <div class="notes"><p>수치 출처 주의: 29.7%·58.9% 점유율과 '90분·10분' 시간은 티오리·보도 측 발표 기준 — 독립 검증된 수치는 아니라 '발표 기준'으로 읽어야 한다. 어제 특집으로 다룬 NoisyTCP(커널 TCP)와 함께, 이번 주 인프라 스택 하부(커널→웹서버)의 잠복 결함 두 건이 연이어 공개된 주간이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 4</div>
+  <h2 class="s-title">더존비즈온 42곳+<br>콜드렐릭의 신원 사칭 —<br>공급망·클라우드 양쪽 균열</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">한국전자인증(전자서명 사업자) 임직원·퇴직자 정보 유출 가능성 — B2B 소프트웨어 단일 장애점 재확인</div>
+  <div class="blk">
+    <ul>
+      <li><strong>더존비즈온 침해 여파: 11월 19일 기준 한국전자인증(Smart A 10), 광주연구원, 광주여성재단, 곡성군미래교육재단 4곳이 추가돼 확인 피해 기업·기관이 42곳 이상으로 확대</strong> — APO 백업과 Smart A 10를 통한 연쇄 확산이며, 인증서·전자서명 사업자가 피해 목록에 오른 점이 2차 위험(신원 인프라 신뢰)을 키운다(보안뉴스)</li>
+      <li><strong>구글 맨디언트·GTIG가 공개한 러시아 연계 '콜드렐릭(COLD RELIC)': MFA 피로 공격으로 관리자 계정을 뚫은 뒤 패스키·OAuth 앱을 등록해 비밀번호 초기화 후에도 수개월 잠복</strong> — 2025년 말 탈취한 미국 기관의 Google Workspace 직원 명부(Takeout)로 2026년 두 번째 기관 직원을 보안 메신저로 사칭 접근, MS Entra ID 통합 로그인(SSO) 토큰까지 탈취했다(보안뉴스)</li>
+      <li><strong>두 사건의 공통 분모는 '경계 밖 신뢰'</strong> — 더존은 신뢰된 벤더 소프트웨어가, 콜드렐릭은 신뢰된 신원 제공자(IdP)에 등록된 영속 수단(패스키·OAuth 토큰)이 침투 경로가 됐다. 비밀번호 변경·세션 만료만으로는 등록 인증 수단이 제거되지 않는다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>보안뉴스 · 구글 맨디언트·GTIG 발표</div>
+  <div class="notes"><p>피해 규모는 보안뉴스 집계 기준(42곳 이상) — 수사·조사 진행에 따라 변동 가능한 수치다. 침해 대응 체크포인트: IdP 레벨에서 모든 등록 인증 수단(패스키·MFA 기기·앱 비밀번호)과 OAuth 권한 전수 초기화, 미등록 앱 감사, Takeout 등 대량 내보내기 로그 점검.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">세션 파일은 어떻게<br>공격 코드가 되는가 —<br>phpAfterShell 해부</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>직렬화 포맷이 본질: PHP 세션은 '키:{타입코드}:값' 형태의 문자열로 저장되고 session_start()는 파일 내용을 무조건 문법적으로 해석한다</strong> — 쓰기 도중 앞뒤가 섞인 파일도 파싱만 통과하면 객체가 된다. 공격자는 새 데이터 Prefix와 옛 데이터 Tail의 경계를 조작해 '유효해 보이는 조각'을 만들어 넣고, 다음 읽기에서 그것이 살아나는 TOCTOU(확인-사용 사이 경쟁)를 노린다</li>
+      <li><strong>pwrite()·ftruncate()가 중단되는 찰나 — 디스크 압박·신호·프로세스 종료 같은 '정상 장애'가 공격 창구가 된다</strong> — 정상 트래픽에서는 희박하지만, 공격자가 동시 요청을 걸고 쓰기 실패를 유도하면 확률 게임이 공격자 쪽으로 기운다. 파일 세션 핸들러(기본값)가 표적이고, DB·Redis 세션 저장소로 옮겨둔 환경은 이 경로가 원천 차단된다</li>
+      <li><strong>지속 연결 불일치(CVE-2026-129289)는 제2의 전선: 애플리케이션이 php://input을 끝까지 읽지 않은 채 응답하면, 같은 커넥션의 다음 요청이 앞 요청 본문과 이어져 해석된다</strong> — NGINX fastcgi_keep_conn on·Apache mod_proxy_fcgi enablereuse=on 환경에서 프록시와 백엔드의 '경계 인식 차이'로 RCE가 성립. request-Body 완독을 강제하지 않는 앱 코드 관행까지 함께 고쳐야 한다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>NVD CVE-2026-126714 원문 · Depthfirst 명명 보도 종합</div>
+  <div class="notes"><p>실무 지침 우선순위: ① 버전 업데이트(8.2.36·8.3.37·8.4.28·8.5.13·8.6.0) ② 파일 세션 → 저장소 이전(Redis·DB)은 이 클래스 전체의 구조적 해결책 ③ 임시: session.upload_progress.enabled=0, FastCGI 재사용 제한. 10월 PHP2Shell에 이어 두 달 연속 PHP 코어 패치 라운드가 열린 것 — PHP를 인터넷 경계에 세운 조직은 분기별이 아니라 월간 패치 리듬으로 전환할 시점이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">'최소 권한'의<br>새 정의 —<br>TEMPORARY 하나가 셸이 된다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>Zheng Yu 연구가 무너뜨린 전제: DB 보안은 '무엇을 읽을 수 있는가'(SELECT·스키마)만 통제해 왔고, '어떤 코드를 실행시키는가'는 고려 대상이 아니었다</strong> — 그런데 쿼리 파서·옵티마이저는 C/C++로 된 사용자 입력 실행 경로다. TEMPORARY 테이블을 만들 수 있다는 것은 곧 그 파서에 구조화된 입력을 보낼 통로를 보장받는 것이고, 파서에 메모리 손상 결함 하나만 있으면 권한 모델은 OS 셸 앞에서 무의미해진다</li>
+      <li><strong>PostgreSQL CVE-2026-116331이 전형이다: min/max 집계 최적화의 타입 혼동 — '객체 생성자(object creator)'면 운영체제 사용자 권한으로 임의 코드 실행(NVD 원문)</strong> — 테이블을 읽지 못해도 임시 객체를 만들고 집계 경로를 태울 수 있으면 된다. 감사 로그 관점에서 이는 '정상 SQL'로 보이므로 탐지 규칙도 재작성이 필요하다</li>
+      <li><strong>Oracle 체이닝이 보여준 조합: 내부 DB + 노출된 웹 엔드포인트(ORDS GraphQL) = 무인증 원격 코드 실행</strong> — DB 보안과 웹 공격 표면의 경계가 조직 내부에선 팀 구분일 뿐, 공격자에겐 그냥 두 단계다. 네트워크 정책으로 관리·GraphQL 엔드포인트를 인터넷에서 회수하는 것이 패치만큼 급하다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · NVD 원문(CVE-2026-116331·114819) · 사용자 브리핑 종합</div>
+  <div class="notes"><p>체크리스트: ① 애플리케이션 계정의 CREATE TEMPORARY 권한 전수 회수(실제 필요 서비스만 예외) ② DB 엔진별 최신 패치 — PostgreSQL 11-12, Oracle 11-17 CPU, MySQL 10월 CPU 이후 ③ ORDS·GraphQL 등 DB 선퓅 웹 엔드포인트 인터넷 노출 전수 점검 ④ ClickHouse format_binary_max_string_size 등 위험 옵션 통제. NVD에서 CVE-2026-116331은 아직 'Awaiting Analysis'(8.8 High) — 점수 확정 후 재확인할 것.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 3</div>
+  <h2 class="s-title">패스키와 OAuth,<br>잠복이 되는 자격 —<br>클라우드 영속성 장악의 구조</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">비밀번호 초기화·세션 만료로는 IdP에 등록된 패스키·MFA 기기·OAuth 권한이 제거되지 않는다 — 전수 초기화가 대응의 1단계</div>
+  <div class="blk">
+    <ul>
+      <li><strong>콜드렐릭의 시나리오는 3단 잠금 해제다: ① MFA 피로 공격으로 관리자 진입 ② 패스키·OAuth 앱 등록 = 비밀번호 바깥의 영속 자격 확보 ③ 탈취한 직원 명부(Takeout) 기반 메신저 사칭으로 두 번째 기관 침투, Entra ID SSO 토큰 탈취</strong> — 각 단계가 서로 다른 신원 시스템(Google Workspace → 보안 메신저 → MS Entra ID)을 잇는 인간 신뢰로 연결됐다</li>
+      <li><strong>'비밀번호 = 계정' 가정의 종말: 클라우드 IdP에서 계정의 정체성은 비밀번호가 아니라 등록된 인증 수단 전체의 집합</strong> — 공격자가 등록한 패스키는 피해자가 비밀번호를 바꾸고 세션을 전부 만료해도 남는다. 실제 사고 대응에서 이 항목은 별도 절차·별도 감사 대상으로 다뤄야 한다</li>
+      <li><strong>더존비즈온 사건과의 대칭: 국내 공급망 침해(신뢰된 소프트웨어)와 글로벌 신원 침해(신뢰된 IdP)는 같은 교훈의 두 얼굴</strong> — 내 통제 밖에 있는 '이미 신뢰한 것'을 정기적으로 재실사하는 절차(벤더 보안 점검·IdP 등록 수단 감사·OAuth 앱 allowlist)가 두 사건 모두의 공통 방어선이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>구글 맨디언트·GTIG 발표 · 보안뉴스 보도 종합</div>
+  <div class="notes"><p>IdP 대응 런북 요약: ① 전 사용자 등록 인증 수단(패스키·FIDO2·앱 비밀번호·MFA 기기) 목록화 후 침해 의심 계정 전수 폐기 ② OAuth 앱 등록·서비스 계정 키 감사(미식별 앱 즉시 revoke) ③ Google Takeout·내보내기 API 사용 로그 역추적 ④ SSO 토큰 탈취 시 연결된 모든 스택 세션 토큰 무효화. 메신저 사칭 접점은 직원 대상 '보안 메신저 발신도 인증 요구' 정책으로 확장.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">이번 주 할 일 —<br>쉘이 열리기 전에<br>막을 곳부터 막는다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>지금(NOW) · PHP: 8.2.36·8.3.37·8.4.28·8.5.13·8.6.0으로 즉시 업그레이드</strong> — 인터넷 경계 PHP(워드프레스·사내 앱) 우선. 지연 서버는 session.upload_progress.enabled=0, FastCGI 지속 연결 재사용 제한, 가능하면 Redis·DB 세션 저장소 이전</li>
+      <li><strong>지금(NOW) · NGINX: KISA 권고대로 공식 1.30.7·1.31.9 업그레이드 또는 http2 off</strong> — 리눅스 배포판 패키지 반영 전이면 공식 빌드/임시 조치를 우선. 어제 다룬 NoisyTCP(커널 TCP) 패치도 같은 창에서 함께 적용</li>
+      <li><strong>이번 주(SOON) · DB: 4대 엔진 최신 패치 + 앱 계정의 CREATE TEMPORARY 권한 회수 + ORDS·GraphQL 등 DB 선퓅 웹 엔드포인트 인터넷 노출 전수 점검 + ClickHouse 위험 옵션 통제</strong></li>
+      <li><strong>이번 주(SOON) · 클라우드 신원: IdP 등록 패스키·MFA 기기·OAuth 앱 전수 감사, 미식별 항목 revoke, Takeout·내보내기 로그 역추적</strong> / <strong>지속 감시(MON) · 더존비즈온 후속 공지와 피해 기관 목록, PHP 18건 중 나머지 CVE의 NVD 레코드 생성·점수 확정 추적을 주간 체크로 등록</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>KISA 권고 · PHP Foundation · The Hacker News · 맨디언트·GTIG 종합</div>
+  <div class="notes"><p>NOW 항목 두 개(PHP·NGINX)는 원격 무인증 RCE 클래스로 대응 시간이 '며칠' 단위다. 이번 주 패치 창에서 NoisyTCP(어제 특집), NGINX2Root, PHP 18종이 서로 다른 스택 레이어에 동시에 걸려 있으니 한 번의 유지보수 윈도우로 함께 처리할 것.</p></div>
+</section>
+
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
