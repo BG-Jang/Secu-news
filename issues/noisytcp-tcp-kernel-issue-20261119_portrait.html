@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>NoisyTCP 특집(CVE-2026-99288) — 2026.11.19 (세로)</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<section class="slide title-slide">
+  <div class="s-tag">Security Special Digest</div>
+  <h1 class="s-title">NoisyTCP 특집<br>— listen() 하나에<br>걸린 11년</h1>
+  <div class="title-date">2026. 11. 19 (THU)</div>
+  <div class="title-meta">
+    <div><div class="n">CVE-2026-99288 · NoisyTCP</div><div class="l">Linux 커널 TCP 사전인증 원격 크래시 — Nginx·Apache·SSH 기본 설정 그대로 표적</div></div>
+    <div><div class="n">11년 잠복 결함</div><div class="l">2015년 도입 → 2026-11-03 수정 — 한국인 연구자 현우 김(@v4bel) 보고·패치</div></div>
+    <div><div class="n">평점 논란</div><div class="l">NVD CVSS 5.9(중간) vs Ubuntu 우선순위 '높음' · Debian DSA-6628-1 즉시 배포</div></div>
+  </div>
+  <div class="title-foot">리눅스 커널 TCP 스택의 락 없는 확립 연결(ehash) 조회에서, 제거된 소켓 주소를 붙잡은 낡은(stale) 조회가 새 객체에 참조를 얻는 ABA 경합이 발생합니다. SYN 쿠키 요청 소켓과 조합하면 원격 공격자가 사전 인증으로 커널 패닉(원격 서비스 거부)을 유발할 수 있고, 컨테이너 환경에서는 웹 서버가 아니라 호스트 전체가 죽습니다. 발견·보고·패치는 한국인 보안 연구자 현우 김(Hyunwoo Kim, @v4bel)이 수행했으며, 11월 3일 커널 수정, 11월 10일 CVE 공개, 11월 16일 금수(embargo) 종료와 함께 상세 보고서가 공개됐습니다<br>단일 사안 심층 분석 — NoisyTCP 특집</div>
+  <div class="notes"><p>2026년 11월 19일자 목요일 특집. 소재: CVE-2026-99288 'NoisyTCP'. 1차 출처는 V4bel/NoisyTCP 공식 어드바이저, oss-security 게시글(2026-11-16), NVD 레코드, Debian·Ubuntu 보안 트래커. 악용 보고 없음(CISA SSVC 기준)과 KEV 미등재는 덱 전반에서 확정·추정·미확보로 분리 표기한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Overview</div>
+  <h2 class="s-title">무엇이 터지는가 —<br>조회 하나가<br>NULL 리스너를 읽는다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">tcp_v4_rcv()가 NULL 리스너를 역참조 — BUG: kernel NULL pointer dereference → 커널 패닉</div>
+  <div class="blk">
+    <ul>
+      <li><strong>TCP 확립 연결 조회(ehash)는 락(lock) 없이 수행되고, 소켓 캐시는 RCU 기반이라 메모리가 조회 리더 종료 전에 재사용될 수 있다</strong> — __inet_lookup_established()·__inet6_lookup_established()는 튜플 매치 후 참조를 얻고 튜플만 재확인할 뿐, 해당 객체가 해시에 걸려 있는지는 확인하지 않았다</li>
+      <li><strong>PoC는 SYN 쿠키 요청 소켓으로 주소 재사용을 유도해 크래시를 재현했다</strong> — 새 요청 소켓은 해시 미등록(unhashed) 상태이고 rsk_listener가 NULL인데, 이전 주소를 로드한 조회가 tcp_get_cookie_sock()이 게시한 참조를 획득해 반환; 수신 경로가 sk_state를 읽으며 주소 0x12에서 크래시가 발생한다</li>
+      <li><strong>수정 방향은 '참조 후 해시 확인'</strong> — IPv4·IPv6 조회 모두 참조 획득 후 nulls 노드가 해시 미등록이거나 튜플이 다르면 참조를 버리고 조회를 재시작하도록 변경. TIME_WAIT 해시댄스·요청→자식 교체 경합도 이제 새 소켓을 찾는다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>NVD CVE-2026-99288 (커널 수정 커밋 설명 원문) · V4bel 공식 어드바이저</div>
+  <div class="notes"><p>NVD 설명에 포함된 오ops 로그: RIP tcp_v4_rcv+0x44e, CR2 0x12, 커널 7.3.0-rc 빌드(PREEMPT lazy). '조용한 서버에서도 listen()만 하면 된다'는 점이 기존 원격 크래시류와의 결정적 차이 — netfilter 룰·특수 소켓·희귀 설정이 필요 없다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Trigger Path</div>
+  <h2 class="s-title">어떻게 때리는가 —<br>두 갈래 ABA 경합과<br>IPv4 분할의 역할</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">RX 컨텍스트 2개 이상(다중 큐·RPS)이 필수 조건 — IPv4 분할 패킷과 일반 TCP 패킷의 수신 해시 차이로 경합을 벌린다</div>
+  <div class="blk">
+    <ul>
+      <li><strong>경로 1 · request_sock 재사용 ABA: 낡은 조회가 기존 요청 소켓을 찾은 사이, 다른 RX 컨텍스트가 이를 해제하고 같은 슬랩 주소·같은 튜플로 SYN 쿠키 요청을 재할당</strong> — 낡은 조회는 새 객체에 참조계를 얻고 튜플 재확인까지 통과하지만, 새 요청에는 리스너가 연결돼 있지 않다. 수신 경로가 NULL 리스너를 역참조해 커널 패닉 → 원격 서비스 거부</li>
+      <li><strong>경로 2 · 완전한(child) 소켓 ABA: 원격 use-after-free까지 갈 수 있는 갈래</strong> — 복잡한 경합이 중첩된 순서로 성공해야 해서 특수 기법 없이는 일반적으로 트리거가 어렵다(공개 어드바이저 기준)</li>
+      <li><strong>컨테이너일수록 위험이 커진다 — 웹 서버 컨테이너에서 패닉이 나면 앱이 아니라 호스트 전체가 다운</strong> — 커널은 컨테이너 간 공유 자원이기 때문. 트리거 시간은 QEMU/KVM VM(가상 CPU 선점 발생) 기준 Nginx·Apache·SSH 기본 설정에서 약 5초~2분, 조용한 베어메탈(8 RX 큐) Nginx에는 최적화 PoC로도 약 14시간</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>V4bel/NoisyTCP 공식 어드바이저 · oss-security 2026-11-16 게시글</div>
+  <div class="notes"><p>공격자는 두 트리거 경로 중 하나를 임의로 선택 가능. '5초~2분 vs 14시간'은 저자 실측치를 그대로 인용한 것으로, 대상 부하·커널 빌드·NIC 드라이버에 따라 달라질 수 있다. RCE 여부에 대해서는 저자 본인도 '아직 아니오 — VM 대상 실험실 한정 익스플로잇만 존재, 원격 DoS는 비교적 용이'라고 명시.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Impact &amp; Patch Status</div>
+  <h2 class="s-title">누가 얼마나 뚫려 있는가 —<br>11년 잠복, 배포판은<br>이미 움직였다</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">CISA SSVC(11-17): 악용 'none' · 자동화 'yes' · 기술적 영향 'partial' — CISA KEV 카탈로그(11-18 기준) 미등재</div>
+  <div class="blk">
+    <ul>
+      <li><strong>영향 범위: 2015-10-03 커밋(079096f103fa)부터 2026-11-03 수정(4e2b3ef19e0e)까지 — 약 11년간 거의 모든 리눅스 배포판에 잠복</strong> — NVD 공개는 11월 10일, 수정 커밋은 stable 트리 4종(d6910034…·8e5172cb…·eb8a2d15…·4e2b3ef1…)으로 병행 반영</li>
+      <li><strong>Debian: bookworm는 DLA-4906-1(6.1.192-2), trixie는 DSA-6628-1(6.12.117-1)로 이미 수정 배포 — forky 7.3.4-1·sid 7.3.5-1 관통</strong> / Ubuntu: 우선순위 '높음(high)' 지정, 7.4~rc2·6.8.y·7.0.y·7.3.4 라인 릴리스, 다수 커널 변종(hwe·aws·azure·gcp)은 여전히 'needed' 단계</li>
+      <li><strong>평점 괴리: NVD CVSS 3.1 기준 5.9(중간, AC:H — 경합 성공 난이도 반영)인데 Ubuntu는 '높음', 배포판들은 실제 DSA를 냈다</strong> — CVSS 점수만 보고 우선순위에서 내리면 안 되는 전형적 사례. 가용성 완전 손실(A:H) + 네트워크발( AV:N) + 인증 불요(PR:N)가 본질이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>NVD API · Debian security tracker(DSA-6628-1/DLA-4906-1) · Ubuntu CVE 페이지 · CISA SSVC · KEV 카탈로그 2026.11.18</div>
+  <div class="notes"><p>확정: 배포판 패치 상태는 트래커 원문 기준. 추정 금지 항목: '야간 악용 시도 급증' 류는 확인된 바 없음 — SSVC 악용 필드는 'none'. 자동화 'yes'는 '기술적으로 자동화 가능'이라는 의미이지 실제 자동화 악용 도구 유포가 관측됐다는 의미가 아니다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">RCU와 슬랩이 만든<br>11년짜리 눈감기 —<br>경쟁 조건을 해부한다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>원형은 고전적 ABA 문제: 조회 코드는 '주소 → 객체'를 신뢰하지만, SLAB_TYPESAFE_BY_RCU 캐시에서는 주소가 불변이어도 그 안의 내용이 통째로 새 객체일 수 있다</strong> — 튜플 재확인이 통과하는 유일한 이유는 새 객체가 하필 같은 4-tuple(IP·포트 쌍)로 태어난 경우라는 점이 치명적이다. SYN 쿠키는 공격자가 원하는 튜플의 요청 소켓을 마음대로 재생성할 수 있는 메커니즘이라 A와 B가 모두 공격자 제어하에 놓인다</li>
+      <li><strong>'참조는 얻었는데 해시 안 된 객체'라는 상태가 존재 가능한 설계 결함이었다</strong> — 패치 전 코드는 참조계 획득 후 튜플만 다시 봤고, 패치 후 코드는 ① nulls 노드 해시 등록 여부 ② 튜플 재일치를 모두 확인해 하나라도 어긋나면 참조를 버리고 루프를 돈다 — 패치는 동시에 ehash에 들어간 적 없는 요청 소켓의 참조계 누수 경로(SYN 쿠키·Fast Open·마이그레이션 실패 지점)도 reqsk_put() 회수로 정리했다</li>
+      <li><strong>왜 하필 지금 터졌나: 트리거는 '첫 튜플 확인 ~ 참조 획득' 사이 극히 좁은 틈에 다른 RX 컨텍스트가 끼어드는 것</strong> — IPv4 분할 패킷은 재조립 경로 때문에 일반 TCP 패킷과 다른 수신 해시를 갖는다. 공격자는 분할 여부와 소스 주소를 조작해 같은 흐름을 서로 다른 CPU 큐로 쪼개 보내 경합 확률을 끌어올린다. 다중 NIC 큐·RPS가 기본인 클라우드 VM이 오히려 가장 취약한 지형인 셈이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>NVD 커밋 설명 원문 · V4bel 어드바이저 트리거 분석 종합</div>
+  <div class="notes"><p>교훈은 커널 동시성 일반론으로 확장 가능: RCU는 '메모리 유효성'만 보장하고 '논리적 정체성'은 보장하지 않는다. 락 없는 조회에서 객체 재확식은 반드시 (1) 신원 (2) 해시/등록 상태 (3) generation이나 버전 태그를 함께 봐야 한다 — 이번 패치는 그중 (2)가 빠져 있던 11년 전 코드를 메운 것이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">RCE는 오는가 —<br>점수 논란과 공개 윤리,<br>그리고 한국인 발견자</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">저자 공식 입장: "아직 RCE 아니다 — VM 실험실 한정 익스플로잇만 보유, 범용 익스플로잇은 연구 중" · 원격 DoS는 용이</div>
+  <div class="blk">
+    <ul>
+      <li><strong>심각도 눈금이 갈린다: NVD CVSS 3.1 5.9(중간) — 공격 복잡도 '높음'(경합 필요)을 반영한 점수</strong> 반면 Ubuntu는 우선순위 '높음', Debian은 stable·LTS 양쪽에 DSA/DLA를 발령했다. CISA SSVC는 '악용 없음·자동화 가능·영향 부분적' — 세 눈금 중 하나만 믿고 판단 순위를 정하는 운영 관행 자체가 이 CVE에서 리스크다</li>
+      <li><strong>발견자는 한국의 현우 김(@v4bel) — 보고부터 공개까지 표준 프로세스를 지켰다</strong> — linux-distros@openwall에 사전 통보하는 금수(embargo) 절차를 거쳐 11-03 커널 수정 → 11-10 CVE·배포판 패치 릴리스 → 11-16 금수 종료 후 oss-security에 전체 기술 보고서 게시. GitHub·PoC성 리포지토리 다수가 공개 며칠 만에 우후죽순 생긴 상태(공식 저장소 외 검증 주의)</li>
+      <li><strong>RCE 전환 가능성은 '경로의 질'에 달려 있다</strong> — 경로 2(child socket ABA)는 원격 use-after-free까지 닿는 갈래로, 저자도 난이도가 높아 일반적으로는 어렵다고 본다. 다만 UAF 계열은 스프레이·형상화 기법 누적으로 역사상 늘 '어렵다→된다'를 반복해 온 카테고리 — DoS용으로만 안도하고 패치를 미루는 근거로는 쓸 수 없다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>V4bel 어드바이저 FAQ · oss-security 게시글 · NVD/SSVC 메타데이터 · GitHub 검색 결과(비공식 저장소 구분)</div>
+  <div class="notes"><p>표현 주의: '한국인 연구자'는 저자 본인 표기(Hyunwoo Kim) 기준. GitHub의 nsvk13·re4·mustafasaydam 등 유사 명칭 저장소는 공식이 아니며 일부는 교육용을 자처한다 — 실행 전 검증 대상. 저자는 범용 익스플로잇 연구를 계속 중이라고 밝혀, 향후 후속 공개 시 RCE 논쟁이 다시 열릴 수 있다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘 할 일 —<br>패치가 답, 그 전까지는<br>경합 조건을 없애라</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>1순위: 커널 패치 적용</strong> — 수정 커밋 4e2b3ef19e0e(2026-11-03)가 반영된 버전으로 업데이트. 배포판 기준 Debian bookworm 6.1.192-2 / trixie 6.12.117-1, Ubuntu 6.8·7.0·7.3.4 라인 릴리스 완료(변종 커널은 트래커에서 개별 확인), 그 외 배포판은 각 벤더 공지 추적</li>
+      <li><strong>패치가 즉시 어렵다면 ① SYN 쿠키 비활성화: sysctl -w net.ipv4.tcp_syncookies=0</strong> — 요청 소켓 재생성 경로를 차단한다. 단 이 값은 네트워크 네임스페이스별 관리라 컨테이너마다 개별 적용해야 하고, SYN 플러드 방어력이 내려가는 트레이드오프가 있다</li>
+      <li><strong>② RX 직렬화: 외부 트래픽 인터페이스의 수신 큐를 하나로 줄이고 RPS·RFS를 비활성화</strong> — 서로 다른 RX 컨텍스트의 동시 경합이라는 전제 자체를 무너뜨린다. 부하로 인한 처리량 손실을 감수해야 하는 임시 방편</li>
+      <li><strong>검증 항목: SSH·Nginx처럼 인증 없이 TCP를 받는 exposed 서비스 목록을 재점검하고, 컨테이너 호스트는 '앱 다운'이 아니라 '호스트 다운' 사안으로 대응 등급을 격상할 것</strong> — 현재 악용 보고는 없지만 PoC와 리포가 공개된 상태, 자동화 가능성은 SSVC 기준 '예'다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>V4bel 어드바이저 완화책 · Debian DSA-6628-1/DLA-4906-1 · Ubuntu CVE 트래커</div>
+  <div class="notes"><p>완화책 두 가지는 저자 공식 권고다. SYN 쿠키를 끄면 이 취약점의 재할당 경로는 막히지만 SYN flood 회복탄력성이 떨어지므로 인터넷 경계 서비스에서는 패치까지의 한시적 사용이 원칙. 단일 RX 큐화도 성능 비용이 있어 상시 구성보다는 긴급 완충용으로 위치를 잡아야 한다.</p></div>
+</section>
+
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=430,H=932;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+</body>
+</html>
