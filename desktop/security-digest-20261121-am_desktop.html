@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.21 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+.back-btn{position:absolute;top:14px;left:18px;z-index:60;display:inline-flex;align-items:center;gap:7px;padding:8px 15px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;color:#f2f2f5;background:rgba(18,19,24,.82);border:1px solid rgba(255,255,255,.28);border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-decoration:none;opacity:.92;transition:opacity .2s,background .2s}
+.back-btn:hover{opacity:1;background:rgba(18,19,24,.95)}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<a class="back-btn" href="index.html" title="목록으로 돌아가기">&#8592; 목록</a>
+<section class="slide title-slide">
+  <div class="s-tag">Security Daily Digest · Morning Edition</div>
+  <h1 class="s-title">아침 정보보안<br>다이제스트<br>— 기계가 뚫은 날</h1>
+  <div class="title-date">2026. 11. 21 (SAT)</div>
+  <div class="title-meta">
+    <div><div class="n">자율 AI 해킹 실전화</div><div class="l">Cairn 11분 제로데이 장악 / Bell Canada '에이전틱 위협 행위자' 피격 공식 인정</div></div>
+    <div><div class="n">KVM 하이퍼바이저 붕괴</div><div class="l">CVE-2026-99312 — AMD 호스트서 게스트가 127GB 호스트 메모리 열람·변조</div></div>
+    <div><div class="n">Expressway 야생 악용</div><div class="l">CVE-2026-76466(9.8) KEV 등재·SSVC active — Cisco 경계 장비 root 탈취</div></div>
+  </div>
+  <div class="title-foot">어제는 '인간 해커'라는 전제가 무너진 날로 기록됩니다. Amazon 위협 인텔리전스는 공격자가 셸 획득 목표만 준 자율 AI 침투 도구 'Cairn'이 동아시아 교육기관 의료 영상 AI 앱(MONAI Label)에서 제로데이를 스스로 찾아 11분 만에 root를 잡은 실전 사례를 공개했고, Bell Canada는 에이전틱 위협 행위자가 회선 프로비저닝 시스템에 침입해 기업 고객 데이터를 탈취했다고 공식 확인했습니다. 같은 날 Linux KVM의 4년 잠복 격리 붕괴 결함(CVE-2026-99312)이 공개됐고, Cisco Expressway 루트 RCE(CVE-2026-76466)는 PoC 공개 직후 야생 악용이 확인돼 CISA KEV에 등재됐습니다. 국내에서는 금감원이 가상자산사업자 28곳 CISO를 긴급 소집해 외부접점 전수점검을 지시했습니다<br>국내외 주요 정보보안 이슈 요약 및 심층 분석 — 아침판</div>
+  <div class="notes"><p>2026년 11월 21일자 토요일 아침 다이제스트. 축: '기계가 뚫은 날' — 공격 주체의 자동화(AI 에이전트), 방어의 사각(하이퍼바이저·경계 장비), 그리고 그에 대한 규제 시계의 가속. CVE 점수는 NVD API 원문 대조: CVE-2026-99312 8.8 High(커널팀 채점), CVE-2026-76466 9.8 Critical(Cisco psirt 원채점)·SSVC 악용 'active'·CISA KEV 2026.11.20 자 등재 확인.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">AI 에이전트가<br>제로데이를 찾아<br>11분 만에 root를 잡았다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">Cairn에 부여된 목표는 단 하나 '셸 접근' — 인간이 몇 주 걸던 제로데이 발굴·무기화가 10여 분 단위로 압축</div>
+  <div class="blk">
+    <ul>
+      <li><strong>Amazon Threat Intelligence 공개: 공격자가 오픈소스 멀티에이전트 침투 도구 'Cairn'(비인증 노출로 정찰 기록이 유출된 상태)에 셸 획득 목표만 부여</strong> — 에이전트가 동아시아 대학 연구기관의 오픈소스 의료 영상 AI 앱 MONAI Label에서 미지의 경로 탐색 제로데이를 스스로 발견, API 매핑부터 Python 시작 스크립트(sitecustomize.py)에 리버스 셸 심기까지 11분 만에 root 장악(MONAI Label은 11월 18일 패치 배포)(BleepingComputer)</li>
+      <li><strong>같은 날 Bell Canada 공식 인정: 11월 17일 '에이전틱 위협 행위자'가 통신 회선 주문·프로비저닝용 Maximo 사전 운영(Pre-production) 환경에 침입</strong> — 기업 고객 연락처, 티켓 제목, 일부 네트워크 IP 정보가 탈취됐다. 통신 인프라의 '개발·스테이징' 영역이 정면 표적이 된 첫 대형 공식 사례</li>
+      <li><strong>두 사건의 공통분모는 속도 압축과 방어 허점 이동</strong> — 프로덕션보다 인증·망분리가 약한 사전 운영 환경, 그리고 인간 분석가가 따라갈 수 없는 속도의 API 탐색. 개발·스테이징 환경을 프로덕션 동급으로 격리하고 비정상 고속 탐색을 차단하는 자동 방어가 시급하다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>BleepingComputer · Amazon Threat Intelligence · Bell Canada 공식 확인</div>
+  <div class="notes"><p>표현 주의: Cairn 공격의 배후 '중국 연계 추정'은 보도 기준 추정 표기다. Bell Canada는 공격자를 '에이전틱 위협 행위자'로만 표현했으며 국가·조직 귀속은 미확인. '11분'은 Amazon 발표 기준 실측으로, 에이전트 무기의 반응 시간을 전제로 한 방어 SLA 재설계(인간 대응 창 24시간 → 자동 차단 분 단위)가 실무 논점으로 떠오른다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">게스트가 호스트를 읽는다 —<br>KVM 격리 붕괴와<br>'패치가 만든 구멍'</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">CVE-2026-99312 (커널팀 채점 CVSS 8.8 High) — 게스트 VM root가 호스트 RAM 127GB 열람·호스트 커널 메모리 변조</div>
+  <div class="blk">
+    <ul>
+      <li><strong>원인은 '패치가 만든 취약점': 2022년 CVE-2022-3344를 고치던 보안 패치가 중첩 VM의 INIT 리셋 때 외부 VM의 중첩 페이지 테이블(NPT) 포인터 복구를 누락</strong> — 이후 약 4년간 커널에 잠복했다. NVD 수정 커밋은 'KVM: x86: Unconditionally reset MMU context when emulating INIT' — INIT 에뮬레이션 시 페이징 여부와 무관하게 MMU 컨텍스트를 강제 리셋하도록 된다</li>
+      <li><strong>공격 구조: 게스트 VM 내 root 공격자가 해제된 페이지 메모리에 조작된 페이지 테이블 엔트리를 채우면 CPU가 이를 정상 테이블로 인식</strong> — DigitalOcean 공유 클라우드 등 AMD 호스트에서 Terra Security 연구원 Oren Yomtov가 검증. Intel 호스트는 해당 코드가 없어 영향 없음</li>
+      <li><strong>업스트림은 수정 완료(7.3.5·6.18.64·6.12.118), Debian·Ubuntu·RHEL 배포판 패키지는 아직 미배포</strong> — 게스트 OS 패치로는 막을 수 없고 호스트 커널 업데이트 후 재부팅이 필요하다. 그 전까지 중첩 가상화가 불필요한 AMD 호스트는 kvm_amd nested=0 + 재부팅이 유일한 차단책</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · NVD API(CVE-2026-99312 커널팀 채점 8.8) · Terra Security 검증</div>
+  <div class="notes"><p>NVD 원문 확인: 상태 Received, CVSS 3.1 8.8 High(커널팀 채점), KEV 카탈로그(2026.11.20 기준) 미등재 — '악용 보고 없음' 상태로 공개됐다. 그러나 성격이 하이퍼바이저 격리 붕괴라 멀티테넌트 클라우드 사업자에게는 점수보다 훨씬 무거운 사안이다. 어제 NoisyTCP(네트워크 스택), 그제 NGINX2Root(웹서버)에 이어 인프라 하부 결함 3연타의 마지막 조각.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">Expressway가 뚫렸다 —<br>PoC 공개 직후 야생 악용,<br>AI 작성 스크립트로 횡적 이동</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">CISA KEV 11월 20일 등재 · SSVC 악용 'active'·기술적 영향 'total' — 경계 장비 root 탈취는 내부망 전체의 문제</div>
+  <div class="blk">
+    <ul>
+      <li><strong>Cisco Expressway Series X15.5.3 이하: 영구 쿠키 사용 + 클러스터 TLS 클라이언트 인증서 검증 미흡으로 무인증 원격 공격자가 DB 서비스 RPC를 호출해 OS root 명령 실행</strong>(CVE-2026-76466, Cisco 원채점 9.8) — 10월 21일 패치(X15.5.20 등) 이후 러시아 보안 기업 F6가 PoC 공개 직후 첫 야생 공격을 포착했다(The Hacker News)</li>
+      <li><strong>공격 체인: 인터넷 노출 장비 2대 장악 → 클러스터 신뢰 관계를 타고 내부 노드 2대로 피벗 → SMB·SQL Server·WinRM·내부 GitLab 저장소를 AI 도구로 작성한 것으로 추정되는 Python 스크립트들로 자동 탐색·자격증명 탈취</strong> — '경계 장비 1대 = 내부망 스캐너 배치'라는 고전 패턴이 AI 자동화로 재등장했다</li>
+      <li><strong>점검 지침: Erlang 로그(erlang.log)의 wombat@127.0.0.1 흔적, /mnt/harddisk/ 경로 비인가 Python 스크립트 유무 확인</strong> — 패치 미완료 장비는 즉시 X15.5.20 이상으로, 당장 불가하면 인터넷 노출을 해제해야 한다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · F6 발표 · NVD(Cisco psirt 채점) · CISA KEV 2026.11.20</div>
+  <div class="notes"><p>확인 사실: KEV 등재일 2026-11-20, SSVC exploitation 'active' — 어제까지의 CVE 보도들과 달리 이 건은 '실제 악용 확인' 축에 속한다. Expressway는 화상회의 경계 장비로 외부와 내부망을 동시에 보는 위치에 있어, 클러스터 신뢰를 통한 피벗이 특히 치명적이다. AI 작성 스크립트 정황은 F6 분석 기준으로 '추정' 표기.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 4</div>
+  <h2 class="s-title">금감원, VASP 28곳<br>CISO 긴급 소집 —<br>"접점 원점에서 다시 점검"</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">9월 말~11월 초 금융권 37개사 40건·약 47만 3,000건 유출 — 가상자산사업자 3곳 포함</div>
+  <div class="blk">
+    <ul>
+      <li><strong>금융감독원이 11월 20일 국내 가상자산사업자 28개사 CISO를 긴급 소집, AI 해킹 대비 외부접점(API·직원 업무망·개발/테스트 서버 포함) 전수점검을 지시</strong> — 보안팀 단독 체크리스트가 아니라 IT 개발·운영 부서 합동 재검증 방식. 기존 점검 목록이 AI 공격의 우회 대상이 된다는 판단이 배경이다(테크M·ZDNet Korea)</li>
+      <li><strong>콜드월렛 보관 비중 95% 이상 관리, 해킹 정황 초기 단계에서 비조치의견서를 통한 선제적 입출금 차단 허용</strong> — '차단했다가 나중에 문제가 된다'는 규제 리스크를 당국이 먼저 덜어준 구조. 원화마켓 5곳에 그쳤던 금융보안원 가입도 나머지 23개 중소 VASP로 확대</li>
+      <li><strong>"점검 결과보다 실제 취약점 개선 여부와 방치 책임을 엄정히 묻겠다"</strong> — 형식적 서류 컴플라이언스에서 실질 공격 표면 관리(ASM)로의 재편 선언. 이번 주 글로벌 사건들(AI 에이전트·경계 장비 악용)이 국내 규제 시계를 앞당긴 셈이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>테크M · ZDNet Korea · 금융감독원 지시</div>
+  <div class="notes"><p>수치는 금감원 발표 기준(37개사 40건, 47만 3,000건) — 집계 기간 9월 말~11월 초. 비조치의견서는 '해킹 정황 초기의 선제 차단'에 한정된 안전장치로, 광범위한 면책이 아님에 주의. 중소 VASP의 금융보안원 가입 확대는 상시 감시 체계 편입을 의미한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">11분이라는 숫자가<br>바꾸는 것 —<br>에이전틱 해킹의 작전학</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>Cairn 사건의 본질은 '목표 위임'이다: 공격자는 익스플로잇을 고르지 않았다. "셸을 얻어라"는 목적 함수만 던졌고, 표적 선정·API 매핑·제로데이 발견·sitecustomize.py 백도어 심기까지 에이전트가 계획하고 실행했다</strong> — 공격의 기술적 진입 장벽이 '익스플로잇 개발 능력'에서 '에이전트 운영 비용'으로 이동한 것. 저숙련 공격자도 대량 병렬로 제로데이 복권을 살 수 있게 된다</li>
+      <li><strong>MONAI Label 같은 AI 연구 스택이 표적이 된 것은 구조적이다: 연구·교육 환경은 노출은 넓고 감시는 얇으며, 오픈소스 ML 도구는 의존성 그래프가 깊다</strong> — 에이전트는 이 '감시의 사각'을 인간보다 빠르고 지치지 없이 훑는다. 어제 다룬 진트(Xint)의 NGINX2Root 자율 탐지와 같은 축에서 읽어야 한다: 발굴 속도의 방어·공격 동시 가속, 이른바 'AI 대 AI' 군비 경쟁이 실전 단계에 진입했다</li>
+      <li><strong>Bell Canada가 보여준 두 번째 교훈은 환경 격리의 실패다: 공격자는 프로덕션이 아니라 Maximo 사전 운영(Pre-production) 환경을 골랐다</strong> — 에이전틱 공격에게 Dev/Stage는 '동일 기능·약한 방어'의 최적 경로다. 대응 원칙은 단순하다: 사전 운영 환경에 프로덕션과 같은 인증·망분리·감시를 적용하고, 고속 API 탐색 패턴(단위 시간당 엔드포인트 접근 폭증)을 탐지 규칙으로 상시화하는 것</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>Amazon Threat Intelligence · BleepingComputer · Bell Canada 발표 종합</div>
+  <div class="notes"><p>실무 체크: ① 연구·내부 도구가 쓰는 오픈소스 ML 스택(MONAI Label 등)의 인터넷 노출 전수 조사 ② sitecustomize.py·.pth·site-packages 자동 로드 지점 무결성 감시 — 에이전트가 가장 선호하는 '재기동 시 자동 실행' 위치 ③ Dev/Stage 환경 SSO·MFA 적용 여부 감사 ④ API 게이트웨이 레벨에서 봇/고속 탐색 속도 제한.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">경계 장비 한 대가<br>내부망 스캐너가 된다 —<br>AI 스크립트 횡적 이동 해부</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>Expressway 침투의 2단계는 '신뢰 구조 타기'였다: 공격자는 내부 노드를 뚫지 않았다 — 클러스터 노드 간 TLS 클라이언트 인증서 검증 미흡을 이용해 같은 클러스터 노드 2대로 피벗</strong> — 경계 장비의 고질병이 또 재현됐다: 밖을 보는 인터페이스와 안을 보는 인터페이스가 한 기기에 있고, 안쪽 신뢰는 평시에는 편리함이지만 전시에 통로다. 방화벽 정책상 '관리 프로토콜 허용'으로 열려 있던 경로가 공격자의 내부 진입로가 된다</li>
+      <li><strong>3단계의 AI 스크립트: SMB·SQL Server·WinRM·내부 GitLab을 훑는 커스텀 Python 정찰 도구들을 AI 도구로 작성한 것으로 추정</strong> — 과거라면 공격자가 준비해 온 도구가 전부였지만, 지금은 침투한 환경의 출력에 맞춰 그 자리에서 도구를 재생성한다. 탐지 관점에서 무서운 지점: 시그니처가 없는 일회성 스크립트라 파일 기반 탐지가 무력하고, '정상 관리 트래픽처럼 보이는 프로토콜 조합'(WinRM·SMB)을 쓴다</li>
+      <li><strong>방어 재배치: ① 경계 장비(Expressway·VPN·방화벽·SD-WAN)를 내부망 '신뢰 노드'에서 격하 — 클러스터 신뢰·관리망 접근을 최소로 ② 세그먼트 간 East-West 가시성 확보 — Expressway 세그먼트에서 SMB/WinRM 트래픽은 그 자체가 이상 신호 ③ GitLab 등 내부 저장소의 토큰·시크릿 스캐닝 상시화 — 정찰의 최종 목적이 자격증명이라는 점을 잊지 말 것</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>F6 공격 체인 분석 · The Hacker News 보도 종합</div>
+  <div class="notes"><p>'신뢰 구조 타기'는 2020년대 경계 장비 사고의 공통 문법: VPN 장비(아무록·포티넷 계열) 사고에서 이미 반복됐고, 클러스터 인증서 검증 생략은 그중에서도 가장 저비용으로 가장 넓게 퍼진 결함 유형. AI 작성 스크립트 '추정'은 F6 분석 표현 그대로 — 단정하지 않되, 탐지 전략은 '도구 서명'이 아니라 '행동'(비정상 프로토콜 조합·속도·시각) 기준으로 세워야 한다는 결론은 어느 쪽이든 성립한다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 3</div>
+  <h2 class="s-title">수리하려는 손이<br>구멍을 냈다 —<br>패치 유발 결함과 격리의 정치학</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>CVE-2026-99312는 '보안 패치가 새 취약점을 만든다'는 명제의 교과서다: CVE-2022-3344 수정 패치가 INIT 리셋 경로에서 NPT 포인터 복구를 건너뛰었고, 그 생략 자체가 4년 잠복 결함이 됐다</strong> — 보안 커밋은 공격 표면 재설계와 같다: 예외 경로를 추가하면 그 예외의 전체 수명 주기를 검증해야 한다. 코드 리뷰 관행상 '보안 패치'는 오히려 더 높은 기준의 회귀 테스트를 받아야 마땅하다</li>
+      <li><strong>하이퍼바이저 격리는 클라우드 신뢰의 최후 계층이다: 네트워크·OS·컨테이너 격리가 모두 게스트 안에서 싸우는 규칙이라면, KVM 결함은 심판대 아래에 폭탄을 놓는 일</strong> — 게스트 root가 호스트 RAM 127GB를 읽을 수 있다는 것은 테넌트 간 격리, 규제상 데이터 분리(금융·의료), 심지어 호스트 내 다른 국가 워크로드의 물리적 경계까지 동시에 무너뜨린다. 그래서 이 결함은 CVSS 8.8보다 무겁게 다뤄져야 한다</li>
+      <li><strong>배포판 공백 기간이 곧 노출 창: 업스트림(7.3.5·6.18.64·6.12.118) 수정 완료 vs Debian·Ubuntu·RHEL 패키지 미배포</strong> — 클라우드·호스팅 운영자는 벤더 패키지만 기다릴 수 없다. 중첩 가상화 불필요 호스트의 kvm_amd nested=0 + 재부팅을 '임시'가 아니라 이번 주 변경 창 1순위로 잡아야 한다. 어제 아침판 Action Items의 패치 윈도우에 이 건까지 합류했다 — 커널(TCP)·웹서버(HTTP/2)·하이퍼바이저(INIT/NPT) 3종 동시 처리</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>NVD 원문(수정 커밋 'Unconditionally reset MMU context when emulating INIT') · The Hacker News · Terra Security</div>
+  <div class="notes"><p>'패치 유발 결함' 선행 사례: 회귀(regression)는 보안 패치에서 드물지 않다 — 수정 자체가 새 상태 머신 분기를 만들기 때문. 운영 지침: 벤더 보안 공지 적용 후에도 해당 기능 경로(여기선 중첩 가상화 OFF 환경 포함)의 스모크 테스트를 두는 것. nested=0 적용 확인은 cat /sys/module/kvm_amd/parameters/nested 로 가능.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">이번 주말·월요일 할 일 —<br>호스트·경계·접점,<br>3개 레이어를 먼저</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>지금(NOW) · KVM: AMD 호스트에서 cat /sys/module/kvm_amd/parameters/nested 확인 → 중첩 가상화 불필요하면 nested=0 + 재부팅</strong> — 배포판 패치 배포 즉시 호스트 커널 업데이트(7.3.5·6.18.64·6.12.118 반영본)로 전환. 멀티테넌트 환경은 우선순위 최상</li>
+      <li><strong>지금(NOW) · Cisco Expressway: X15.5.20 이상 패치, 불가 시 인터넷 노출 해제</strong> — erlang.log의 wombat@127.0.0.1 흔적·/mnt/harddisk/ 비인가 Python 스크립트 점검. KEV 등재(11-20)·active 악용 확인 건이므로 탐지 IOC 대조를 병행</li>
+      <li><strong>이번 주(SOON) · MONAI Label 및 연구·내부 ML 스택: 11-18 패치 적용 + sitecustomize.py 등 자동 로드 지점 무결성 점검 + 인터넷 노출 조사</strong> / Dev·Stage 환경의 프로덕션 동급 격리 감사(SSO·MFA·망분리), 고속 API 탐색 탐지 규칙 추가</li>
+      <li><strong>국내 VASP·금융권 · 금감원 지침 이행 계획 수립: API·개발/테스트 서버 포함 외부접점 합동 전수목록, 콜드월렛 95% 비중 관리, 선제 입출금 차단 프로시저(비조치의견서 활용) 마련</strong> — 다음 분기 감사 대비 문서화가 아니라 이번 주 실행 항목으로</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>CISA KEV · NVD · 금감원 지시 · BleepingComputer 종합</div>
+  <div class="notes"><p>주말 유지보수 창 우선순위는 '무인증 원격 + 확인된 악용' 축: Expressway(active) → KVM nested=0(격리 붕괴) 순서. 어제 호(PHP·NGINX)와 합쳐 이번 주 커널/웹스택 패치 3종(KVM·NoisyTCP·NGINX2Root)을 단일 윈도우로 처리할 것. Cairn/Bell 건은 즉각 패치 대상이 아니라 방어 체계 재설계 과제 — 월요일 회의 안건으로 상정.</p></div>
+</section>
+
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
