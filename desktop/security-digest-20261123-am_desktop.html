@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>아침 정보보안 다이제스트 — 2026.11.23 PC 16:9</title>
+<style>
+:root{--color-paper:oklch(98% 0.012 45);--color-paper-2:oklch(95% 0.014 45);--color-paper-3:oklch(92% 0.016 45);--color-ink:oklch(18% 0.012 45);--color-ink-2:oklch(32% 0.014 45);--color-rule:oklch(84% 0.010 45);--color-accent:oklch(42% 0.20 25);--bg:var(--color-paper);--surface-2:var(--color-paper-3);--text-1:var(--color-ink);--text-2:var(--color-ink-2);--text-3:oklch(48% 0.012 45);--accent:var(--color-accent);--bad:var(--color-accent);--warn:oklch(68% 0.16 75);--good:oklch(58% 0.18 145)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{height:100%;overflow:hidden;background:#14151a}body{font-family:'Inter','Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw;height:100vh;overflow:hidden}.slide{position:absolute;inset:auto;left:50%;top:50%;width:430px;height:932px;padding:44px 40px 58px;transform:translate(-50%,-50%) scale(var(--mb-scale));transform-origin:center center;background:var(--bg);color:var(--text-1);overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s ease;display:flex;flex-direction:column}.slide.is-active{opacity:1;pointer-events:auto}.s-tag{font-family:'JetBrains Mono','IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}.s-title{font-family:'Oswald','Inter','Noto Sans KR',sans-serif;font-weight:800;font-size:34px;line-height:1.14;letter-spacing:-.01em;color:var(--text-1)}.rule-double{border:none;border-top:3px solid var(--text-1);position:relative;margin:22px 0}.rule-double::after{content:"";position:absolute;top:4px;left:0;right:0;border-top:1px solid var(--text-1)}.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid currentColor;margin-top:12px}.b-crit{color:var(--bad);background:oklch(42% 0.20 25 / .08)}.b-warn{color:var(--warn);background:oklch(68% 0.16 75 / .08)}.blk{margin-top:18px}.blk-label{font-family:'Oswald','Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-1);padding-bottom:8px;border-bottom:2px solid var(--text-1);margin-bottom:10px}.blk ul{list-style:none}.blk li{position:relative;font-size:15px;line-height:1.55;color:var(--text-1);padding-left:16px;margin-bottom:10px}.blk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--accent)}.blk li strong{font-weight:700}.src{margin-top:auto;background:var(--surface-2);border-left:3px solid var(--accent);padding:11px 14px;font-size:12px;line-height:1.55;color:var(--text-2)}.src b{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);display:block;margin-bottom:4px}.title-slide{justify-content:center}.title-slide .s-title{font-size:52px;line-height:1.1}.title-date{font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:20px}.title-meta{display:flex;gap:22px;margin-top:30px}.title-meta div{border-top:2px solid var(--text-1);padding-top:8px}.title-meta .n{font-family:'Oswald','Inter',sans-serif;font-size:28px;font-weight:800;line-height:1}.title-meta .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);margin-top:5px}.title-foot{margin-top:auto;font-size:12px;color:var(--text-3);line-height:1.6}.act-row{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--color-rule)}.act-row:last-of-type{border-bottom:none}.act-tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:.06em;min-width:48px;padding-top:2px}.act-tag.t-now{color:var(--bad)}.act-tag.t-soon{color:var(--warn)}.act-tag.t-mon{color:var(--text-3)}.act-head{font-size:15px;font-weight:700;line-height:1.4}.act-sub{font-size:12.5px;line-height:1.45;color:var(--text-2);margin-top:3px}.pbar{position:absolute;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:30;transition:width .3s ease}.counter{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--text-3);z-index:30;pointer-events:none}.hint{position:absolute;bottom:44px;left:0;right:0;text-align:center;font-size:13px;color:var(--text-3);z-index:29;opacity:.9;transition:opacity .6s ease;pointer-events:none}.hint.gone{opacity:0}.notes{display:none}
+
+/* DESKTOP-16:9 v2 — PC 화면 최적화 오버라이드 */
+.slide{width:1280px;height:720px;padding:44px 72px 52px}
+.s-wrap{display:flex;flex-direction:column;width:100%;height:100%;transform-origin:center center}
+.s-title{font-size:44px;line-height:1.12}
+.badge{font-size:12.5px;margin-top:14px;letter-spacing:.06em}
+.blk{margin-top:20px}
+.blk-label{font-size:16px;margin-bottom:11px}
+.blk li{font-size:17px;line-height:1.58;padding-left:17px;margin-bottom:12px}
+.blk li::before{top:9px}
+.src{font-size:13px;padding:11px 16px}
+.src b{font-size:11px}
+.title-date{font-size:16px;margin-top:22px}
+.title-meta{gap:34px;margin-top:30px}
+.title-meta .n{font-size:36px}
+.title-meta .l{font-size:11.5px;margin-top:6px}
+.title-foot{font-size:13px;line-height:1.65}
+.act-row{padding:12px 0;gap:13px}
+.act-head{font-size:16.5px}
+.act-sub{font-size:13px;margin-top:4px}
+.act-tag{font-size:12px;min-width:54px}
+.counter,.hint{display:none}
+.kbhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:var(--text-3);opacity:.55;z-index:30;pointer-events:none}
+.back-btn{position:absolute;top:14px;left:18px;z-index:60;display:inline-flex;align-items:center;gap:7px;padding:8px 15px;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.06em;color:#f2f2f5;background:rgba(18,19,24,.82);border:1px solid rgba(255,255,255,.28);border-radius:9px;box-shadow:0 2px 10px rgba(0,0,0,.35);text-decoration:none;opacity:.92;transition:opacity .2s,background .2s}
+.back-btn:hover{opacity:1;background:rgba(18,19,24,.95)}
+/* END DESKTOP-16:9 */
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<div class="deck">
+<a class="back-btn" href="index.html" title="목록으로 돌아가기">&#8592; 목록</a>
+<section class="slide title-slide">
+  <div class="s-tag">Security Daily Digest · Morning Edition</div>
+  <h1 class="s-title">아침 정보보안<br>다이제스트<br>— 한전의 두 번째 문</h1>
+  <div class="title-date">2026. 11. 23 (MON)</div>
+  <div class="title-meta">
+    <div><div class="n">한전 152만 248건 연쇄 유출</div><div class="l">한전ON·전자조달(SRM) — 주민번호+카드번호 결합 유출, 한 달 만의 재참사</div></div>
+    <div><div class="n">OpenRouter, 'ZDR' 허상 드러나다</div><div class="l">카나리 200만 건 추적 — 침해 방치 호스팅 3곳 퇴출, 125개 엔드포인트 자격 박탈</div></div>
+    <div><div class="n">클라우드 관리평판·엔진 연쇄 피격</div><div class="l">Rackspace Spot Kubernetes 시크릿 열람 / MS Entra Connect Health API 실제 악용</div></div>
+  </div>
+  <div class="title-foot">새 한 주의 시작이 무겁다. 한국전력공사가 고객 플랫폼 '한전ON'과 전자조달시스템(SRM)에서 주민등록번호·계좌번호·카드번호를 포함해 총 152만 248건이 유출됐다고 공식 발표했다 — 지난달 임직원 3만 5천 명 유출에 이은 한 달 만의 재참사다. AI 전선에서는 Dragos의 카나리 토큰 200만 건 추적이 '데이터 미보관(Zero Data Retention)' 약속의 민낯을 드러냈다: OpenRouter 연동 호스팅 업체 3곳이 수개월간 침해당한 채 고객 프롬프트와 AWS 키를 빼앗기고 있었고, ZDR 플래그조차 저가 리셀러로 몰래 우회됐다. 클라우드에서는 Rackspace Spot의 Kubernetes 시크릿 열람과 마이크로소프트 Entra Connect Health API의 실제 악용이 같은 날 확인됐고, Ghostscript 샌드박스 탈출(CVE-2026-125396)은 평범한 파일 업로드 하나를 서버 명령 실행으로 바꾼다. 국내에서는 CJ대한통운 챗봇과 블랙다이아몬드 외주 ERP가 새로운 접점 공격면임을 알렸다<br>국내외 주요 정보보안 이슈 요약 및 심층 분석 — 아침판</div>
+  <div class="notes"><p>2026년 11월 23일자 월요일 아침 다이제스트. 축: '한전의 두 번째 문' — 같은 기관이 한 달 사이 두 번, 이번엔 대민·조달 두 개 시스템에서 동시에 뚫렸다. 부축은 신뢰의 하청(OpenRouter ZDR)과 관리평판(Rackspace·Entra), 그리고 렌더러라는 그림자 공격면(Ghostscript). 주차 누적 문서는 2026년 11월 4주차 다이제스트에 기록된다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 1</div>
+  <h2 class="s-title">한전 152만 248건 유출 —<br>주민번호·카드번호가<br>함께 빠져나갔다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">한전ON 65만 487명 + 전자조달(SRM) 86만 9,761명 — 10월 임직원 유출 후 한 달 만의 재참사, 사장 명의 대국민 사과</div>
+  <div class="blk">
+    <ul>
+      <li><strong>한국전력공사, 11월 22일 공식 발표: 11월 20일 외부 불법 접속 시도를 탐지해 조사한 결과 고객 플랫폼 '한전ON'과 전자조달시스템(SRM)에서 총 152만 248건의 개인정보가 유출</strong> — 김동철 사장 명의 대국민 사과문이 게시됐다(보안뉴스)</li>
+      <li><strong>유출 항목의 무게가 다르다: 한전ON에서는 고객번호·성명·주민(외국인등록)번호·주소·은행명·계좌번호·카드사·카드번호·요금정보 등 12개 항목</strong>, 조달망에서는 기업 대표자 42만 6,827명의 주민번호·이메일과 한전·협력사 직원 44만 2,934명의 사번·연락처가 노출됐다 — 식별자와 금융정보가 결합된 형태라 명의도용·금융 피싱 위험이 최상위다</li>
+      <li><strong>반복되는 실패라는 점이 본질: 불과 한 달 전 10월에도 임직원 2만 4,769명(국감에서 안면인증 408명, CCTV 1만 4,957대 계정 포함 총 3만 5,528명으로 확대 확인) 노출 사고를 겪었다</strong> — 한전은 "고객 편의·접근성을 높이기 위한 개방형 디지털 서비스 일부 기능이 표적이 됐다"고 밝혔다. 대민 기능 확장 속도에 인증·API 접근 통제와 고유식별번호 분리 보관이 따라가지 못한 구조적 문제다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>보안뉴스 · 한전 공식 발표 (11-22)</div>
+  <div class="notes"><p>확정/진행 중 분리: 유출 규모(152만 248건)와 항목 목록은 한전 공식 발표 기준 확정. 침입 경로·악용된 구체 기능은 조사 중으로 미공개 — '개방형 디지털 서비스 일부 기능'이라는 기관 표현 이상으로 단정하지 않는다. 후속: 방통위·개인정보위 조사, 범정부 2차 피해 방지 조치(명의도용 차단 서비스 안내 등)를 이번 주 MON 항목으로 추적.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 2</div>
+  <h2 class="s-title">OpenRouter 퇴출 사태 —<br>'Zero Data Retention'의<br>허상을 낚아올린 카나리</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">Dragos, 카나리 프롬프트 200만 건 추적 — 침해 인지조차 못 한 호스팅 3곳 퇴출, ZDR 자격 125개 엔드포인트 박탈</div>
+  <div class="blk">
+    <ul>
+      <li><strong>Dragos 연구진이 7월부터 11월까지 카나리 토큰(고유 웹 링크·AWS 테스트 키)을 심은 프롬프트 200만 건을 AI 게이트웨이·추론 업체에 전송해 추적</strong> — OpenRouter와 연동된 호스팅 제공업체 3곳이 수개월간 내부 침해를 당한 채 고객 프롬프트와 AWS 키를 도난당하고 있었고, 스스로 침해 사실조차 모르고 있었다(The Hacker News)</li>
+      <li><strong>탈취 지점이 예사롭지 않다: 모델에 거절된 요청까지 통째로 빠져나갔다 — 공격자가 트래픽 최전단에서 요청 전체를 복제했다는 뜻</strong>이다. 훔친 AWS 키는 11월 1일 ARTEX AI 도구로 생존 검증까지 됐다(Phala·Together AI 등은 별도 침해 공지 발표)</li>
+      <li><strong>ZDR 플래그는 휴지조각이 됐다: 데이터 미보관 설정 프롬프트조차 제3자 저가 리셀러 마켓플레이스로 은밀히 포워딩</strong> — 한 중국 AI 연구소는 모델 요청 링크의 절반 이상(ZDR 요청의 약 3분의 2 포함)을 스크래핑해 Git 저장소 복제를 시도하고 사내 메신저(Feishu)에서 열람한 정황까지 잡혔다. OpenRouter는 업체 3곳 퇴출과 125개 엔드포인트 ZDR 자격 박탈로 대응했지만, AI 추론 공급망 신뢰 위기 자체는 남았다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · Dragos 연구 (7-11월 추적)</div>
+  <div class="notes"><p>실무 함의: 프라이버시 플래그는 계약 문구일 뿐 기술적 보장이 아니다. 기업은 AI 프롬프트에 API 키·기밀 코드를 실어 보내는 관행 자체를 금지하고, 게이트웨이 경유 시 민감 데이터 마스킹, 고감도 워크로드는 1차 벤더 직계약 또는 자체 호스팅으로 분리해야 한다. 카나리 토큰은 우리 조직 프롬프트의 실제 종착지를 확인하는 유일한 검증 수단이라는 점도 기억할 것.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 3</div>
+  <h2 class="s-title">관리평판이 뚫렸다 —<br>Rackspace Spot 시크릿 열람,<br>MS Entra API 실제 악용</h2>
+  <hr class="rule-double">
+  <div class="badge b-warn">작업 부하가 아니라 그 위를 관리하는 층이 표적 — 고객은 DB 비밀번호·API 키·리프레시 토큰 전량 교체가 필수</div>
+  <div class="blk">
+    <ul>
+      <li><strong>Rackspace(11-21 공지): 11월 17일 공격자가 유출 고객 자격증명으로 Rackspace Spot에 로그인, 고객 Kubernetes 클러스터에 무단 파드(접두사 i1·glm-·probe)를 생성하고 DB 비밀번호·API 키가 담긴 Kubernetes Secrets와 Spot 토큰을 열람</strong> — Rackspace와 공동 개발사 Platform9은 전체 정화를 위해 관리 콘솔 접속을 전면 차단했다가 21일 복구했다(BleepingComputer)</li>
+      <li><strong>마이크로소프트도 같은 날 인정: 온프레미스 AD 동기화 모니터링용 Entra Connect Health API에 7월 23일 도입된 취약점이 11월 9일 발견 전까지 실제 악용</strong> — 다수 기업·MSP 테넌트의 관리자 이메일, 테넌트 ID, 초기 도메인, 동기화 상태, 만료 인증서 등 메타데이터가 무단 조회됐다(BleepingComputer)</li>
+      <li><strong>비밀번호·토큰 자체는 미유출이지만 피해 시나리오는 명확하다: 노출된 관리자 이메일을 노린 고도화 스피어피싱과 테넌트 지형 파악(초기 도메인·동기화 상태)은 침입 전 단계의 연료</strong> — MSP처럼 다수 고객을 대리 관리하는 구조에서는 한 개의 관리평판 침해가 고객사 전체로 증폭된다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>BleepingComputer · Rackspace 공지 · Microsoft 통지 (11-20~21)</div>
+  <div class="notes"><p>대응 순서: ① Rackspace Spot 고객은 클러스터 내 모든 Secret·DB 비밀번호·API 키·리프레시 토큰 rotate, 무단 파드 생성 이력 감사 ② Entra Connect Health 고객은 관리자 메일 대상 피싱 경보 공지, 인증서 만료 정보 노출분 점검 ③ 관리 콘솔(IP 허용·하드웨어 MFA·조건부 접근)을 작업 부하와 다른 사령탑으로 취급하는 체계 재확인. '관리평판'과 '작업평판'의 분리 통제가 이번 두 사건의 공통 교훈이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Top Story 4</div>
+  <h2 class="s-title">Ghostscript 샌드박스 탈출 —<br>업로드 한 번이<br>서버 명령이 된다</h2>
+  <hr class="rule-double">
+  <div class="badge b-crit">CVE-2026-125396 (CVSS 8.5) 폰트 로딩 UAF — ImageMagick·Pillow 경유 Roundcube·WordPress 등 10여 개 앱 실증</div>
+  <div class="blk">
+    <ul>
+      <li><strong>pwn.ai가 Ghostscript 10.08.0(9월 패치) 이전 버전의 폰트 로딩 중 use-after-free 결함(CVE-2026-125396, CVSS 8.5)으로 -dSAFER 샌드박스를 뚫는 RCE를 시연</strong> — 앱이 Ghostscript를 직접 호출하지 않아도 ImageMagick·Pillow 등 백엔드 렌더러가 PNG·JPG·PDF 썸네일 생성 과정에서 내부적으로 호출한다. Roundcube 웹메일·WordPress 플러그인 등 10여 개 앱에서 평범한 파일 업로드만으로 서버 명령 실행이 성립했다(The Hacker News)</li>
+      <li><strong>패치 공백이 공격 창이다: Debian 12·Amazon Linux·SUSE 등 다수 배포판과 컨테이너 이미지의 업데이트가 지연</strong> — 의존성 트리에 갇혀 버전 올림을 못 하는 애플리케이션이 그대로 무방비 노출된다. 10.08.0 이상 업그레이드와 AppArmor 격리가 시급하다</li>
+      <li><strong>국내 접점도 동시에 울렸다: CJ대한통운은 11월 16일경 배송 조회 '오네(O-NE)' 챗봇 서버에 대한 비정상 자동화 대량 접근(인수인 이름·동 단위 주소 조회)을 포착해 WAF 차단 강화와 조사에 착수</strong>(데일리시큐), 블랙다이아몬드 코리아는 주문·배송용 외주 통합 ERP 서버의 비정상 접근 통보를 받고 연동을 차단했다(보안뉴스) — 챗봇 API 열거 공격과 외주 물류 접점이 새 표적 지형이다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · pwn.ai 시연 · 데일리시큐 · 보안뉴스</div>
+  <div class="notes"><p>공격면 관점: 렌더러는 '보이지 않는 서브프로세스'다 — 업로드 파일 검증(magic bytes만으론 부족), 썸네일 생성을 별도 컨테이너·샌드박스로 격리, Ghostscript 미설치 이미지 사용 같은 공급 단계 통제가 재발 방지에 직결된다. CJ대한통운 건은 유출 확정 발표가 아니라 '비정상 접근 포착·조사 중' 단계 — 피해 규모가 확정되기 전까지 단정 표기 금지.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 1</div>
+  <h2 class="s-title">개방형 공공서비스의 청구서 —<br>편리함의 속도와<br>보안의 부채</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>한전 사고의 방정식: '편리함'은 인증 경계를 인터넷 쪽으로 옮기는 작업이다</strong> — 한전ON의 요금 조회·납부, SRM의 조달 참여 기능은 본래 내부망 신뢰권에 있던 데이터를 로그인 한 번이면 닿는 곳에 배치했다. 기관이 "개방형 디지털 서비스 일부 기능이 표적이 됐다"고 말할 때, 그 말은 곧 방어 책임이 인터넷 노출면으로 이동했다는 자인이다</li>
+      <li><strong>데이터 모델이 사고 규모를 결정한다: 주민번호+계좌번호+카드번호가 한 레코드에 공존하면, 뚫린 순간 2차 피해(명의도용·금융 사기)의 완결 세트가 넘어간다</strong> — 고유식별번호는 조회 전용으로 분리 보관하고 서비스 DB에는 토큰화된 식별자만 두는 설계, 조달망 대표자 주민번호처럼 '왜 이 테이블에 필요한가'를 되묻는 최소 수집 원칙이 부채 상환의 첫 항목이다</li>
+      <li><strong>한 달 만의 재발은 사후 조치의 실패다: 10월 임직원 유출 후 특단의 통제 강화가 있었다면 11월 연쇄 유출은 막았어야 한다</strong> — 사고 후 점검이 '권고 이행 확인'에서 끝나고 아키텍처 개편으로 이어지지 않는 공공기관 관행, 그리고 반복 기관에 대한 제재·평가 체계의 실효성이 이번 주 국정감사 이후 최대 쟁점이 된다</li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>보안뉴스 · 한전 발표 종합 분석</div>
+  <div class="notes"><p>국가·공공기관 실무 이관: ① 대민 전환(웹/모바일) 신규 기능의 보안성 검토를 오픈 전 게이트로 강제(현재는 사후 점검 중심) ② 고유식별번호 결합 보관 시스템 전수 조사·분리 일정 수립 ③ 협력사·조달 참여자 데이터는 '대외 제공 가능한 성격'으로 분류해 별도 격리. 개인 실무: 한전 고객이라면 카드 즉시 재발급·명의도용 차단 서비스(무료) 등록, 조달 참여 기업은 대표자 명의 금융계좌 동결 옵션 검토.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Deep Dive 2</div>
+  <h2 class="s-title">신뢰의 하청 —<br>AI 추론 공급망에서<br>'플래그'는 계약일 뿐이다</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>OpenRouter 모델의 경제학이 사고를 예약했다: 게이트웨이는 최저가 라우팅을 팔고, 저가 리셀러는 로깅·재라우팅으로 마진을 만든다</strong> — Dragos가 적발한 ZDR 우회(저가 마켓플레이스 포워딩, 중국 연구소의 요청 스크래핑)은 예외가 아니라 이 가격 구조의 필연적 탈루다. 구매자는 1차 벤더와 계약했지만 프롬프트의 실제 종착지는 공급망 최하단 리셀러였다</li>
+      <li><strong>'거절된 요청'까지 훔쳐간 위치에서 교훈을 읽어야 한다: 침해는 모델이 아니라 모델 앞의 프록시·게이트웨이 계층에서 일어났다</strong> — 트래픽 최전단 복제는 TLS 종단점과 로그 파이프라인을 가진 곳이면 가능하다. 벤더의 보안 성숙도 평가가 모델 성능 비교표보다 선행돼야 하는 이유다</li>
+      <li><strong>방어는 세 겹으로: ① 내보내기 통제 — 프롬프트에 API 키·기밀 코드를 넣지 못하게 하는 DLP와 코드 마스킹(키가 들어가면 유출면이 데이터에서 자격증명으로 격상된다) ② 라우팅 투명성 — 카나리 토큰으로 우리 트래픽의 실제 종착지 정기 검증 ③ 중대 워크로드 분리 — 고감도 추론은 1차 벤더 직계약 또는 자체 호스팅으로 공급망 밖으로</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>The Hacker News · Dragos 연구 종합 분석</div>
+  <div class="notes"><p>거버넌스 관점: ZDR은 '기술적 상태'가 아니라 '벤더의 선언'이다. 조달·계약 심사 시 프롬프트 보관 정책뿐 아니라 하위 재처리자(sub-processor) 목록과 감사권을 요구해야 하고, AI 게이트웨이 이용 규정에 기밀 데이터 반입 금지와 위반 시 계약 조항을 명시할 것. 자사 11-20 진트 특집(AI 코딩 에이전트 신뢰)과 같은 축 — 신뢰할 수 있는 것은 모델이 아니라 검증 가능한 경로뿐이다.</p></div>
+</section>
+<section class="slide">
+  <div class="s-tag">Action Items</div>
+  <h2 class="s-title">오늘 할 일 —<br>한전 고객·조달기업,<br>그리고 렌더러 점검</h2>
+  <hr class="rule-double">
+  <div class="blk">
+    <ul>
+      <li><strong>지금(NOW) · 한전 고객: 카드 재발급·계좌 변경 모니터링, 명의도용 차단 서비스 무료 등록 — '한전 사칭 요금·환급' 피싱이 오늘부터 쏟아질 것을 전제로 알림 발송</strong> / 조달 참여 기업은 대표자 주민번호 노출 전제로 금융 계정 이상거래 점검</li>
+      <li><strong>지금(NOW) · Rackspace Spot 고객: Kubernetes Secrets·DB 비밀번호·API 키·리프레시 토큰 전량 rotate, 무단 파드(i1·glm-·probe) 생성 이력 감사</strong> / Entra Connect Health 이용 조직은 관리자 이메일 대상 스피어피싱 경보 공지</li>
+      <li><strong>오늘(TODAY) · Ghostscript: 10.08.0 미만 설치 현황 전수 조사(컨테이너 이미지 포함) — ImageMagick·Pillow 경유 썸네일 파이프라인을 격리 컨테이너로 분리하고 업로드 파일 검증 강화</strong></li>
+      <li><strong>이번 주(SOON) · AI 게이트웨이 정책: 프롬프트 내 자격증명 반입 금지 + 카나리 토큰 종착지 검증, 챗봇·외주 ERP(API 열거 방어·접근 통제) 점검</strong> / <strong>지속 감시(MON) · 한전 침입 경로 수사 결과, CJ대한통운 오네 챗봇 조사 결론, OpenRouter 후속 공급망 감사, Ruby2Shell PoC 공개 D-2(11-25)</strong></li>
+    </ul>
+  </div>
+  <div class="src"><b>출처</b>한전 · Rackspace · pwn.ai · Dragos 발표 종합</div>
+  <div class="notes"><p>우선순위 논리: 오늘 지시 3건은 모두 '이미 터진 사건의 확산 차단'(유출 정보 악용, 시크릿 재사용, 렌더러 공격면)이고 SOON은 구조적 재발 방지다. MON 항목 중 Ruby2Shell PoC(11-25)는 어제 호부터 이어지는 마감 임박 항목 — 이번 주 목요일 전 업그레이드를 끝내야 한다.</p></div>
+</section>
+</div>
+<script>
+(function(){'use strict';var d=document.querySelector('.deck');if(!d)return;var s=Array.prototype.slice.call(d.querySelectorAll('.slide'));if(!s.length)return;var W=1280,H=720;function f(){var vw=window.innerWidth||390,vh=window.innerHeight||844;d.style.setProperty('--mb-scale',Math.min(vw/W,vh/H).toFixed(4))}f();window.addEventListener('resize',f);window.addEventListener('orientationchange',function(){setTimeout(f,200)});var p=document.createElement('div');p.className='pbar';d.appendChild(p);var c=document.createElement('div');c.className='counter';d.appendChild(c);var h=document.createElement('div');h.className='hint';h.textContent='\u2190 \uc2a4\uc648\uc774\ud504 \u2192';d.appendChild(h);setTimeout(function(){h.classList.add('gone')},5000);var cur=0;function show(i){i=Math.max(0,Math.min(s.length-1,i));cur=i;s.forEach(function(sk,k){sk.classList.toggle('is-active',k===i)});p.style.width=((i+1)/s.length*100)+'%';c.textContent=(i+1)+' / '+s.length}show(0);var sx=0,sy=0,tr=false;document.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;sx=e.touches[0].clientX;sy=e.touches[0].clientY;tr=true},{passive:true});document.addEventListener('touchend',function(e){if(!tr)return;tr=false;var t=e.changedTouches[0],dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){if(dx<0)show(cur+1);else show(cur-1);return}if(Math.abs(dx)<12&&Math.abs(t.clientY-sy)<12){var w=window.innerWidth;if(t.clientX>w*0.65)show(cur+1);else if(t.clientX<w*0.35)show(cur-1)}},{passive:true});document.addEventListener('mousedown',function(e){mx=e.clientX});var mx=null;document.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){if(dx<0)show(cur+1);else show(cur-1)}});function fromHash(){var m=/^#\/(\d+)/.exec(location.hash);if(m)show(parseInt(m[1],10)-1)}window.addEventListener('hashchange',fromHash);fromHash();setInterval(function(){var h='#/'+(cur+1);if(location.hash!==h){try{history.replaceState(null,'',h)}catch(e){}}},800)})();
+</script>
+<script>/*DESKTOP-FIT*/(function(){var s=document.querySelectorAll('.slide');var n=s.length;if(!n)return;var k=document.createElement('div');k.className='kbhint';k.textContent='\u2190 \u2192 \ud0a4 \ub610\ub294 \ub4dc\ub798\uadf8 \ub108\ube44\uac8c\uc774\uc158';document.querySelector('.deck').appendChild(k);function idx(){for(var i=0;i<n;i++)if(s[i].classList.contains('is-active'))return i;return 0}document.addEventListener('keydown',function(e){var i=idx();if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();if(i+2<=n)location.hash='#/'+(i+2)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(i>0)location.hash='#/'+i}});function autoFit(){for(var i=0;i<n;i++){var sl=s[i];var w=sl.querySelector(':scope > .s-wrap');if(!w){w=document.createElement('div');w.className='s-wrap';while(sl.firstChild)w.appendChild(sl.firstChild);sl.appendChild(w)}w.style.transform='';var cs=getComputedStyle(sl);var pt=parseFloat(cs.paddingTop),pb=parseFloat(cs.paddingBottom),ph=parseFloat(cs.paddingLeft)+parseFloat(cs.paddingRight);var availH=sl.clientHeight-pt-pb,availW=sl.clientWidth-ph;w.style.width=availW+'px';w.style.height=availH+'px';if(w.scrollHeight>availH+2){var r=Math.max(0.6,(availH-4)/w.scrollHeight);w.style.transform='scale('+r.toFixed(4)+')'}}}autoFit();window.addEventListener('resize',function(){setTimeout(autoFit,150)});setTimeout(autoFit,300)})();</script>
+</body>
+</html>
